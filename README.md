@@ -60,7 +60,7 @@ Add-Ons
 
 User Story:
 ============
-“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game or save and load an existing game. Concerning gameplay, the character I am controlling needs to move freely in four directions and have a short and long range attack. Each level needs to contain a variety of basic enemies with a mini boss, all of which the character will need to attack to kill. I want to be able to advance to different levels of increasing difficulty. Finally, I want to defeat a challenging end boss that hopefully leaves me with a sense that I accomplished something.”   
+“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game or save and load an existing game. Concerning gameplay, the character I am controlling needs to move freely and have at least two different types of attacks. Each level needs to contain a variety of basic enemies with a mini boss, all of which the character will need to attack to kill. I want to be able to advance to different levels of increasing difficulty. Finally, I want to defeat a challenging end boss that hopefully leaves me with a sense that I accomplished something.”   
 
 
 
