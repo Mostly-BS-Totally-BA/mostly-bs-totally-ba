@@ -42,13 +42,13 @@ Gameplay:
 
 Add-Ons
 =========
-	* Each boss fight will have different mechanics. This is to add variety to the game so that bosses feel unique and provide a challenge for the player to overcome.
-	* Ability to solve puzzles, and interact with objects in game such as opening a chest to find loot.
-	* Functioning inventory system where you can see items you have picked up throughout the game, and possibly use said items.
-	* Procedurally generate maps, so that every time a player starts a game it is a never before seen map, this will make memorizing the game maps nearly impossible.
-	* Provide readable text on the screen that will pop up at various points. Each time it will provide more context to the story of the game so that the player can feel involved in the game world.
-	* Multiple Player Classes, such as Rogue, Warrior, Wizard who have different weapon/attack functionality.
-	* Addition of an in game map, to track where the player is and where they have/haven’t been yet.
+* Each boss fight will have different mechanics. This is to add variety to the game so that bosses feel unique and provide a challenge for the player to overcome.
+* Ability to solve puzzles, and interact with objects in game such as opening a chest to find loot.
+* Functioning inventory system where you can see items you have picked up throughout the game, and possibly use said items.
+* Procedurally generate maps, so that every time a player starts a game it is a never before seen map, this will make memorizing the game maps nearly impossible.
+* Provide readable text on the screen that will pop up at various points. Each time it will provide more context to the story of the game so that the player can feel involved in the game world.
+* Multiple Player Classes, such as Rogue, Warrior, Wizard who have different weapon/attack functionality.
+* Addition of an in game map, to track where the player is and where they have/haven’t been yet.
 
 
 User Story:
