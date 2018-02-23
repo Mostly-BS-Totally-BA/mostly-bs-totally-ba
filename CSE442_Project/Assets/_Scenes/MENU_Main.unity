@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8988bbe8b2bd5443f83ad9ce41b5d2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStart: 1
+  isNew: 1
   isQuit: 0
+  isStart: 0
 --- !u!4 &314608310 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4940231587471696, guid: f5b854756e5c145c7938ca04c4426511,
