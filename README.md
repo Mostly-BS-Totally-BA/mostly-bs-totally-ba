@@ -20,11 +20,26 @@ Gitter Badge
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MostlyBSTotallyBA/Project_Discussion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
+Project Video
+===========
+https://www.youtube.com/watch?v=tOTkq1Pvyuw
+
+
+
 Prototype Instructions
 =========================
-1) Locate your OS version's executable in CSE442_Project.
-2) Download executable to your computer
-3) Run executable file
+Mac
+------
+1) Locate the executable in the CSE442_Project folder
+2) Download this to your computer
+3) Run the executable to begin playing
+
+Windows
+------------
+1) Locate the zip file in the CSE442_Project folder
+2) Download this to your computer
+3) Unzip all contents of the downloaded file
+4) Run the executable to begin playing
 
 
 Minimum Viable Product:
