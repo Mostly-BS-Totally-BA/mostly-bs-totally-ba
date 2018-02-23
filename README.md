@@ -15,6 +15,16 @@ Members:
 * Andrew Forthman
 * Arody Deleon
 
+Gitter Badge
+==============
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MostlyBSTotallyBA/Project_Discussion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+Prototype Instructions
+=========================
+1) Locate your OS version's executable in CSE442_Project.
+2) Download executable to your computer
+3) Run executable file
 
 
 Minimum Viable Product:
@@ -41,7 +51,6 @@ Gameplay:
 * User Interface:
 	* Game opens and loads to a basic menu with options for creating a new game,  loading a saved game, and exiting the game.
 	* When the player beats the game, or if the player decides to exit the game, they will be able to do so with an option screen to take them back to the main menu.
-
 
 
 
@@ -100,6 +109,4 @@ Code Reviewing:
 
 
 
-Gitter Badge
-==============
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MostlyBSTotallyBA/Project_Discussion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
