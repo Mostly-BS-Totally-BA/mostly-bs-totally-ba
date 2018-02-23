@@ -15,7 +15,7 @@ public class MenuMain : MonoBehaviour {
             //MeshRenderer render = gameObject.GetComponentInChildren<MeshRenderer>();
             //render.enabled = false;
 
-            SceneManager.LoadScene("MENU-Instructions");
+            SceneManager.LoadScene(2);
             GetComponent<Renderer>().material.color = Color.blue;
         }
         if (isQuit){
@@ -26,7 +26,7 @@ public class MenuMain : MonoBehaviour {
             //MeshRenderer render = gameObject.GetComponentInChildren<MeshRenderer>();
             //render.enabled = false;
 
-            SceneManager.LoadScene("MAP-Level1");
+            SceneManager.LoadScene(1);
             GetComponent<Renderer>().material.color = Color.blue;
         }
     }
