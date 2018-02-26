@@ -80,11 +80,12 @@ Add-Ons
 * Provide readable text on the screen that will pop up at various points. Each time it will provide more context to the story of the game so that the player can feel involved in the game world.
 * Multiple Player Classes, such as Rogue, Warrior, Wizard who have different weapon/attack functionality.
 * Addition of an in game map, to track where the player is and where they have/haven’t been yet.
+* save and load an existing game.
 
 
 User Story:
 ============
-“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game or save and load an existing game. Concerning gameplay, the character I am controlling needs to move freely and have at least two different types of attacks. Each level needs to contain a variety of basic enemies with a mini boss, all of which the character will need to attack to kill. I want to be able to advance to different levels of increasing difficulty. Finally, I want to defeat a challenging end boss that hopefully leaves me with a sense that I accomplished something.”   
+“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game. Concerning gameplay, the character I am controlling needs to move freely,attack, and defeat enemeies. A level needs to contain a variety of basic enemies with a mini boss, all of which the character will need to attack to kill. I want to be able to be able to finish a level. Finally, I want to defeat a challenging end boss that hopefully leaves me with a sense that I accomplished something.”   
 
 
 
