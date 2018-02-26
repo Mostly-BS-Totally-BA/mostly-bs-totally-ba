@@ -85,7 +85,7 @@ Add-Ons
 
 User Story:
 ============
-“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game. Concerning gameplay, the character I am controlling needs to move freely,attack, and defeat enemeies. A level needs to contain a variety of basic enemies with a mini boss, all of which the character will need to attack to kill. I want to be able to be able to finish a level. Finally, I want to defeat a challenging end boss that hopefully leaves me with a sense that I accomplished something.”   
+“I want to be able to play an old style game that feels nostalgic, such as The Legend of Zelda. The game should have some basic common functionality, including a user interface, and options to start a new game. Concerning gameplay, the character I am controlling needs to move freely,attack, and defeat enemeies. A level needs to contain a variety of basic enemies with a boss, all of which the character will need to attack to kill. I want to be able to be able to finish a level that provides me a sense of accomplishment."   
 
 
 
