@@ -6,8 +6,10 @@ public class Enemy_movement : MonoBehaviour {
     public float currentHealth;
     public float maxHealth;
     public float speed;
+    public GameObject smallrat;
     private Animator animator;
     private Transform target;
+    private Rigidbody2D rb;
 
     public bool aggro;
     //private PolygonCollider2D polygonCol2D;
@@ -17,8 +19,11 @@ public class Enemy_movement : MonoBehaviour {
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         //polygonCol2D = GetComponent<PolygonCollider2D>();
-		
-	}
+        rb = GetComponent<Rigidbody2D>();
+        //Player = GameObject.FindWithTag("Player");
+        smallrat = GameObject.FindWithTag("Enemy");
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -55,7 +60,11 @@ public class Enemy_movement : MonoBehaviour {
 
         if (aggro == true)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Vector2 direction = target.position - transform.position;
+            Vector2 newvector = direction.normalized * speed *Time.deltaTime;
+            rb.velocity = newvector;
+            //Vector3 vect = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
+            //transform.Translate(vect.x * speed * Time.deltaTime, vect.y * speed * Time.deltaTime, 0f);
             if (Vector2.Distance(transform.position, target.position) >= 4.5)
             {
                 aggro = false;
