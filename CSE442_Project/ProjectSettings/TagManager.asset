@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - UI_MM_Title
+  - UI_MM_Choices
   layers:
   - Default
   - TransparentFX
