@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4531271287877138}
   - component: {fileID: 212251925043550502}
-  - component: {fileID: 60593967793796958}
   m_Layer: 0
   m_Name: White Candle
   m_TagString: Untagged
@@ -41,44 +40,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60593967793796958
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1722695339183200}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.12545013, y: 0.4371128}
-      - {x: -0.18535137, y: -0.0666008}
-      - {x: -0.18573761, y: -0.31126213}
-      - {x: -0.24979115, y: -0.31185722}
-      - {x: -0.2497387, y: -0.43758202}
-      - {x: -0.1885271, y: -0.49983025}
-      - {x: 0.12763596, y: -0.5}
-      - {x: 0.18791103, y: -0.43474388}
-      - {x: 0.18751526, y: -0.3147831}
-      - {x: 0.12646866, y: -0.3139}
-      - {x: 0.123846054, y: -0.063913345}
-      - {x: 0.061600685, y: 0.43662262}
-      - {x: 0.00072956085, y: 0.49912834}
-      - {x: -0.063840866, y: 0.50011635}
 --- !u!212 &212251925043550502
 SpriteRenderer:
   m_ObjectHideFlags: 1
