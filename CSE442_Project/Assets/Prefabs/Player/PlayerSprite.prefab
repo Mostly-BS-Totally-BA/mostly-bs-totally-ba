@@ -23,9 +23,11 @@ GameObject:
   - component: {fileID: 50687493357935152}
   - component: {fileID: 114690234178371062}
   - component: {fileID: 60197618634418896}
+  - component: {fileID: 95386838459572296}
+  - component: {fileID: 114879458552026008}
   m_Layer: 0
   m_Name: PlayerSprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +115,23 @@ PolygonCollider2D:
       - {x: 0.37390098, y: 0.29067945}
       - {x: 0.38262057, y: 0.5}
       - {x: -0.3826207, y: 0.5}
+--- !u!95 &95386838459572296
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575102054125136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 060245365b6d5482d934b3c61feadb9e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114690234178371062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,7 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19beecc8d2e344744a125c0c9c22cc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1.75
+  animator: {fileID: 95386838459572296}
+--- !u!114 &114879458552026008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1575102054125136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9ac5d808d07e944b72648a9ac31f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactingObj: {fileID: 0}
 --- !u!212 &212654243070348258
 SpriteRenderer:
   m_ObjectHideFlags: 1
