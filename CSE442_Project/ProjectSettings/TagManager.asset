@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - UI_MM_Title
   - UI_MM_Choices
+  - Door_Interactable
+  - Door_Inter_Locked
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Doors
+    uniqueID: 4166366833
+    locked: 0
+  - name: Items
+    uniqueID: 1046516885
     locked: 0
