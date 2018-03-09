@@ -3,11 +3,13 @@
 public class Player_Movement : MonoBehaviour {
 
 	public float speed;
-	public Animator animator;
+	private Animator animator;
+	  
+	private bool moving;
+	private Vector2 lastMove;
 
-	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -16,49 +18,25 @@ public class Player_Movement : MonoBehaviour {
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 
-		if (horizontal == 0.0f || vertical == 0.0f) {
-			animator.SetBool ("move_down", false);
-			animator.SetBool ("move_up", false);
-			animator.SetBool ("move_left", false);
-			animator.SetBool ("move_right", false);
-		}
-		//move right
-		if(horizontal > 0.5f)
-		{
-			transform.Translate (new Vector3 (Input.GetAxisRaw ("Horizontal") * speed * Time.deltaTime,0f,0f));
-			animator.SetBool ("move_down", false);
-			animator.SetBool ("move_up", false);
-			animator.SetBool ("move_left", false);
-			animator.SetBool ("move_right", true);
+		moving = false;
+		if (horizontal > 0.5f || horizontal < -0.5f) {
+
+			transform.Translate (new Vector3 (horizontal * speed * Time.deltaTime, 0f, 0f));
+			moving = true;
+			lastMove = new Vector2 (horizontal, 0f);
 		}
 
-		//move left
-		if (horizontal < -0.5f) {
-			transform.Translate (new Vector3 (Input.GetAxisRaw ("Horizontal") * speed * Time.deltaTime,0f,0f));
-			animator.SetBool ("move_down", false);
-			animator.SetBool ("move_up", false);
-			animator.SetBool ("move_left", true);
-			animator.SetBool ("move_right", false);
+		if (vertical > 0.5f || vertical < -0.5f) {
+
+			transform.Translate (new Vector3 (0f, vertical * speed * Time.deltaTime, 0f));
+			moving = true;
+			lastMove = new Vector2 (0f, vertical);
 		}
 
-		//move up
-		if(vertical > 0.5f)
-		{
-			transform.Translate (new Vector3 (0f,Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime,0f));
-			animator.SetBool ("move_down", false);
-			animator.SetBool ("move_up", true);
-			animator.SetBool ("move_left", false);
-			animator.SetBool ("move_right", false);
-		}
-
-		//move down
-		if (vertical < -0.5f) {
-			transform.Translate (new Vector3 (0f, Input.GetAxisRaw ("Vertical") * speed * Time.deltaTime, 0f));
-			animator.SetBool ("move_down", true);
-			animator.SetBool ("move_up", false);
-			animator.SetBool ("move_left", false);
-			animator.SetBool ("move_right", false);
-		}
-
+		animator.SetFloat ("x_movement", horizontal);
+		animator.SetFloat ("y_movement", vertical);
+		animator.SetBool ("moving", moving);
+		animator.SetFloat ("last_x_movement", lastMove.x);
+		animator.SetFloat ("last_y_movement", lastMove.y);
 	}
 }
