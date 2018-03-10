@@ -69,4 +69,14 @@ public class Player_Movement : MonoBehaviour {
 		animator.SetFloat ("last_x_movement", lastMove.x);
 		animator.SetFloat ("last_y_movement", lastMove.y);
 	}
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Enemy")
+        {
+            player_rigid.velocity = Vector2.zero;
+        }
+        //coll.gameObject.SendMessage("ApplyDamage", 10);
+
+    }
 }
