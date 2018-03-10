@@ -114,6 +114,7 @@ public class Enemy_movement : MonoBehaviour {
             if (Vector2.Distance(transform.position, target.position) >= 4.5 || touchPlayer == true)
             {
                 aggro = false;
+                rb.velocity = Vector2.zero;
                 
             }
             
