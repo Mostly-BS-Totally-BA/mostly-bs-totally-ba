@@ -85,11 +85,11 @@ public class Enemy_movement : MonoBehaviour {
         if (touchPlayer == true)
         {
             //aggro = false;
-            rb.velocity = Vector2.zero;
+            //rb.velocity = Vector2.zero;
             timeCount = timeCount - Time.deltaTime;
             if (timeCount <= 0)
             {
-                touchPlayer = false;
+                //touchPlayer = false;
                 timeCount = 1f;
             }
 
@@ -98,7 +98,11 @@ public class Enemy_movement : MonoBehaviour {
         {
             Vector2 direction = target.position - transform.position;
             Vector2 newvector = direction.normalized * speed *Time.deltaTime;
-            rb.velocity = newvector;
+
+            if (rb.bodyType != RigidbodyType2D.Static)
+            {
+                rb.velocity = newvector;
+            }
             //rb.position
 
             //transform.Translate(new Vector3(rb.position.x-newvector.x, rb.position.y-newvector.y, 0f));
