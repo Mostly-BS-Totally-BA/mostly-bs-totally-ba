@@ -70,6 +70,7 @@ public class Enemy_movement : MonoBehaviour {
     {
         //coll.rigidbody.isKinematic = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
+        touchPlayer = false;
     }
     public void MoveEnemy()
     {
@@ -84,7 +85,7 @@ public class Enemy_movement : MonoBehaviour {
         }
         if (touchPlayer == true)
         {
-            //aggro = false;
+            aggro = true;
             //rb.velocity = Vector2.zero;
             timeCount = timeCount - Time.deltaTime;
             if (timeCount <= 0)
