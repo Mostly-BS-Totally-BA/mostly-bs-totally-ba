@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4563674855150658}
   - component: {fileID: 212835027226494000}
   - component: {fileID: 95622263685259866}
+  - component: {fileID: 114997746215770816}
   - component: {fileID: 50562288425016010}
   - component: {fileID: 60487033433576058}
-  - component: {fileID: 114997746215770816}
   m_Layer: 0
   m_Name: SmallRat
   m_TagString: Enemy
@@ -54,15 +54,15 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_UseAutoMass: 1
+  m_Mass: 0.510378
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!60 &60487033433576058
 PolygonCollider2D:
@@ -127,11 +127,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25271fda392439f4b84aef948f629b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
-  speed: 100
+  currentHealth: 100
+  maxHealth: 100
+  speed: 85
   smallrat: {fileID: 0}
   aggro: 0
+  touchPlayer: 0
+  touchWeapon: 0
+  timeCount: 0
 --- !u!212 &212835027226494000
 SpriteRenderer:
   m_ObjectHideFlags: 1
