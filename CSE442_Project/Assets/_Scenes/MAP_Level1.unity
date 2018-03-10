@@ -12908,7 +12908,7 @@ Prefab:
     - target: {fileID: 50562288425016010, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
         type: 2}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50562288425016010, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
         type: 2}
@@ -12923,11 +12923,26 @@ Prefab:
     - target: {fileID: 50562288425016010, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
         type: 2}
       propertyPath: m_Mass
-      value: 0.0001
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
         type: 2}
       propertyPath: speed
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 50562288425016010, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16193,7 +16208,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385069495}
   m_LocalRotation: {x: -0, y: -0, z: -0.9686845, w: -0.24829501}
-  m_LocalPosition: {x: -0.224, y: -0.142, z: 1}
+  m_LocalPosition: {x: -0.224, y: -0.142, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1544528259}
@@ -28317,6 +28332,31 @@ Prefab:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 50687493357935152, guid: 767370fb0f9604231b9cffdf68f519fd,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
+        type: 2}
+      propertyPath: attack_duration
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
+        type: 2}
+      propertyPath: speed
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
+        type: 2}
+      propertyPath: swordCollider
+      value: 
+      objectReference: {fileID: 1544528261}
+    - target: {fileID: 60197618634418896, guid: 767370fb0f9604231b9cffdf68f519fd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
   m_IsPrefabParent: 0
@@ -36206,6 +36246,7 @@ GameObject:
   - component: {fileID: 1544528259}
   - component: {fileID: 1544528260}
   - component: {fileID: 1544528261}
+  - component: {fileID: 1544528262}
   m_Layer: 0
   m_Name: MedWep_3
   m_TagString: Untagged
@@ -36279,7 +36320,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -36303,6 +36344,17 @@ PolygonCollider2D:
       - {x: 0.23065294, y: 0.45552775}
       - {x: 0.056337237, y: 0.26357734}
       - {x: 0.0632822, y: 0.15149046}
+--- !u!114 &1544528262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544528258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74aa81c253c94268b6c5379efa72a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1546867112
 Prefab:
   m_ObjectHideFlags: 0
