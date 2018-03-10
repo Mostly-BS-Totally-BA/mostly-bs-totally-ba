@@ -26,7 +26,7 @@ public class Enemy_movement : MonoBehaviour {
         //Player = GameObject.FindWithTag("Player");
         smallrat = GameObject.FindWithTag("Enemy");
         playerColl = GetComponent<PolygonCollider2D>();
-        timeCount = .5f;
+        timeCount = 1f;
 
     }
 	
@@ -55,6 +55,9 @@ public class Enemy_movement : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
             touchPlayer = true;
+            //coll.rigidbody.isKinematic = true;
+            //rb.velocity = Vector2.zero;
+            rb.bodyType= RigidbodyType2D.Static; 
         }
         if(coll.gameObject.tag=="Weapon")
         {
@@ -63,7 +66,11 @@ public class Enemy_movement : MonoBehaviour {
             //coll.gameObject.SendMessage("ApplyDamage", 10);
 
     }
-
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        //coll.rigidbody.isKinematic = false;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+    }
     public void MoveEnemy()
     {
         
@@ -77,13 +84,13 @@ public class Enemy_movement : MonoBehaviour {
         }
         if (touchPlayer == true)
         {
-            aggro = false;
+            //aggro = false;
             rb.velocity = Vector2.zero;
             timeCount = timeCount - Time.deltaTime;
             if (timeCount <= 0)
             {
                 touchPlayer = false;
-                timeCount = .5f;
+                timeCount = 1f;
             }
 
         }
@@ -92,9 +99,12 @@ public class Enemy_movement : MonoBehaviour {
             Vector2 direction = target.position - transform.position;
             Vector2 newvector = direction.normalized * speed *Time.deltaTime;
             rb.velocity = newvector;
+            //rb.position
+
+            //transform.Translate(new Vector3(rb.position.x-newvector.x, rb.position.y-newvector.y, 0f));
             //Vector3 vect = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
             //transform.Translate(vect.x * speed * Time.deltaTime, vect.y * speed * Time.deltaTime, 0f)
-            
+
 
             if (Vector2.Distance(transform.position, target.position) >= 4.5 || touchPlayer == true)
             {

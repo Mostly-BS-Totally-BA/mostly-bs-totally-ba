@@ -75,8 +75,15 @@ public class Player_Movement : MonoBehaviour {
         if (coll.gameObject.tag == "Enemy")
         {
             player_rigid.velocity = Vector2.zero;
+            //coll.rigidbody.isKinematic = true;
         }
         //coll.gameObject.SendMessage("ApplyDamage", 10);
 
     }
+    
+    void OnCollisionExit2D(Collision2D coll)
+    {
+        //coll.rigidbody.isKinematic = false;
+    }
+    
 }
