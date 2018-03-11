@@ -9,15 +9,19 @@ public class Player_Interact : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Door_Interactable"))  
+        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Chest_Interactable"))  
         {
             interactingObj = collision.gameObject;
+        }
+        else if (collision.CompareTag("Treasure_Inter") || collision.CompareTag("Platino"))
+        {
+            collision.SendMessage("RunInteraction");
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Door_Interactable"))
+        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Interactable"))
         {
             if (collision.gameObject == interactingObj)
             {

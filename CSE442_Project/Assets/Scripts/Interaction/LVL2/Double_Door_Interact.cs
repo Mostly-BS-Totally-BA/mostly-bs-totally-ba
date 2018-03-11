@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Double_Door_Interact : MonoBehaviour {
-
+public class Double_Door_Interact : MonoBehaviour
+{
     public GameObject opened_door1;
     public GameObject opened_door2;
     public GameObject other_door;
@@ -20,5 +20,6 @@ public class Double_Door_Interact : MonoBehaviour {
         other_door.SetActive(false);
         opened_door1.SetActive(true);
         opened_door2.SetActive(true);
+        Destroy(gameObject.GetComponent("Interact_Text"));
     }
 }

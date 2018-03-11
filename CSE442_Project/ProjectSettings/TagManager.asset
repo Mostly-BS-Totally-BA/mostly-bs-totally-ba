@@ -9,6 +9,14 @@ TagManager:
   - UI_MM_Choices
   - Door_Interactable
   - Door_Inter_Locked
+  - Puzzle_Interact
+  - Platino
+  - Treasure_Inter
+  - Platino_Candle
+  - Interactable
+  - Chest_Interactable
+  - Chest_Open
+  - Platino_Candle_NonInter
   layers:
   - Default
   - TransparentFX
