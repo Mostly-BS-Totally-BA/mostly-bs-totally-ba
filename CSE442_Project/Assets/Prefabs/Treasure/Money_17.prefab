@@ -20,9 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4490462401007570}
   - component: {fileID: 212500774624313946}
+  - component: {fileID: 60997695643126566}
+  - component: {fileID: 114330389420070408}
   m_Layer: 0
   m_Name: Money_17
-  m_TagString: Untagged
+  m_TagString: Treasure_Inter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,13 +35,69 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1890264846258094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.55, y: -21.35, z: 0.09667969}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.83, y: -14.68, z: 0.041992188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60997695643126566
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890264846258094}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.31150055, y: 0.31628704}
+      - {x: -0.2513094, y: 0.18740368}
+      - {x: -0.3111353, y: 0.129385}
+      - {x: -0.373312, y: 0.058018684}
+      - {x: -0.38408184, y: -0.0034770966}
+      - {x: -0.2521057, y: -0.05922413}
+      - {x: -0.18680668, y: -0.12560749}
+      - {x: -0.067429066, y: -0.25376987}
+      - {x: 0.06577301, y: -0.2495346}
+      - {x: 0.19400692, y: -0.12200832}
+      - {x: 0.31637478, y: -0.0007944107}
+      - {x: 0.3239956, y: 0.12186813}
+      - {x: 0.18680668, y: 0.25160503}
+      - {x: -0.059361458, y: 0.252285}
+      - {x: 0.06899166, y: 0.37015057}
+      - {x: 0.06036091, y: 0.43961048}
+      - {x: 0.000009536743, y: 0.43914413}
+      - {x: -0.123909, y: 0.31273365}
+      - {x: -0.18978119, y: 0.31947994}
+      - {x: -0.24442673, y: 0.37756538}
+      - {x: -0.31482792, y: 0.37481308}
+--- !u!114 &114330389420070408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1890264846258094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75436f856f13e4546894a581518ecb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212500774624313946
 SpriteRenderer:
   m_ObjectHideFlags: 1

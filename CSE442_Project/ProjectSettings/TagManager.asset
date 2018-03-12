@@ -9,6 +9,15 @@ TagManager:
   - UI_MM_Choices
   - Door_Interactable
   - Door_Inter_Locked
+  - Puzzle_Interact
+  - Platino
+  - Treasure_Inter
+  - Platino_Candle
+  - Interactable
+  - Chest_Interactable
+  - Chest_Open
+  - Platino_Candle_NonInter
+  - Platino_Text
   layers:
   - Default
   - TransparentFX
@@ -51,4 +60,7 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 1046516885
+    locked: 0
+  - name: Overlay
+    uniqueID: 3125488157
     locked: 0

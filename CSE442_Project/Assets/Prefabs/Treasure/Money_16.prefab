@@ -20,9 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4133070440175856}
   - component: {fileID: 212450731791544116}
+  - component: {fileID: 70898377237868890}
+  - component: {fileID: 114176388546541768}
   m_Layer: 0
   m_Name: Money_16
-  m_TagString: Untagged
+  m_TagString: Treasure_Inter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,13 +35,39 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270409289380792}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.14, y: -21.38, z: 0.09667969}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.793, y: -13.923, z: 0.041992188}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &70898377237868890
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270409289380792}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0050452948, y: 0}
+  m_Size: {x: 0.5661166, y: 0.88900757}
+  m_Direction: 0
+--- !u!114 &114176388546541768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270409289380792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75436f856f13e4546894a581518ecb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212450731791544116
 SpriteRenderer:
   m_ObjectHideFlags: 1

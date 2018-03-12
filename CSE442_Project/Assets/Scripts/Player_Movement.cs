@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour {
 	private bool moving;
 	private bool isAttacking;
 	private Vector2 lastMove;
+    public bool canMove = true;
 
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -20,8 +21,13 @@ public class Player_Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			
-		float horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (!canMove)
+        {
+            return;
+        }
+
+        float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 
 		moving = false;

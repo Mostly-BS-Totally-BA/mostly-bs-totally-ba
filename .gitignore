@@ -35,5 +35,15 @@ sysinfo.txt
 .DS_Store
 CSE442_Project/.DS_Store
 CSE442_Project/Assets/.DS_Store
+<<<<<<< HEAD
+<<<<<<< HEAD
+*.ide
+=======
 CSE442_Project/.vs/CSE442_Project/v15/sqlite3/storage.ide-shm
 CSE442_Project/.vs/CSE442_Project/v15/sqlite3/storage.ide-wal
+>>>>>>> develop
+CSE442_Project/.vs/CSE442_Project/v15/sqlite3/storage.ide
+=======
+CSE442_Project/.vs/CSE442_Project/v15/sqlite3/storage.ide-shm
+CSE442_Project/.vs/CSE442_Project/v15/sqlite3/storage.ide-wal
+>>>>>>> 0a4bb2a62424e1df138a47c3297ac337d5ccfd49
