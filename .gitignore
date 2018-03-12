@@ -37,3 +37,4 @@ sysinfo.txt
 .DS_Store
 CSE442_Project/.DS_Store
 CSE442_Project/Assets/.DS_Store
+*.ide
