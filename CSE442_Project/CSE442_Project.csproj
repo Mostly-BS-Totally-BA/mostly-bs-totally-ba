@@ -342,6 +342,7 @@
     <Compile Include="Assets\Scripts\Interaction\Treasure_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Unlock_Door_lvl1.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
   </ItemGroup>
   <ItemGroup>
