@@ -17,6 +17,7 @@ TagManager:
   - Chest_Interactable
   - Chest_Open
   - Platino_Candle_NonInter
+  - Platino_Text
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class Treasure_pickup : MonoBehaviour
 {
     bool showGUI = false;
     public string text;
-    float timer = .25F;
+    float timer = .35F;
 
     public void RunInteraction()
     {

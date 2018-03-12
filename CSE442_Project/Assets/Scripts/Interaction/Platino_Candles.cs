@@ -23,8 +23,8 @@ public class Platino_Candles : MonoBehaviour
     {
         if (collision.CompareTag("Platino_Candle_NonInter"))
         {
+            Destroy(collision.GetComponent<CircleCollider2D>());
             showGUI = false;
-            Destroy(collision.GetComponent("CircleCollider2D"));
         }
     }
 
@@ -33,9 +33,10 @@ public class Platino_Candles : MonoBehaviour
         if (Input.GetButtonDown("Interaction") && candle)
         {
             number_pulled++;
-            Destroy(candle);
             showGUI = true;
+            Destroy(candle);
         }
+
         if(number_pulled == 3)
         {
             for (int i = 0; i < walls.GetLength(0); i++)
