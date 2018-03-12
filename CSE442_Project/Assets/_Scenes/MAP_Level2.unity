@@ -4355,6 +4355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &140254908
 Prefab:
   m_ObjectHideFlags: 0
@@ -9060,11 +9061,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 114123936060899128, guid: b019456bae22d0749b867ba47c883455,
-        type: 2}
-      propertyPath: text
-      value: You gained 20 gold!
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b019456bae22d0749b867ba47c883455, type: 2}
   m_IsPrefabParent: 0
@@ -11662,6 +11658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &390527456
 Prefab:
   m_ObjectHideFlags: 0
@@ -14001,6 +13998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: There is no turning back...
+  player: {fileID: 0}
 --- !u!1001 &473661617
 Prefab:
   m_ObjectHideFlags: 0
@@ -14718,6 +14716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &494835016
 Prefab:
   m_ObjectHideFlags: 0
@@ -15618,6 +15617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &528161214
 Prefab:
   m_ObjectHideFlags: 0
@@ -19064,74 +19064,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1130180788674334, guid: 3c5059f478192054f965cc5a6b7fda11,
     type: 2}
   m_PrefabInternal: {fileID: 1351008332}
---- !u!114 &643309431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643309430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: You gained 50 gold!
---- !u!60 &643309432
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643309430}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.43949127, y: 0.24600983}
-      - {x: -0.43723106, y: -0.44293785}
-      - {x: 0.25538254, y: -0.44564056}
-      - {x: 0.4336996, y: -0.24884605}
-      - {x: 0.4318428, y: 0.31212044}
-      - {x: 0.38302135, y: 0.37160873}
-      - {x: -0.31454659, y: 0.37160873}
---- !u!61 &643309433
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 643309430}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.09909785, y: -0.23930836}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3392203, y: 1.4786167}
-  m_EdgeRadius: 0
 --- !u!1001 &643539030
 Prefab:
   m_ObjectHideFlags: 0
@@ -20520,6 +20452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to pull
+  player: {fileID: 0}
 --- !u!1001 &704196699
 Prefab:
   m_ObjectHideFlags: 0
@@ -21573,6 +21506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to pull
+  player: {fileID: 0}
 --- !u!1001 &747971686
 Prefab:
   m_ObjectHideFlags: 0
@@ -21672,7 +21606,7 @@ Prefab:
       value: Chest_Open
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 60661428495134114, guid: 3c5059f478192054f965cc5a6b7fda11, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 3c5059f478192054f965cc5a6b7fda11, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &748301480 stripped
@@ -22913,6 +22847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &817041651
 Prefab:
   m_ObjectHideFlags: 0
@@ -23157,6 +23092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &818975115
 Prefab:
   m_ObjectHideFlags: 0
@@ -23942,6 +23878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to pull
+  player: {fileID: 0}
 --- !u!1001 &837009032
 Prefab:
   m_ObjectHideFlags: 0
@@ -25353,6 +25290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &900893484
 Prefab:
   m_ObjectHideFlags: 0
@@ -26703,6 +26641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 100 gold!
+  player: {fileID: 0}
 --- !u!61 &953952615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29201,6 +29140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1057774745
 Prefab:
   m_ObjectHideFlags: 0
@@ -30851,6 +30791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1121994424
 Prefab:
   m_ObjectHideFlags: 0
@@ -31829,6 +31770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1160321640
 Prefab:
   m_ObjectHideFlags: 0
@@ -31929,6 +31871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1163443414
 Prefab:
   m_ObjectHideFlags: 0
@@ -32485,11 +32428,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 114042060605435996, guid: 63d69c595b246e84ab3a710c5e534369,
-        type: 2}
-      propertyPath: text
-      value: You gained 30 gold!
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63d69c595b246e84ab3a710c5e534369, type: 2}
   m_IsPrefabParent: 0
@@ -32812,6 +32750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1183925380
 Prefab:
   m_ObjectHideFlags: 0
@@ -37256,6 +37195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1311634274
 Prefab:
   m_ObjectHideFlags: 0
@@ -37885,12 +37825,7 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1130180788674334, guid: 3c5059f478192054f965cc5a6b7fda11, type: 2}
-      propertyPath: m_TagString
-      value: Chest_Open
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 60661428495134114, guid: 3c5059f478192054f965cc5a6b7fda11, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c5059f478192054f965cc5a6b7fda11, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1351008333 stripped
@@ -38744,6 +38679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1382435578
 Prefab:
   m_ObjectHideFlags: 0
@@ -43402,6 +43338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!114 &1535136745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44748,6 +44685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 100 gold!
+  player: {fileID: 0}
 --- !u!61 &1578712705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50587,6 +50525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1781323733
 Prefab:
   m_ObjectHideFlags: 0
@@ -51849,6 +51788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1824493261
 Prefab:
   m_ObjectHideFlags: 0
@@ -53495,6 +53435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 100 gold!
+  player: {fileID: 0}
 --- !u!61 &1879226981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54941,6 +54882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 50 gold!
+  player: {fileID: 0}
 --- !u!60 &1932771761
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -55324,6 +55266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &1949807403
 Prefab:
   m_ObjectHideFlags: 0
@@ -75379,6 +75322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: Press 'e' to open
+  player: {fileID: 0}
 --- !u!1001 &2078955564
 Prefab:
   m_ObjectHideFlags: 0
