@@ -17,6 +17,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
     GameObject torch = null;
     string text;
     bool showGUI;
+    bool solved = false;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,11 +32,11 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         showGUI = false;
-        if (torch1_pulls == 1 && torch2_pulls == 3 && torch3_pulls == 1 && torch4_pulls == 4)
+        if (solved == true)
         {
             for (int i = 0; i < torches.GetLength(0); i++)
             {
-                Destroy(torches[i].GetComponent<BoxCollider2D>());
+                Destroy(torches[i]);
             }
         }
     }
@@ -115,6 +116,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
                 {
                     overlays[i].SetActive(false);
                 }
+                solved = true;
             }
         }
     }

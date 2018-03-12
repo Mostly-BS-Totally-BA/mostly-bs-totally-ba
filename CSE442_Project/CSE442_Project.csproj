@@ -340,9 +340,7 @@
     <Compile Include="Assets\Scripts\Interaction\LVL2\TextBoxManager.cs" />
     <Compile Include="Assets\Scripts\Interaction\Pickup_key.cs" />
     <Compile Include="Assets\Scripts\Interaction\Platino_Candles.cs" />
-    <Compile Include="Assets\Scripts\Interaction\Platino_speech_lvl1.cs" />
     <Compile Include="Assets\Scripts\Interaction\Player_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\TextBoxManageLVL1.cs" />
     <Compile Include="Assets\Scripts\Interaction\Transition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Treasure_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Unlock_Door_lvl1.cs" />
