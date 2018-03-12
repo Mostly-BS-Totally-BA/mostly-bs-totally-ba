@@ -23361,48 +23361,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4310839941812238, guid: 94db126121bcfda4c8ee7192c8a29993,
     type: 2}
   m_PrefabInternal: {fileID: 824702513}
---- !u!1 &826691805 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1517836312834098, guid: ff292ced54641a24c871f1156252ac2d,
+--- !u!114 &826691809 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114108277010988224, guid: ff292ced54641a24c871f1156252ac2d,
     type: 2}
   m_PrefabInternal: {fileID: 1030194953}
---- !u!61 &826691806
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 826691805}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.21292877, y: -1.011405}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.4904938, y: 3.02281}
-  m_EdgeRadius: 0
---- !u!114 &826691809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 826691805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a248a43243b9284bbf71c5769c3c1b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1441230866}
 --- !u!1001 &827522903
 Prefab:
   m_ObjectHideFlags: 0
@@ -28518,18 +28482,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1517836312834098, guid: ff292ced54641a24c871f1156252ac2d, type: 2}
-      propertyPath: m_Name
-      value: Platino
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517836312834098, guid: ff292ced54641a24c871f1156252ac2d, type: 2}
-      propertyPath: m_TagString
-      value: Platino
-      objectReference: {fileID: 0}
-    - target: {fileID: 1517836312834098, guid: ff292ced54641a24c871f1156252ac2d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114108277010988224, guid: ff292ced54641a24c871f1156252ac2d,
+        type: 2}
+      propertyPath: textBox
+      value: 
+      objectReference: {fileID: 1441230866}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff292ced54641a24c871f1156252ac2d, type: 2}
   m_IsPrefabParent: 0

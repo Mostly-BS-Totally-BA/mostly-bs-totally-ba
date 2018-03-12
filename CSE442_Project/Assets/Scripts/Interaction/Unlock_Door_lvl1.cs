@@ -5,9 +5,14 @@ using UnityEngine;
 public class Unlock_Door_lvl1 : MonoBehaviour
 {
     public GameObject unlocked_door;
+    public Player_Interact player;
+
     public void RunInteraction()
     {
-        gameObject.SetActive(false);
-        unlocked_door.SetActive(true);
+        if(player.has_lvl1_Key == true)
+        {
+            gameObject.SetActive(false);
+            unlocked_door.SetActive(true);
+        }
     }
 }
