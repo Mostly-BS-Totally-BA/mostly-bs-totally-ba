@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4537796195689076}
   - component: {fileID: 212859297566162032}
+  - component: {fileID: 114111831906236802}
   m_Layer: 0
   m_Name: Torch_single
   m_TagString: Untagged
@@ -40,6 +41,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114111831906236802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918924382785436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Press 'e' to pull
 --- !u!212 &212859297566162032
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -73,7 +86,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300128, guid: f215ed8b05230284eb5083954e72df66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -10,6 +10,7 @@ public class Platino_Candles : MonoBehaviour
 
     bool showGUI = false;
     int number_pulled = 0;
+    int previous_pulled = 0;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,10 +22,11 @@ public class Platino_Candles : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Platino_Candle_NonInter"))
+        if (collision.CompareTag("Platino_Candle_NonInter") && previous_pulled < number_pulled)
         {
-            Destroy(collision.GetComponent<CircleCollider2D>());
             showGUI = false;
+            previous_pulled = number_pulled;
+            Destroy(collision.GetComponent<CircleCollider2D>());
         }
     }
 
@@ -32,6 +34,7 @@ public class Platino_Candles : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction") && candle)
         {
+            previous_pulled = number_pulled;
             number_pulled++;
             showGUI = true;
             Destroy(candle);

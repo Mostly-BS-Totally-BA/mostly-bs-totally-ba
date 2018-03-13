@@ -330,14 +330,17 @@
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\From_lvl1_to_Transition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interact_Text.cs" />
+    <Compile Include="Assets\Scripts\Interaction\lvl1_Puzzle_Interactions.cs" />
+    <Compile Include="Assets\Scripts\Interaction\lvl1_puzzle_tip.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Double_Door_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\From_Transition_to_2.cs" />
+    <Compile Include="Assets\Scripts\Interaction\LVL2\Platino_Speech.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Puzzle_Lvl2.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Secret_Passage_Lvl2.cs" />
+    <Compile Include="Assets\Scripts\Interaction\LVL2\TextBoxManager.cs" />
+    <Compile Include="Assets\Scripts\Interaction\Pickup_key.cs" />
     <Compile Include="Assets\Scripts\Interaction\Platino_Candles.cs" />
-    <Compile Include="Assets\Scripts\Interaction\Platino_Speech.cs" />
     <Compile Include="Assets\Scripts\Interaction\Player_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\TextBoxManager.cs" />
     <Compile Include="Assets\Scripts\Interaction\Transition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Treasure_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Unlock_Door_lvl1.cs" />
@@ -366,7 +369,8 @@
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Packages\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\Text\Platino_lvl2.txt" />
+    <None Include="Assets\Text\Platino_Text.txt" />
+    <None Include="Assets\Text\Platino_lvl1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

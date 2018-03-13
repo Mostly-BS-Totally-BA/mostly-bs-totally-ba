@@ -19,7 +19,7 @@ public class TextBoxManager : MonoBehaviour {
     private void Start()
     {
         lines = (textFile.text.Split('\n'));
-        endLine = lines.Length - 1;
+        //endLine = lines.Length - 1;
     }
 
     private void Update()

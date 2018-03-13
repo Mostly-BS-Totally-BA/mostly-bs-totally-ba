@@ -6,10 +6,11 @@ public class Player_Interact : MonoBehaviour
 {
 
     public GameObject interactingObj = null;
+    public bool has_lvl1_Key = false;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Chest_Interactable"))  
+        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Chest_Interactable") || collision.CompareTag("Door_Inter_Locked"))  
         {
             interactingObj = collision.gameObject;
         }
@@ -21,7 +22,7 @@ public class Player_Interact : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Interactable"))
+        if (collision.CompareTag("Door_Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Interactable") || collision.CompareTag("Door_Inter_Locked"))
         {
             if (collision.gameObject == interactingObj)
             {
