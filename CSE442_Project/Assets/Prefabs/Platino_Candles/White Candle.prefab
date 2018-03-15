@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4531271287877138}
   - component: {fileID: 212251925043550502}
+  - component: {fileID: 58327173617949412}
   m_Layer: 0
   m_Name: White Candle
-  m_TagString: Untagged
+  m_TagString: Platino_Candle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,13 +34,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722695339183200}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.9, y: 20.63, z: -0.016440967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.128544, y: -44.994698, z: 0.011169601}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58327173617949412
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722695339183200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.40457535}
+  serializedVersion: 2
+  m_Radius: 0.90457535
 --- !u!212 &212251925043550502
 SpriteRenderer:
   m_ObjectHideFlags: 1
