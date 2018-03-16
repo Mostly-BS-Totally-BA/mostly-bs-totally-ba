@@ -17,6 +17,8 @@ public class Enemy_movement : MonoBehaviour {
     private PolygonCollider2D playerColl;
     public float timeCount;
 
+    private UIManager _uiManager;
+
     // Use this for initialization
     void Start () {
         this.currentHealth = this.maxHealth;
@@ -28,6 +30,7 @@ public class Enemy_movement : MonoBehaviour {
         playerColl = GetComponent<PolygonCollider2D>();
         timeCount = 1f;
 
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 	
 	// Update is called once per frame
@@ -48,8 +51,10 @@ public class Enemy_movement : MonoBehaviour {
 
     public void death()
     {
+        _uiManager.UpdateScore();
         Destroy(gameObject);
     }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
