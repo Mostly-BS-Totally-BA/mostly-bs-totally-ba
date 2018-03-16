@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour 
 {
+    public GameManager GameManager;
     private GameManager _gameManager;
 
     void Awake(){
@@ -22,7 +23,9 @@ public class MainMenu : MonoBehaviour
     
     public void NewGame()
     {
+        _gameManager.SetGameState(GameState.Game);
         SceneManager.LoadScene(1);
+        Debug.Log("Current game state when NewGame: " + _gameManager.gameState);
     }
 
     public void QuitGame ()

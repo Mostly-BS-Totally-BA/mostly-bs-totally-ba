@@ -11,10 +11,10 @@ public class Enemy_movement : MonoBehaviour {
     private Transform target;
     private Rigidbody2D rb;
     public bool aggro;
-    private PolygonCollider2D polygonCol2D;
+    //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
     public bool touchPlayer;
     public bool touchWeapon;
-    private PolygonCollider2D playerColl;
+    //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
 
     private UIManager _uiManager;
@@ -23,11 +23,11 @@ public class Enemy_movement : MonoBehaviour {
     void Start () {
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        polygonCol2D = GetComponent<PolygonCollider2D>();
+        //polygonCol2D = GetComponent<PolygonCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         //Player = GameObject.FindWithTag("Player");
         smallrat = GameObject.FindWithTag("Enemy");
-        playerColl = GetComponent<PolygonCollider2D>();
+        //playerColl = GetComponent<PolygonCollider2D>();
         timeCount = 1f;
 
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();

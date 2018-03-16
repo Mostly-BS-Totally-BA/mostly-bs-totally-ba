@@ -6,7 +6,7 @@ public enum GameState { NullState, Intro, MainMenu, Game }
 public delegate void OnStateChangeHandler();
 
 
-public class GameManager
+public class GameManager : Singleton<GameManager> 
 {
     private static GameManager _instance = null;
     public event OnStateChangeHandler OnStateChange;
@@ -14,11 +14,11 @@ public class GameManager
     protected GameManager() { }
 
     private UIManager _uiManager;
-    private bool _gameRunning = false;
+    //private bool _gameRunning = false;
     private bool _gamePaused = false;
 
     public int playerLives = 5;
-
+/*
     public static GameManager Instance{
         get{
             if (_instance == null){
@@ -27,7 +27,7 @@ public class GameManager
             return _instance;
         }
     }
-
+*/
     public void SetGameState(GameState gameState){
         this.gameState = gameState;
         if (OnStateChange!=null){
@@ -58,15 +58,18 @@ public class GameManager
 
 	void Update()
 	{
-        if (_gameRunning == true )
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape)){
+            Debug.Log("Escape Key");
+            if (_instance.gameState == GameState.Game )
+            {
+                Debug.Log("Escape Key in GS");
                 if (_gamePaused == false){
-                    _gamePaused = true;
+                    PauseGame(true);
                     _uiManager.HideEscMenu();
                 }
                 else{
-                    _gamePaused = false;
+                    PauseGame(false);
                     _uiManager.ShowEscMenu();
                 }
                     
@@ -74,6 +77,16 @@ public class GameManager
 
         }
 	}
+
+    private void PauseGame(bool pause){
+        _gamePaused = pause;
+        if (pause == true){
+            Time.timeScale = 0;
+        }
+        else{
+            Time.timeScale = 1;
+        }
+    }
 
 
 

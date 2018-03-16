@@ -23,3 +23,16 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
 
 }
+
+/*
+public static GameManager Instance
+{
+    get
+    {
+        if (_instance == null)
+        {
+            _instance = new GameManager();
+        }
+        return _instance;
+    }
+}*/
