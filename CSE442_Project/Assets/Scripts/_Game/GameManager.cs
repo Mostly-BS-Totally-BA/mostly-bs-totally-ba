@@ -2,28 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour 
+public enum GameState { NullState, Intro, MainMenu, Game }
+public delegate void OnStateChangeHandler();
+
+
+public class GameManager
 {
-    private static GameManager _instance;
+    private static GameManager _instance = null;
+    public event OnStateChangeHandler OnStateChange;
+    public GameState gameState { get; private set; }
+    protected GameManager() { }
+
     private UIManager _uiManager;
     private bool _gameRunning = false;
     private bool _gamePaused = false;
 
     public int playerLives = 5;
 
-    public static GameManager Instance 
-    { 
-        get
-        {
-            //create logic to create the instance
+    public static GameManager Instance{
+        get{
             if (_instance == null){
-                GameObject go = new GameObject("GameManager");
-                go.AddComponent<GameManager>();
+                _instance = new GameManager();
             }
-
             return _instance;
         }
     }
+
+    public void SetGameState(GameState gameState){
+        this.gameState = gameState;
+        if (OnStateChange!=null){
+            OnStateChange();
+        }
+    }
+
 
     //check/set in Player script
     //GameManager.Instance.isDead = false;
@@ -32,12 +43,7 @@ public class GameManager : MonoBehaviour
     public bool IsDead { get; set; }
 
 	void Awake()
-	{
-        if (_instance == null)
-            _instance = this;
-        else if (_instance != this)
-            Destroy(gameObject);
-        
+	{       
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         if (_uiManager != null)
         {
