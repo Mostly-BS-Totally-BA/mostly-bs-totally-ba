@@ -84,15 +84,14 @@ public class Enemy_movement : MonoBehaviour {
 
     public void MoveEnemy()
     {
-        
         if(aggro==false)
         {
             if (Vector2.Distance(transform.position,target.position)<=2)
             {
                 aggro = true;
             }
-            
         }
+
         if (touchPlayer == true)
         {
             aggro = true;
@@ -103,8 +102,8 @@ public class Enemy_movement : MonoBehaviour {
                 //touchPlayer = false;
                 timeCount = 1f;
             }
-
         }
+
         if (aggro == true)
         {
             Vector2 direction = target.position - transform.position;
@@ -128,15 +127,7 @@ public class Enemy_movement : MonoBehaviour {
                 {
                     rb.velocity = Vector2.zero;
                 }
-
             }
-            
         }
-        
-        
-
     }
-
-
-
 }

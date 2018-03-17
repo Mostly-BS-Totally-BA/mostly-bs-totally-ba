@@ -13,14 +13,26 @@ public class Player_Movement : MonoBehaviour {
 	private Vector2 lastMove;
     public bool canMove = true;
 
+    private GameManager _gm = null;
+
 	void Start () {
 		animator = GetComponent<Animator> ();
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
+        _gm = GameManager.Instance;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (_gm.gameState == GameState.Game)
+        {
+            MovePlayer();
+        }
+
+	}
+
+    void MovePlayer(){
 
         if (!canMove)
         {
@@ -28,53 +40,58 @@ public class Player_Movement : MonoBehaviour {
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
-		float vertical = Input.GetAxisRaw("Vertical");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-		moving = false;
+        moving = false;
 
-		if (!isAttacking) {
-			if (horizontal > 0.5f || horizontal < -0.5f) {
+        if (!isAttacking)
+        {
+            if (horizontal > 0.5f || horizontal < -0.5f)
+            {
+                transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0f, 0f));
+                moving = true;
+                lastMove = new Vector2(horizontal, 0f);
+            }
 
-				transform.Translate (new Vector3 (horizontal * speed * Time.deltaTime, 0f, 0f));
-				moving = true;
-				lastMove = new Vector2 (horizontal, 0f);
-			}
+            if (vertical > 0.5f || vertical < -0.5f)
+            {
 
-			if (vertical > 0.5f || vertical < -0.5f) {
+                transform.Translate(new Vector3(0f, vertical * speed * Time.deltaTime, 0f));
+                moving = true;
+                lastMove = new Vector2(0f, vertical);
+            }
 
-				transform.Translate (new Vector3 (0f, vertical * speed * Time.deltaTime, 0f));
-				moving = true;
-				lastMove = new Vector2 (0f, vertical);
-			}
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
 
-			if (Input.GetKeyDown (KeyCode.Space)) {
+                swordCollider.enabled = true;
+                counter = attack_duration;
+                isAttacking = true;
+                player_rigid.velocity = Vector2.zero;
+                animator.SetBool("isAttacking", true);
+            }
 
-				swordCollider.enabled = true;
-				counter = attack_duration;
-				isAttacking = true;
-				player_rigid.velocity = Vector2.zero;
-				animator.SetBool ("isAttacking", true);
-			}
-				
-		}
+        }
 
-		if (counter > 0) {
-			counter = counter - Time.deltaTime;
-		}
+        if (counter > 0)
+        {
+            counter = counter - Time.deltaTime;
+        }
 
-		else{
+        else
+        {
 
-			swordCollider.enabled = false;
-			isAttacking = false;
-			animator.SetBool ("isAttacking", false);
-		}
+            swordCollider.enabled = false;
+            isAttacking = false;
+            animator.SetBool("isAttacking", false);
+        }
 
-		animator.SetFloat ("x_movement", horizontal);
-		animator.SetFloat ("y_movement", vertical);
-		animator.SetBool ("moving", moving);
-		animator.SetFloat ("last_x_movement", lastMove.x);
-		animator.SetFloat ("last_y_movement", lastMove.y);
-	}
+        animator.SetFloat("x_movement", horizontal);
+        animator.SetFloat("y_movement", vertical);
+        animator.SetBool("moving", moving);
+        animator.SetFloat("last_x_movement", lastMove.x);
+        animator.SetFloat("last_y_movement", lastMove.y);
+    }
 
     void OnCollisionEnter2D(Collision2D coll)
     {

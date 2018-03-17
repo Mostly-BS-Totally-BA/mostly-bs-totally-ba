@@ -37,6 +37,7 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.Escape)) { _gm.EscPressed(); }
         _gm = GameManager.Instance;
         PlayerDead();
+        GameOver();
 	}
 
     public void StartNewGame(){
@@ -109,15 +110,27 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void PlayerDead(){
-        Debug.Log("PlayerDead");
         if (_gm.gameState == GameState.PlayerDead){
             //Time.timeScale = 0;
             //call player dead animation
             timeCount -= Time.deltaTime;
-            Debug.Log("Time: " + timeCount);
 
             if (timeCount <= 0){
-                Debug.Log("timecount: " + _gm.gameState);
+                timeCount = 2f;
+                _gm.gameState = GameState.GameOver;
+            }
+        }
+    }
+
+    public void GameOver()
+    {
+        if (_gm.gameState == GameState.GameOver)
+        {
+            timeCount -= Time.deltaTime;
+
+            if (timeCount <= 0)
+            {
+                timeCount = 2f;
                 _gm.gameState = GameState.MainMenu;
                 SceneManager.LoadScene(0);
             }

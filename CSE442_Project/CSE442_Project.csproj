@@ -348,6 +348,7 @@
     <Compile Include="Assets\Scripts\_Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\_Game\LoadScene.cs" />
     <Compile Include="Assets\Scripts\_Game\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\_Game\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\_Game\Properties.cs" />
     <Compile Include="Assets\Scripts\_Game\Singleton.cs" />
     <Compile Include="Assets\Scripts\_Game\UIManager.cs" />

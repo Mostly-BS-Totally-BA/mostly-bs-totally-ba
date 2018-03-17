@@ -7,8 +7,6 @@ public class MainMenu : MonoBehaviour
 {
     public GameManager GameManager;
     private GameManager _gm;
-    public UIManager UIManager;
-    private UIManager _ui = null;
 
     void Awake(){
         _gm = GameManager.Instance;
