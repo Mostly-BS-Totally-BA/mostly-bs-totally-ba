@@ -17,7 +17,7 @@ public class Enemy_movement : MonoBehaviour {
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
 
-    private UIManager _uiManager;
+    private GameManager _gm = null;
 
     // Use this for initialization
     void Start () {
@@ -30,17 +30,18 @@ public class Enemy_movement : MonoBehaviour {
         //playerColl = GetComponent<PolygonCollider2D>();
         timeCount = 1f;
 
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        _uiManager.LivesIncrease(4);
+        _gm = GameManager.Instance;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        MoveEnemy();
-        //animator.SetBool("SmallRat", true);
-
-
+        if (_gm.gameState == GameState.Game)
+        {
+            MoveEnemy();
+            //animator.SetBool("SmallRat", true);
+        }
     }
+
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
@@ -52,8 +53,9 @@ public class Enemy_movement : MonoBehaviour {
 
     public void death()
     {
-        _uiManager.UpdateScore();
-        _uiManager.LivesDecrease(1);
+        _gm = GameManager.Instance;
+        _gm.ScoreIncrease(10);
+        _gm.LivesDecrease(1);
         Destroy(gameObject);
     }
 
@@ -79,6 +81,7 @@ public class Enemy_movement : MonoBehaviour {
         rb.bodyType = RigidbodyType2D.Dynamic;
         touchPlayer = false;
     }
+
     public void MoveEnemy()
     {
         

@@ -14,20 +14,21 @@ public class MainMenu : MonoBehaviour
         _gm = GameManager.Instance;
         _gm.OnStateChange += HandleOnStateChange;
 
-        Debug.Log("Current game state when Awakes: " + _gm.gameState);
+        //Debug.Log("Current game state when Awakes: " + _gm.gameState);
 
         _gm.SetGameState(GameState.MainMenu);
     }
 
     void Start() {
-        Debug.Log("Current game state when Starts: " + _gm.gameState);
+        //Debug.Log("Current game state when Starts: " + _gm.gameState);
     }
     
     public void NewGame()
     {
-        _gm.SetGameState(GameState.Game);
-        Debug.Log("NewGame state: " + _gm.gameState);
-        SceneManager.LoadScene(1);
+        Debug.Log("New Game");
+        _gm.StartNewGame();
+        //_gm.SetGameState(GameState.Game);
+        //SceneManager.LoadScene(1);
     }
 
     public void QuitGame ()

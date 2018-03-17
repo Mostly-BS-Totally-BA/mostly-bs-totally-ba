@@ -38627,7 +38627,8 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114521118927322250, guid: 05e4acfcc949f448d871c2b5cacf52ee, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 05e4acfcc949f448d871c2b5cacf52ee, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1285948544
@@ -46661,6 +46662,7 @@ GameObject:
   - component: {fileID: 1637572218}
   - component: {fileID: 1637572217}
   - component: {fileID: 1637572221}
+  - component: {fileID: 1637572222}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -46745,6 +46747,17 @@ MonoBehaviour:
   smooth_camera: 0.125
   camera_target: {fileID: 1513285576}
   camera_offset: {x: 0, y: 0, z: -1}
+--- !u!114 &1637572222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1637572216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da5bdc80d924e4136a144d75c779eeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1637783093
 Prefab:
   m_ObjectHideFlags: 0
@@ -57954,7 +57967,6 @@ MonoBehaviour:
   - {fileID: 21300022, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   livesImageDisplay: {fileID: 2029920223}
   scoreText: {fileID: 507335687}
-  score: 0
   escMenu: {fileID: 67707297}
 --- !u!1001 &2101923504
 Prefab:

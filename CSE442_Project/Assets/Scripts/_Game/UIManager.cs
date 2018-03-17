@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviour //Singleton<UIManager> //
 {
     protected UIManager() { }
-    public int livesCount { get; private set; }
-    private int livesMax = 10;
+
     [SerializeField]
     private Sprite[] lives;
     [SerializeField]
@@ -15,55 +14,40 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text scoreText;
     [SerializeField]
-    private int score;
-    [SerializeField]
     private GameObject escMenu;
 
     //public UIManager UIManager;
     private GameManager _gm = null;
-    private UIManager _ui = null;
+    private UIManager _ui;
 
 
     void Awake()
     {
         _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        //_ui = UIManager.Instance;
         _gm = GameManager.Instance;
     }
 
-    public void LivesDecrease(int lives){
-        _ui.livesCount -= lives;
-        UpdateLives();
-    }
-
-    public void LivesIncrease(int lives){
-        _ui.livesCount += lives;
-        UpdateLives();
-    }
-
-    private void UpdateLives()
+    public void UpdateLives()
     {
-        Debug.Log("Lives: " + _ui.livesCount);
+        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        Debug.Log("Lives: ");
+        Debug.Log("Lives: " + _gm.LivesCount);
 
-        _ui.livesImageDisplay.sprite = lives[livesCount];
+        _ui.livesImageDisplay.sprite = lives[_gm.LivesCount];
     }
 
     public void UpdateScore()
     {
-        score += 10;
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + _gm.Score;
     }
 
     //1.0 - real, 0.5 - slow mo
-    public void ShowEscMenu()
-    {
-        Debug.Log("ShowEscMenu");
+    public void ShowEscMenu() {
         _ui.escMenu.SetActive(true);
     }
 
-    public void HideEscMenu()
-    {
-        Debug.Log("HideEscMenu");
+    public void HideEscMenu() {
         _ui.escMenu.SetActive(false);
     }
-	
 }
