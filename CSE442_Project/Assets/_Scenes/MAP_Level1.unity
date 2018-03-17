@@ -33110,7 +33110,7 @@ Prefab:
     - target: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
         type: 2}
       propertyPath: speed
-      value: 4.25
+      value: 2.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
@@ -42885,11 +42885,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
