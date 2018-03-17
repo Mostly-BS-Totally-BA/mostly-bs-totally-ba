@@ -44,7 +44,7 @@ public class GameManager : Singleton<GameManager>
         _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.Game);
-        _gm.LivesCount = 1;
+        _gm.LivesCount = 4;
         timeCount = 2.0f;
         SceneManager.LoadScene(1);
     }
