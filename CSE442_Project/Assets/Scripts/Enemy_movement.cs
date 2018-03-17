@@ -11,32 +11,37 @@ public class Enemy_movement : MonoBehaviour {
     private Transform target;
     private Rigidbody2D rb;
     public bool aggro;
-    private PolygonCollider2D polygonCol2D;
+    //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
     public bool touchPlayer;
     public bool touchWeapon;
-    private PolygonCollider2D playerColl;
+    //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
+
+    private GameManager _gm = null;
 
     // Use this for initialization
     void Start () {
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        polygonCol2D = GetComponent<PolygonCollider2D>();
+        //polygonCol2D = GetComponent<PolygonCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         //Player = GameObject.FindWithTag("Player");
         smallrat = GameObject.FindWithTag("Enemy");
-        playerColl = GetComponent<PolygonCollider2D>();
+        //playerColl = GetComponent<PolygonCollider2D>();
         timeCount = 1f;
 
+        _gm = GameManager.Instance;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        MoveEnemy();
-        //animator.SetBool("SmallRat", true);
-
-
+        if (_gm.gameState == GameState.Game)
+        {
+            MoveEnemy();
+            //animator.SetBool("SmallRat", true);
+        }
     }
+
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
@@ -48,8 +53,12 @@ public class Enemy_movement : MonoBehaviour {
 
     public void death()
     {
+        _gm = GameManager.Instance;
+        _gm.ScoreIncrease(10);
+        //_gm.LivesDecrease(1);
         Destroy(gameObject);
     }
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
@@ -72,17 +81,17 @@ public class Enemy_movement : MonoBehaviour {
         rb.bodyType = RigidbodyType2D.Dynamic;
         touchPlayer = false;
     }
+
     public void MoveEnemy()
     {
-        
         if(aggro==false)
         {
             if (Vector2.Distance(transform.position,target.position)<=2)
             {
                 aggro = true;
             }
-            
         }
+
         if (touchPlayer == true)
         {
             aggro = true;
@@ -93,8 +102,8 @@ public class Enemy_movement : MonoBehaviour {
                 //touchPlayer = false;
                 timeCount = 1f;
             }
-
         }
+
         if (aggro == true)
         {
             Vector2 direction = target.position - transform.position;
@@ -118,15 +127,7 @@ public class Enemy_movement : MonoBehaviour {
                 {
                     rb.velocity = Vector2.zero;
                 }
-
             }
-            
         }
-        
-        
-
     }
-
-
-
 }
