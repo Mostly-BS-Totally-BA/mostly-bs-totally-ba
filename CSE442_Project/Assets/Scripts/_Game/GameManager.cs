@@ -2,32 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { NullState, Intro, MainMenu, Game }
+public enum GameState { NullState, Intro, MainMenu, Game, Paused }
 public delegate void OnStateChangeHandler();
 
 
-public class GameManager : Singleton<GameManager> 
+public class GameManager : Singleton<GameManager>
 {
-    private static GameManager _instance = null;
+    private static GameManager _gm = null;
     public event OnStateChangeHandler OnStateChange;
     public GameState gameState { get; private set; }
     protected GameManager() { }
-
-    private UIManager _uiManager;
-    //private bool _gameRunning = false;
-    private bool _gamePaused = false;
-
+    public bool gamePaused { get; private set; }
     public int playerLives = 5;
-/*
-    public static GameManager Instance{
-        get{
-            if (_instance == null){
-                _instance = new GameManager();
-            }
-            return _instance;
-        }
-    }
-*/
+
+    public UIManager UIManager;
+    private UIManager _ui = null;
+
     public void SetGameState(GameState gameState){
         this.gameState = gameState;
         if (OnStateChange!=null){
@@ -35,59 +25,44 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-
-    //check/set in Player script
-    //GameManager.Instance.isDead = false;
-    //GameManager.Instance.Score;
     public int Score { get; set; }
     public bool IsDead { get; set; }
 
 	void Awake()
-	{       
-        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
-        if (_uiManager != null)
-        {
-            _uiManager.UpdateLives(playerLives);
-        }
-	}
-
-	void Start()
 	{
-        Score = 10;
+        _gm = GameManager.Instance;
 	}
 
 	void Update()
 	{
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Debug.Log("Escape Key");
-            if (_instance.gameState == GameState.Game )
-            {
-                Debug.Log("Escape Key in GS");
-                if (_gamePaused == false){
-                    PauseGame(true);
-                    _uiManager.HideEscMenu();
-                }
-                else{
-                    PauseGame(false);
-                    _uiManager.ShowEscMenu();
-                }
-                    
-            }
-
-        }
+        if (Input.GetKeyDown(KeyCode.Escape)) { _gm.EscPressed(); }
 	}
 
-    private void PauseGame(bool pause){
-        _gamePaused = pause;
-        if (pause == true){
+    public void EscPressed(){
+        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        Debug.Log("Escape Key - state: " + _gm.gameState);
+        if (_gm.gameState == GameState.Game) {
+            Debug.Log("Escape Key0");
+            _gm.SetGameState(GameState.Paused);
+            _ui.ShowEscMenu();
+        }
+        else {
+            Debug.Log("Escape Key1");
+            _gm.SetGameState(GameState.Game);
+            _ui.HideEscMenu();
+        }
+        _gm.PauseGame();
+    }
+
+    public void PauseGame(){
+        Debug.Log("PauseGame - state: " + _gm.gameState);
+        if (_gm.gameState == GameState.Paused) {
+            Debug.Log("Paused0");
             Time.timeScale = 0;
         }
-        else{
+        if (_gm.gameState == GameState.Game) {
+            Debug.Log("Paused1");
             Time.timeScale = 1;
         }
     }
-
-
-
 }

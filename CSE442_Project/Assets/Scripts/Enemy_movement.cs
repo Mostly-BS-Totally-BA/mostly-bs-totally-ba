@@ -31,6 +31,7 @@ public class Enemy_movement : MonoBehaviour {
         timeCount = 1f;
 
         _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _uiManager.LivesIncrease(4);
     }
 	
 	// Update is called once per frame
@@ -52,6 +53,7 @@ public class Enemy_movement : MonoBehaviour {
     public void death()
     {
         _uiManager.UpdateScore();
+        _uiManager.LivesDecrease(1);
         Destroy(gameObject);
     }
 

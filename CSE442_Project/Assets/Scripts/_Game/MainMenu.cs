@@ -6,26 +6,28 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour 
 {
     public GameManager GameManager;
-    private GameManager _gameManager;
+    private GameManager _gm;
+    public UIManager UIManager;
+    private UIManager _ui = null;
 
     void Awake(){
-        _gameManager = GameManager.Instance;
-        _gameManager.OnStateChange += HandleOnStateChange;
+        _gm = GameManager.Instance;
+        _gm.OnStateChange += HandleOnStateChange;
 
-        Debug.Log("Current game state when Awakes: " + _gameManager.gameState);
+        Debug.Log("Current game state when Awakes: " + _gm.gameState);
 
-        _gameManager.SetGameState(GameState.MainMenu);
+        _gm.SetGameState(GameState.MainMenu);
     }
 
     void Start() {
-        Debug.Log("Current game state when Starts: " + _gameManager.gameState);
+        Debug.Log("Current game state when Starts: " + _gm.gameState);
     }
     
     public void NewGame()
     {
-        _gameManager.SetGameState(GameState.Game);
+        _gm.SetGameState(GameState.Game);
+        Debug.Log("NewGame state: " + _gm.gameState);
         SceneManager.LoadScene(1);
-        Debug.Log("Current game state when NewGame: " + _gameManager.gameState);
     }
 
     public void QuitGame ()
@@ -34,7 +36,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void HandleOnStateChange(){
-        Debug.Log("Handling state change to: " + _gameManager.gameState);
+        //Debug.Log("Handling state change to: " + _gm.gameState);
         
     }
 
