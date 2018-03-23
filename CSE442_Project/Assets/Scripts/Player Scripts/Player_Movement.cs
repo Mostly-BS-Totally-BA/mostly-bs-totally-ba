@@ -14,12 +14,14 @@ public class Player_Movement : MonoBehaviour {
     public bool canMove = true;
 
     private GameManager _gm = null;
+    public int currentHealth;
 
-	void Start () {
+    void Start () {
 		animator = GetComponent<Animator> ();
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
+        currentHealth = 100;
 	}
 	
 	// Update is called once per frame
@@ -31,7 +33,19 @@ public class Player_Movement : MonoBehaviour {
         }
 
 	}
-
+    public void takeDamage(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            death();
+        }
+    }
+    public void death()
+    {
+        //_gm.LivesDecrease(1);
+        Destroy(gameObject);
+    }
     void MovePlayer(){
 
         if (!canMove)

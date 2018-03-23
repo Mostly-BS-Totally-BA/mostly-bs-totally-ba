@@ -7,11 +7,13 @@ public class Enemy_movement : MonoBehaviour {
     public float maxHealth;
     public float speed;
     public GameObject smallrat;
+    private GameObject Player;
     private Animator animator;
     private Transform target;
     private Rigidbody2D rb;
     private SpriteRenderer SpriteR;
-    
+    private bool attackS;
+    private int countAtt;
     private float red;
     private float green;
     private float blue;
@@ -23,24 +25,28 @@ public class Enemy_movement : MonoBehaviour {
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
 
+
     private GameManager _gm = null;
 
     // Use this for initialization
     void Start () {
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        Player = GameObject.FindWithTag("Player");
         //polygonCol2D = GetComponent<PolygonCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         //Player = GameObject.FindWithTag("Player");
         smallrat = GameObject.FindWithTag("Enemy");
         //playerColl = GetComponent<PolygonCollider2D>();
-        timeCount = 3f;
+        timeCount = 1f;
         SpriteR = GetComponent<SpriteRenderer>();
         red = 255f;
         blue = 255f;
         green = 255f;
         mColor = new Color(red, green, blue);
         _gm = GameManager.Instance;
+        attackS = false;
+        countAtt = 0;
     }
 	
 	// Update is called once per frame
@@ -49,6 +55,10 @@ public class Enemy_movement : MonoBehaviour {
         {
             MoveEnemy();
             //animator.SetBool("SmallRat", true);
+            if(attackS==true)
+            {
+                attack();
+            }
         }
     }
 
@@ -74,13 +84,12 @@ public class Enemy_movement : MonoBehaviour {
         
         if (coll.gameObject.tag == "Player")
         {
-            
+            rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Invoke("colorChange", 2);
-            Invoke("colorChange", 2);
-            Invoke("colorChange", 2);
-            Invoke("colorChange", 2);
-            Invoke("defaultColor", 3);
+            
+            //Invoke("colorChange", 1);
+            //Invoke("defaultColor", 3);
+            attackS = true;
         }
     }
 
@@ -108,6 +117,10 @@ public class Enemy_movement : MonoBehaviour {
         //coll.rigidbody.isKinematic = false;
         rb.bodyType = RigidbodyType2D.Dynamic;
         touchPlayer = false;
+        attackS = false;
+        this.SpriteR.color = new Color(1, 1, 1);
+        blue = 255;
+        green = 255;
     }
 
     public void defaultColor()
@@ -139,8 +152,8 @@ public class Enemy_movement : MonoBehaviour {
         if(timeCount<=0)
         {
             
-            blue = blue - 50;
-            green = green - 50;
+            blue = blue - 85;
+            green = green - 85;
             red = red / 255;
             blue = blue / 255;
             green = green / 255;
@@ -150,9 +163,18 @@ public class Enemy_movement : MonoBehaviour {
             green = green * 255;
             Debug.Log("Blue: " + blue + "Green: " + green);
             Debug.Log("Sprite:" + SpriteR.color.ToString());
-            timeCount = 3f;
+            timeCount = 1f;
+            countAtt++;
         }
-        
+        if(countAtt==3)
+        {
+            Player.SendMessage("takeDamage", 10);
+            this.SpriteR.color = new Color(1, 1, 1);
+            blue = 255;
+            green = 255;
+            countAtt = 0;
+        }
+
 
 
     }
