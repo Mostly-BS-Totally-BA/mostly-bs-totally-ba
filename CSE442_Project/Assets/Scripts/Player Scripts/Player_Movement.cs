@@ -12,7 +12,9 @@ public class Player_Movement : MonoBehaviour {
 	private bool isAttacking;
 	private Vector2 lastMove;
     public bool canMove = true;
-
+    [SerializeField]
+    private PolygonCollider2D[] colliders;
+    private int currentColliderIndex = 0;
     private GameManager _gm = null;
     public int currentHealth;
 
@@ -45,6 +47,12 @@ public class Player_Movement : MonoBehaviour {
     {
         //_gm.LivesDecrease(1);
         Destroy(gameObject);
+    }
+    public void SetColliderForSprite(int spriteNum)
+    {
+        colliders[currentColliderIndex].enabled = false;
+        currentColliderIndex = spriteNum;
+        colliders[currentColliderIndex].enabled = true;
     }
     void MovePlayer(){
 

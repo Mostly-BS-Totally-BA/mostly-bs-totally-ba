@@ -38,7 +38,7 @@ public class Enemy_movement : MonoBehaviour {
         //Player = GameObject.FindWithTag("Player");
         smallrat = GameObject.FindWithTag("Enemy");
         //playerColl = GetComponent<PolygonCollider2D>();
-        timeCount = 1f;
+        timeCount = .5f;
         SpriteR = GetComponent<SpriteRenderer>();
         red = 255f;
         blue = 255f;
@@ -163,12 +163,16 @@ public class Enemy_movement : MonoBehaviour {
             green = green * 255;
             Debug.Log("Blue: " + blue + "Green: " + green);
             Debug.Log("Sprite:" + SpriteR.color.ToString());
-            timeCount = 1f;
+            timeCount = .5f;
             countAtt++;
+            if(countAtt==2&&countAtt!=3)
+            {
+                Player.SendMessage("takeDamage", 10);
+            }
         }
         if(countAtt==3)
         {
-            Player.SendMessage("takeDamage", 10);
+            //Player.SendMessage("takeDamage", 10);
             this.SpriteR.color = new Color(1, 1, 1);
             blue = 255;
             green = 255;
