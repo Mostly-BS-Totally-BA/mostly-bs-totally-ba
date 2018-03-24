@@ -1,15 +1,16 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/_Game/PauseMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/_Game/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Enemy_movement.cs" Line="112" Column="54" />
       <File FileName="Assets/Scripts/Interaction/Player_Interact.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Interaction/Chest_Interact.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/_Game/LoadScene.cs" Line="7" Column="7" />
-      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="111" Column="30" />
-      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="46" Column="32" />
+      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="38" Column="36" />
+      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="26" Column="9" />
       <File FileName="Assets/Scripts/_Game/Singleton.cs" Line="24" Column="5" />
       <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerAttack.cs" Line="9" Column="3" />
+      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />
