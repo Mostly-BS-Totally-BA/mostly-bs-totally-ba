@@ -18,6 +18,8 @@ TagManager:
   - Chest_Open
   - Platino_Candle_NonInter
   - Platino_Text
+  - UI_Menu
+  - UI_HUD
   layers:
   - Default
   - TransparentFX

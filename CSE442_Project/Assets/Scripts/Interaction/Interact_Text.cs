@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Interact_Text : MonoBehaviour
 {
-    bool showGUI = false;
+    [SerializeField]
+    private bool showGUI = false;
     public string text;
     public Player_Interact player;
 
@@ -25,6 +26,9 @@ public class Interact_Text : MonoBehaviour
                 showGUI = true;
             }
         }
+    }
+    public bool getShowGUI(){
+        return showGUI;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
