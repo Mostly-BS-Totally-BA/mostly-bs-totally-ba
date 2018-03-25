@@ -356,12 +356,10 @@
     <Compile Include="Assets\Scripts\Enemy_movement.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\From_lvl1_to_Transition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interact_Text.cs" />
     <Compile Include="Assets\Scripts\Interaction\lvl1_Puzzle_Interactions.cs" />
     <Compile Include="Assets\Scripts\Interaction\lvl1_puzzle_tip.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Double_Door_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\LVL2\From_Transition_to_2.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Platino_Speech.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Puzzle_Lvl2.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Secret_Passage_Lvl2.cs" />

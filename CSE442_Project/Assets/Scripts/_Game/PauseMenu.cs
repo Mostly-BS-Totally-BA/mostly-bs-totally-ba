@@ -7,10 +7,10 @@ public class PauseMenu : MonoBehaviour {
     private GameManager _gm;
 
     public void ReturnToGame(){
-        Debug.Log("Esc Pressed");
+        //Debug.Log("Esc Pressed");
         _gm = GameManager.Instance;
         _gm.EscPressed();
-        Debug.Log("State: " + _gm.gameState);
+        //Debug.Log("State: " + _gm.gameState);
     }
 
     public void QuitGame(){

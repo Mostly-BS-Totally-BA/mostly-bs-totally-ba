@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1963167739915116}
+  m_IsPrefabParent: 1
+--- !u!1 &1963167739915116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4251145749020736}
+  - component: {fileID: 114494668033786878}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4251145749020736
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963167739915116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 111.53124, y: 285.91132, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114494668033786878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963167739915116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7527a2e5aa25540478e1b871ac2bf64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives:
+  - {fileID: 21300030, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  - {fileID: 21300028, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  - {fileID: 21300026, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  - {fileID: 21300024, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  - {fileID: 21300022, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  livesImageDisplay: {fileID: 114765701219237462, guid: 5571efc3afe0f472f8328ab679360a02,
+    type: 2}
+  scoreText: {fileID: 114937367326919472, guid: 5571efc3afe0f472f8328ab679360a02,
+    type: 2}
+  escMenu: {fileID: 1236633163740032, guid: 80fc911c55ceb44dd8c85a6678629494, type: 2}
+  newLevel: {fileID: 1809160253500752, guid: ef8c6b7d961c145cbb2b667a38517810, type: 2}

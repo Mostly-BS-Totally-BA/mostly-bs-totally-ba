@@ -9,24 +9,29 @@ public class MainMenu : MonoBehaviour
     private GameManager _gm;
 
     void Awake(){
-        _gm = GameManager.Instance;
-        _gm.OnStateChange += HandleOnStateChange;
+
 
         //Debug.Log("Current game state when Awakes: " + _gm.gameState);
 
-        _gm.SetGameState(GameState.MainMenu);
+
     }
 
     void Start() {
+        _gm = GameManager.Instance;
+        _gm.OnStateChange += HandleOnStateChange;
+
         //Debug.Log("Current game state when Starts: " + _gm.gameState);
+
+        //Debug.Log("StateAA: " + _gm.gameState);
+        if (_gm.gameState == GameState.NullState)
+            _gm.SetGameState(GameState.MainMenu);
+        //Debug.Log("StateAB: " + _gm.gameState);
     }
     
     public void NewGame()
     {
-        Debug.Log("New Game");
+        //Debug.Log("New Game");
         _gm.StartNewGame();
-        //_gm.SetGameState(GameState.Game);
-        //SceneManager.LoadScene(1);
     }
 
     public void QuitGame ()
@@ -39,5 +44,9 @@ public class MainMenu : MonoBehaviour
         
     }
 
-
+    public void StartLevel()
+    {
+        //Debug.Log("Next Level");
+        _gm.StartLevel();
+    }
 }
