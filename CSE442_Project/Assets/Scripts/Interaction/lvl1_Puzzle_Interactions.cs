@@ -32,6 +32,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         showGUI = false;
+        torch = null;
         if (solved == true)
         {
             for (int i = 0; i < torches.GetLength(0); i++)
