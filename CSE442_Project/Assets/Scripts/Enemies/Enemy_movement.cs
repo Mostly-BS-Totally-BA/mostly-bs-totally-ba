@@ -185,7 +185,7 @@ public class Enemy_movement : MonoBehaviour {
 
     public void MoveEnemy()
     {
-        if(aggro==false)
+        if(aggro== false && target != null)
         {
             if (Vector2.Distance(transform.position,target.position)<=2)
             {
@@ -195,10 +195,10 @@ public class Enemy_movement : MonoBehaviour {
 
         
 
-        if (aggro == true)
+        if (aggro == true && target != null)
         {
             Vector2 direction = target.position - transform.position;
-            Vector2 newvector = direction.normalized * speed *Time.deltaTime;
+            Vector2 newvector = direction.normalized * speed * Time.deltaTime;
 
             if (rb.bodyType != RigidbodyType2D.Static)
             {
@@ -209,9 +209,9 @@ public class Enemy_movement : MonoBehaviour {
             //transform.Translate(new Vector3(rb.position.x-newvector.x, rb.position.y-newvector.y, 0f));
             //Vector3 vect = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
             //transform.Translate(vect.x * speed * Time.deltaTime, vect.y * speed * Time.deltaTime, 0f)
-            if (touchPlayer==true)
+            if (touchPlayer == true)
             {
-               // attack();
+                // attack();
             }
 
             if (Vector2.Distance(transform.position, target.position) >= 4.5 || touchPlayer == true)
@@ -222,6 +222,7 @@ public class Enemy_movement : MonoBehaviour {
                     rb.velocity = Vector2.zero;
                 }
             }
+
         }
     }
 }

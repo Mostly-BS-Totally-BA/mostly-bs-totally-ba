@@ -172,7 +172,7 @@ public class LVL1Boss : MonoBehaviour
                 timeCount = .5f;
 
                 //coolDownAttack++;
-                if (countAtt == 3 && countAtt != 4)
+                if (countAtt == 3 && countAtt != 4&&target != null)
                 {
                     //Player.SendMessage("takeDamage", 10);
                     Vector2 direction = target.position - transform.position;
@@ -208,7 +208,7 @@ public class LVL1Boss : MonoBehaviour
 
     public void MoveEnemy()
     {
-        if (aggro == false)
+        if (aggro == false && target != null)
         {
             if (Vector2.Distance(transform.position, target.position) <= 3)
             {
