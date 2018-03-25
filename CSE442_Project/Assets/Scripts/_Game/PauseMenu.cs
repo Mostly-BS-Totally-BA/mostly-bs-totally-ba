@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
 
     private GameManager _gm;
+    private UIManager _ui;
 
     public void ReturnToGame(){
         //Debug.Log("Esc Pressed");
@@ -14,8 +15,9 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void QuitGame(){
+        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.GameOver);
-        _gm.GameOver();
+        _ui.ExitGame();
     }
 }

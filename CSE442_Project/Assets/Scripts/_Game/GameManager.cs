@@ -43,7 +43,7 @@ public class GameManager : Singleton<GameManager>
             PlayerDead();
             GameOver();            
         //}
-        Debug.Log("GM UP ");
+        //Debug.Log("GM UP ");
         //Debug.Log("TimeUp: " + timeCount);
 	}
 
@@ -60,18 +60,18 @@ public class GameManager : Singleton<GameManager>
     {
         _ui = GameObject.Find("UIManager").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        Debug.Log("State1: " + _gm.gameState);
+        //Debug.Log("State1: " + _gm.gameState);
         //Debug.Log("NLA: " + _ui.GetActiveNL());
         if (_gm.Level > 1) { _ui.SetLevelTransition(false); } //if (_gm.gameState == GameState.LevelTransition) { }
-        Debug.Log("State2: " + _gm.gameState);
+        //Debug.Log("State2: " + _gm.gameState);
         //Debug.Log("NLB: " + _ui.GetActiveNL());
         _gm.SetGameState(GameState.Game);
-        Debug.Log("State3: " + _gm.gameState);
+        //Debug.Log("State3: " + _gm.gameState);
         //Debug.Log("NLC: " + _ui.newLevel.activeSelf);
         SceneManager.LoadScene(_gm.Level);
         //Debug.Log("NLD: " + _ui.newLevel.activeSelf);
         if (_gm.Level > 1) { _ui.SetLevelTransition(false); }
-        Debug.Log("StartLevel");
+        //Debug.Log("StartLevel");
         //Debug.Log("NLE: " + _ui.newLevel.activeSelf);
         //_ui = GameObject.Find("UIManager").GetComponent<UIManager>();
         //Debug.Log("State: " + _gm.gameState);
@@ -91,14 +91,14 @@ public class GameManager : Singleton<GameManager>
     {
         _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        Debug.Log("RIA1: " + _gm.gameState);
+        //Debug.Log("RIA1: " + _gm.gameState);
         _gm.SetGameState(GameState.LevelTransition);
-        Debug.Log("RIA2: " + _gm.gameState);
+        //Debug.Log("RIA2: " + _gm.gameState);
         SetLevel(_gm.Level += 1);
-        Debug.Log("RIA3: " + _gm.gameState);
+        //Debug.Log("RIA3: " + _gm.gameState);
         //Debug.Log("Level: " + _gm.Level);
         _ui.SetLevelTransition(true);
-        Debug.Log("RIA4: " + _gm.gameState);
+        //Debug.Log("RIA4: " + _gm.gameState);
     }
 
     public void ScoreDecrease(int score)
@@ -166,7 +166,7 @@ public class GameManager : Singleton<GameManager>
             _ui.SetLevelTransition(false);
             _gm.StartLevel();
         }
-        Debug.Log("StateB: " + _gm.gameState);
+        //Debug.Log("StateB: " + _gm.gameState);
     }
 
     public void PauseGame(){
@@ -185,7 +185,7 @@ public class GameManager : Singleton<GameManager>
             //Time.timeScale = 0;
             //call player dead animation
             timeCount -= Time.deltaTime;
-            Debug.Log("Time2: " + timeCount);
+            //Debug.Log("Time2: " + timeCount);
 
             if (timeCount <= 0){
                 timeCount = 2f;
@@ -197,20 +197,22 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
+        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        Debug.Log("StateGO1: " + _gm.gameState);
+        //Debug.Log("StateGO1: " + _gm.gameState);
         if (_gm.gameState == GameState.GameOver)
         {
-            timeCount -= Time.deltaTime;
-            Debug.Log("Time1: " + timeCount);
+            //timeCount -= Time.deltaTime;
+            //Debug.Log("Time1: " + timeCount);
 
-            if (timeCount <= 0)
-            {
-                timeCount = 2f;
-                Debug.Log("StateGO2: " + _gm.gameState);
-                _gm.SetGameState(GameState.MainMenu);
-                SceneManager.LoadScene(0);
-            }
+            //if (timeCount <= 0)
+            //{
+                //timeCount = 2f;
+                //Debug.Log("StateGO2: " + _gm.gameState);
+                _ui.GameOver();
+                //_gm.SetGameState(GameState.MainMenu);
+                //SceneManager.LoadScene(0);
+            //}
         }
     }
 }
