@@ -32565,7 +32565,7 @@ Prefab:
     - target: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
         type: 2}
       propertyPath: speed
-      value: 2.25
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 4466824504031186, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
       propertyPath: m_LocalRotation.z

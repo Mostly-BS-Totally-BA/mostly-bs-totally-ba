@@ -24,6 +24,7 @@ public class GameManager : Singleton<GameManager>
 
     public UIManager UIManager;
     private UIManager _ui;
+    private MainMenu _mm;
 
     public void SetGameState(GameState gameState){
         this.gameState = gameState;
@@ -105,6 +106,9 @@ public class GameManager : Singleton<GameManager>
                 _ui.HideEscMenu();
             }
             _gm.PauseGame();
+        } else if (_gm.gameState == GameState.MainMenu){
+            _mm = GameObject.Find("Canvas").GetComponent<MainMenu>();
+            _mm.escPressed();
         }
     }
 
@@ -136,16 +140,6 @@ public class GameManager : Singleton<GameManager>
         {
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _ui.GameOver();
-            /*
-            timeCount -= Time.deltaTime;
-
-            if (timeCount <= 0)
-            {
-                timeCount = 2f;
-                _gm.gameState = GameState.MainMenu;
-                SceneManager.LoadScene(0);
-            }
-            */
         }
     }
 }
