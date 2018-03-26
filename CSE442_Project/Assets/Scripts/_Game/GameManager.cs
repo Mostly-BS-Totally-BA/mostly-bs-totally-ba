@@ -90,18 +90,22 @@ public class GameManager : Singleton<GameManager>
 
     public void EscPressed(){
         Debug.Log("ESC1");
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        if (_gm.gameState == GameState.Game) {
-            Debug.Log("ESC2 "+ _gm.gameState);
-            _gm.SetGameState(GameState.Paused);
-            _ui.ShowEscMenu();
+        if (_gm.gameState == GameState.Game || _gm.gameState == GameState.Paused){
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+            if (_gm.gameState == GameState.Game)
+            {
+                Debug.Log("ESC2 " + _gm.gameState);
+                _gm.SetGameState(GameState.Paused);
+                _ui.ShowEscMenu();
+            }
+            else if (_gm.gameState == GameState.Paused)
+            {
+                Debug.Log("ESC3: " + _gm.gameState);
+                _gm.SetGameState(GameState.Game);
+                _ui.HideEscMenu();
+            }
+            _gm.PauseGame();
         }
-        else if (_gm.gameState == GameState.Paused) {
-            Debug.Log("ESC3: " + _gm.gameState);
-            _gm.SetGameState(GameState.Game);
-            _ui.HideEscMenu();
-        }
-        _gm.PauseGame();
     }
 
     public void PauseGame(){

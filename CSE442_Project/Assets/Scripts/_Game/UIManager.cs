@@ -15,11 +15,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     [SerializeField]
     private Text scoreText;
     [SerializeField]
-    private GameObject mainMenu;
-    [SerializeField]
     private GameObject escMenu;
-    [SerializeField]
-    private GameObject overMenu;
 
     //public UIManager UIManager;
     private GameManager _gm = null;
@@ -49,7 +45,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     //1.0 - real, 0.5 - slow mo
     public void ShowEscMenu() {
-        _ui.escMenu.SetActive(true);
+        activateEscMenu("MainMenu");
     }
 
     public void HideEscMenu() {
@@ -59,26 +55,23 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     public void GameOver()
     {
-        //curCanvas.SetActive(true);
-
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        //_ui.newLevel = GameObject.Find("Canvas").transform.Find("NewLevel").gameObject;
-        //_ui.escMenu.SetActive(false);
-        _ui.escMenu.SetActive(true);
-        _ui.mainMenu.SetActive(false);
-        _ui.overMenu.SetActive(true);
+        activateEscMenu("GameOver");
     }
 
     public void ExitGame()
     {
-        //curCanvas.SetActive(true);
-
-        //_ui = GameObject.Find("Canvas").GetComponent<UIManager>();
-        //_ui.newLevel = GameObject.Find("Canvas").transform.Find("NewLevel").gameObject;
-        //_ui.overMenu.SetActive(false);
-        //_ui.mainMenu.SetActive(true);
-        //_ui.escMenu.SetActive(false);
         _gm.SetGameState(GameState.MainMenu);
         SceneManager.LoadScene(0);
+    }
+
+    private void activateEscMenu(string menu){
+        _ui.escMenu.SetActive(true);
+        foreach (Transform escChild in _ui.escMenu.transform)
+        {
+            if (escChild.name == menu)
+                escChild.gameObject.SetActive(true);
+            else
+                escChild.gameObject.SetActive(false);
+        }
     }
 }

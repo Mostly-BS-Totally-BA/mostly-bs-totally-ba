@@ -13578,6 +13578,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114731046777947640, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
         type: 2}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 1346795259}
+    - target: {fileID: 114731046777947640, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+        type: 2}
       propertyPath: escMenu
       value: 
       objectReference: {fileID: 1577449154}
@@ -13586,11 +13591,6 @@ Prefab:
       propertyPath: overMenu
       value: 
       objectReference: {fileID: 1577449155}
-    - target: {fileID: 114731046777947640, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
-        type: 2}
-      propertyPath: mainMenu
-      value: 
-      objectReference: {fileID: 1346795259}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9afc442628f34b3bbb42e9d2ad6d1ae, type: 2}
   m_IsPrefabParent: 0
@@ -43845,43 +43845,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114733854537545864, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114733854537545864, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114580073775655630, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1923205783}
-    - target: {fileID: 114908350813247354, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114908350813247354, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1454725215236556, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850088357127036, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1391595578040446, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
   m_IsPrefabParent: 0
