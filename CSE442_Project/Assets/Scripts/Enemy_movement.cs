@@ -55,7 +55,7 @@ public class Enemy_movement : MonoBehaviour {
     {
         _gm = GameManager.Instance;
         _gm.ScoreIncrease(10);
-        _gm.LivesDecrease(6);
+        //_gm.LivesDecrease(6);
         Destroy(gameObject);
     }
 
