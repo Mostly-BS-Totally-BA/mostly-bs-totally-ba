@@ -9,7 +9,7 @@ public class LoadScene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.UpdateLives();
         _ui.UpdateScore();
 	}

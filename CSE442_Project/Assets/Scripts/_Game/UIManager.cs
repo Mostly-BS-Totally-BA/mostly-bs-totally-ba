@@ -23,14 +23,14 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     void Awake()
     {
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         //_ui = UIManager.Instance;
         _gm = GameManager.Instance;
     }
 
     public void UpdateLives()
     {
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         Debug.Log("Lives: ");
         Debug.Log("Lives: " + _gm.LivesCount);
 
