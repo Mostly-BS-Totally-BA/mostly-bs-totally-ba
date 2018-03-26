@@ -16,8 +16,6 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     private Text scoreText;
     [SerializeField]
     private GameObject escMenu;
-    [SerializeField]
-    private GameObject newLevel;
 
     //public UIManager UIManager;
     private GameManager _gm = null;
@@ -31,16 +29,10 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _gm = GameManager.Instance;
     }
 
-	private void Start()
-	{
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.UpdateLives();
-        _ui.UpdateScore();
-	}
-
-	public void UpdateLives()
+    public void UpdateLives()
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        Debug.Log("Lives: ");
         Debug.Log("Lives: " + _gm.LivesCount);
 
         _ui.livesImageDisplay.sprite = lives[_gm.LivesCount];
@@ -48,9 +40,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     public void UpdateScore()
     {
-        Debug.Log("Score: " + _gm.Score);
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.scoreText.text = "Score: " + _gm.Score;
+        scoreText.text = "Score: " + _gm.Score;
     }
 
     //1.0 - real, 0.5 - slow mo
@@ -62,16 +52,6 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _ui.escMenu.SetActive(false);
     }
 
-    public void SetLevelTransition(bool show)
-    {
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.newLevel.SetActive(show);
-    }
-
-    public void StartLevel()
-    {
-        _gm.StartLevel();
-    }
 
     public void GameOver()
     {

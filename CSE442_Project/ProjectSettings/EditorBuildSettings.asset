@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/LVL1_to_LVL2_Transition.unity
     guid: e418a945fd15ac3409eb85ea52cfcdb2
   - enabled: 1

@@ -37,6 +37,8 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("New Game");
         _gm.StartNewGame();
+        //_gm.SetGameState(GameState.Game);
+        //SceneManager.LoadScene(1);
     }
 
     public void QuitGame ()

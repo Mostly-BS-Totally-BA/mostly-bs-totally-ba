@@ -17,10 +17,8 @@ public class GameManager : Singleton<GameManager>
 
 
     public int LivesCount { get; private set; }
-    [SerializeField]
     private int _livesMax = 10;
     public int Score { get; private set; }
-    public int Level { get; private set; }
 
     private float timeCount = 2.0f;
 
@@ -46,44 +44,11 @@ public class GameManager : Singleton<GameManager>
     public void StartNewGame(){
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        //_gm.SetGameState(GameState.Game);
-        _gm.LivesCount = 4;
-        _gm.Level = 1;
-        _gm.Score = 0;
-        timeCount = 2.0f;
-        _gm.StartLevel();
-    }
-
-    public void StartLevel()
-    {
-        _gm = GameManager.Instance;
-        //if (_gm.Level > 1) { _ui.SetLevelTransition(false); } //if (_gm.gameState == GameState.LevelTransition) { }
         _gm.SetGameState(GameState.Game);
-        SceneManager.LoadScene(_gm.Level);
-        if (_gm.Level > 1) {
-            Debug.Log("StartLevel");
-            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-            _ui.UpdateScore();
-            _ui.UpdateLives();
-            //{ _ui.SetLevelTransition(false); }
-        }
+        _gm.LivesCount = 4;
+        timeCount = 2.0f;
+        SceneManager.LoadScene(1);
     }
-
-    public void SetLevel(int level)
-    {
-        _gm = GameManager.Instance;
-        _gm.Level = level;
-    }
-
-    public void NextLevelTransition()
-    {
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _gm = GameManager.Instance;
-        _gm.SetGameState(GameState.LevelTransition);
-        SetLevel(_gm.Level += 1);
-        _ui.SetLevelTransition(true);
-    }
-
 
     public void ScoreDecrease(int score)
     {
@@ -102,7 +67,7 @@ public class GameManager : Singleton<GameManager>
     public void LivesDecrease(int lives)
     {
         int newLives = _gm.LivesCount - lives;
-        if (newLives < 0){
+        if (newLives <= 0){
             newLives = 0;
             _gm.SetGameState(GameState.PlayerDead);
             PlayerDead();
