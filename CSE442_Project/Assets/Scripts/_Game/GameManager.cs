@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver }
+public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
 public delegate void OnStateChangeHandler();
 
 
@@ -67,6 +67,7 @@ public class GameManager : Singleton<GameManager>
     {
         int newLives = _gm.LivesCount - lives;
         if (newLives <= 0){
+            newLives = 0;
             _gm.SetGameState(GameState.PlayerDead);
             PlayerDead();
         }
@@ -129,6 +130,9 @@ public class GameManager : Singleton<GameManager>
     {
         if (_gm.gameState == GameState.GameOver)
         {
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+            _ui.GameOver();
+            /*
             timeCount -= Time.deltaTime;
 
             if (timeCount <= 0)
@@ -137,6 +141,7 @@ public class GameManager : Singleton<GameManager>
                 _gm.gameState = GameState.MainMenu;
                 SceneManager.LoadScene(0);
             }
+            */
         }
     }
 }
