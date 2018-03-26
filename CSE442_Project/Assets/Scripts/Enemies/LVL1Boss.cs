@@ -25,6 +25,7 @@ public class LVL1Boss : MonoBehaviour
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
     public bool coolDownAttack;
+    public GameObject key;
 
 
     private GameManager _gm = null;
@@ -49,6 +50,7 @@ public class LVL1Boss : MonoBehaviour
         attackS = false;
         countAtt = 0;
         coolDownAttack = false;
+        key.SetActive(false);
     }
 
     // Update is called once per frame
@@ -80,8 +82,13 @@ public class LVL1Boss : MonoBehaviour
         _gm.ScoreIncrease(10);
         //_gm.LivesDecrease(1);
         Destroy(gameObject);
+        key.SetActive(true);
+        //Destroy(gameObject);
     }
-
+    private void send_damage()
+    {
+        Player.SendMessage("takeDamage", 20);
+    }
     private void OnCollisionStay2D(Collision2D coll)
     {
 
@@ -89,7 +96,7 @@ public class LVL1Boss : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-
+            Invoke("send_damage", 2);
             //Invoke("colorChange", 1);
             //Invoke("defaultColor", 3);
             attackS = true;
@@ -196,7 +203,8 @@ public class LVL1Boss : MonoBehaviour
             green = 255;
             //countAtt = 0;
         }
-        if(countAtt==10)
+        //cooldown for each attack
+        if(countAtt==6)
         {
             countAtt = 0;
             coolDownAttack=false;
