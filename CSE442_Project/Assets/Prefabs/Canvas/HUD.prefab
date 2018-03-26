@@ -133,7 +133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: '
+  m_Text: 'Score:'
 --- !u!114 &114731046777947640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,9 +153,8 @@ MonoBehaviour:
   - {fileID: 21300022, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   livesImageDisplay: {fileID: 114770931355849854}
   scoreText: {fileID: 114083963734910470}
-  mainMenu: {fileID: 0}
   escMenu: {fileID: 0}
-  overMenu: {fileID: 0}
+  newLevel: {fileID: 0}
 --- !u!114 &114770931355849854
 MonoBehaviour:
   m_ObjectHideFlags: 1
