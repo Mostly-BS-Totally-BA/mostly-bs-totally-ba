@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour {
 	{
 		GameObject enemy = _enemy.gameObject;
 		if (_enemy.gameObject.CompareTag("Enemy")) {
-			enemy.SendMessage("takeDamage", 50);
+			enemy.GetComponent<Enemy_movement> ().takeDamage (50);
 		}
 
 	}
