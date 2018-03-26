@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver }
+public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
 public delegate void OnStateChangeHandler();
 
 
@@ -17,13 +17,16 @@ public class GameManager : Singleton<GameManager>
 
 
     public int LivesCount { get; private set; }
+    [SerializeField]
     private int _livesMax = 10;
     public int Score { get; private set; }
+    public int Level { get; private set; }
 
     private float timeCount = 2.0f;
 
     public UIManager UIManager;
     private UIManager _ui;
+    private MainMenu _mm;
 
     public void SetGameState(GameState gameState){
         this.gameState = gameState;
@@ -41,24 +44,57 @@ public class GameManager : Singleton<GameManager>
 	}
 
     public void StartNewGame(){
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        _gm.SetGameState(GameState.Game);
+        //_gm.SetGameState(GameState.Game);
         _gm.LivesCount = 4;
+        _gm.Level = 1;
+        _gm.Score = 0;
         timeCount = 2.0f;
-        SceneManager.LoadScene(1);
+        _gm.StartLevel();
     }
+
+    public void StartLevel()
+    {
+        _gm = GameManager.Instance;
+        //if (_gm.Level > 1) { _ui.SetLevelTransition(false); } //if (_gm.gameState == GameState.LevelTransition) { }
+        _gm.SetGameState(GameState.Game);
+        SceneManager.LoadScene(_gm.Level);
+        if (_gm.Level > 1) {
+            Debug.Log("StartLevel");
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+            _ui.UpdateScore();
+            _ui.UpdateLives();
+            //{ _ui.SetLevelTransition(false); }
+        }
+    }
+
+    public void SetLevel(int level)
+    {
+        _gm = GameManager.Instance;
+        _gm.Level = level;
+    }
+
+    public void NextLevelTransition()
+    {
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _gm = GameManager.Instance;
+        _gm.SetGameState(GameState.LevelTransition);
+        SetLevel(_gm.Level += 1);
+        _ui.SetLevelTransition(true);
+    }
+
 
     public void ScoreDecrease(int score)
     {
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.Score -= score;
         _ui.UpdateScore();
     }
 
     public void ScoreIncrease(int score)
     {
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.Score += score;
         _ui.UpdateScore();
     }
@@ -66,11 +102,12 @@ public class GameManager : Singleton<GameManager>
     public void LivesDecrease(int lives)
     {
         int newLives = _gm.LivesCount - lives;
-        if (newLives <= 0){
+        if (newLives < 0){
+            newLives = 0;
             _gm.SetGameState(GameState.PlayerDead);
             PlayerDead();
         }
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.LivesCount = newLives;
         _ui.UpdateLives();
     }
@@ -81,23 +118,33 @@ public class GameManager : Singleton<GameManager>
         if (newLives > _livesMax)
             newLives = _livesMax;
         if (_gm.LivesCount != newLives){
-            _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _gm.LivesCount = newLives;
             _ui.UpdateLives();
         }
     }
 
     public void EscPressed(){
-        _ui = GameObject.Find("Canvas").GetComponent<UIManager>();
-        if (_gm.gameState == GameState.Game) {
-            _gm.SetGameState(GameState.Paused);
-            _ui.ShowEscMenu();
+        Debug.Log("ESC1");
+        if (_gm.gameState == GameState.Game || _gm.gameState == GameState.Paused){
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+            if (_gm.gameState == GameState.Game)
+            {
+                Debug.Log("ESC2 " + _gm.gameState);
+                _gm.SetGameState(GameState.Paused);
+                _ui.ShowEscMenu();
+            }
+            else if (_gm.gameState == GameState.Paused)
+            {
+                Debug.Log("ESC3: " + _gm.gameState);
+                _gm.SetGameState(GameState.Game);
+                _ui.HideEscMenu();
+            }
+            _gm.PauseGame();
+        } else if (_gm.gameState == GameState.MainMenu){
+            _mm = GameObject.Find("Canvas").GetComponent<MainMenu>();
+            _mm.escPressed();
         }
-        else if (_gm.gameState == GameState.Paused) {
-            _gm.SetGameState(GameState.Game);
-            _ui.HideEscMenu();
-        }
-        _gm.PauseGame();
     }
 
     public void PauseGame(){
@@ -126,14 +173,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (_gm.gameState == GameState.GameOver)
         {
-            timeCount -= Time.deltaTime;
-
-            if (timeCount <= 0)
-            {
-                timeCount = 2f;
-                _gm.gameState = GameState.MainMenu;
-                SceneManager.LoadScene(0);
-            }
+            _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+            _ui.GameOver();
         }
     }
 }

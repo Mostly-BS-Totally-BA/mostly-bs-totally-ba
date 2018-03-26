@@ -12,18 +12,14 @@ public class Player_Movement : MonoBehaviour {
 	private bool isAttacking;
 	private Vector2 lastMove;
     public bool canMove = true;
-    [SerializeField]
-    private PolygonCollider2D[] colliders;
-    private int currentColliderIndex = 0;
-    private GameManager _gm = null;
-    public int currentHealth;
 
-    void Start () {
+    private GameManager _gm = null;
+
+	void Start () {
 		animator = GetComponent<Animator> ();
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
-        currentHealth = 100;
 	}
 	
 	// Update is called once per frame
@@ -35,25 +31,7 @@ public class Player_Movement : MonoBehaviour {
         }
 
 	}
-    public void takeDamage(int amount)
-    {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            death();
-        }
-    }
-    public void death()
-    {
-        //_gm.LivesDecrease(1);
-        Destroy(gameObject);
-    }
-    public void SetColliderForSprite(int spriteNum)
-    {
-        colliders[currentColliderIndex].enabled = false;
-        currentColliderIndex = spriteNum;
-        colliders[currentColliderIndex].enabled = true;
-    }
+
     void MovePlayer(){
 
         if (!canMove)
