@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     protected UIManager() { }
 
     [SerializeField]
-    private Sprite[] lives;
+    public Sprite[] lives;
     [SerializeField]
     private Image livesImageDisplay;
     [SerializeField]

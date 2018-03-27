@@ -87,7 +87,7 @@ public class LVL1Boss : MonoBehaviour
     }
     private void send_damage()
     {
-        Player.SendMessage("takeDamage", 20);
+        Player.SendMessage("takeDamage", 2);
     }
     private void OnCollisionStay2D(Collision2D coll)
     {
@@ -96,7 +96,8 @@ public class LVL1Boss : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Invoke("send_damage", 2);
+            Invoke("send_damage", 3);
+            //_gm.LivesDecrease(1);
             //Invoke("colorChange", 1);
             //Invoke("defaultColor", 3);
             attackS = true;
@@ -112,7 +113,8 @@ public class LVL1Boss : MonoBehaviour
             //rb.velocity = Vector2.zero;
             //rb.bodyType= RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Player.SendMessage("takeDamage", 20);
+            Player.SendMessage("takeDamage", 2);
+            //_gm.LivesDecrease(2);
 
 
         }

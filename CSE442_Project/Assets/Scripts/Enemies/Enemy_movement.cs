@@ -167,7 +167,8 @@ public class Enemy_movement : MonoBehaviour {
             countAtt++;
             if(countAtt==2&&countAtt!=3)
             {
-                Player.SendMessage("takeDamage", 10);
+                Player.SendMessage("takeDamage", 1);
+                //_gm.LivesDecrease(1);
             }
         }
         if(countAtt==3)

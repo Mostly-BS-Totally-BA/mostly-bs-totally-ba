@@ -23,7 +23,7 @@ public class Player_Movement : MonoBehaviour {
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
-        currentHealth = 100;
+        currentHealth = 6;
 	}
 	
 	// Update is called once per frame
@@ -36,12 +36,14 @@ public class Player_Movement : MonoBehaviour {
 
 	}
     public void takeDamage(int amount)
-    {
+    {   
+        //_gm.LivesDecrease(amount);
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
             death();
         }
+        _gm.LivesDecrease(amount);
     }
     public void death()
     {
