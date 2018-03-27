@@ -26,6 +26,7 @@ public class LVL1Boss : MonoBehaviour
     public float timeCount;
     public bool coolDownAttack;
     public GameObject key;
+    private float attackCount;
 
 
     private GameManager _gm = null;
@@ -51,6 +52,8 @@ public class LVL1Boss : MonoBehaviour
         countAtt = 0;
         coolDownAttack = false;
         key.SetActive(false);
+        attackCount = 2;
+
     }
 
     // Update is called once per frame
@@ -62,7 +65,13 @@ public class LVL1Boss : MonoBehaviour
             //animator.SetBool("SmallRat", true);
             if (attackS == true)
             {
-                
+                attackCount -= Time.deltaTime;
+                if(attackCount<=0)
+                {
+                    send_damage();
+                    attackCount = 2;
+                    attackS = false;
+                }
             }
         }
     }
@@ -89,7 +98,7 @@ public class LVL1Boss : MonoBehaviour
     {
         if(Player!=null)
         { 
-            Player.SendMessage("takeDamage", 2);
+            Player.SendMessage("takeDamage", 1);
         }
         
     }
@@ -100,7 +109,7 @@ public class LVL1Boss : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Invoke("send_damage", 3);
+            //Invoke("send_damage", 3);
             //_gm.LivesDecrease(1);
             //Invoke("colorChange", 1);
             //Invoke("defaultColor", 3);
@@ -117,7 +126,7 @@ public class LVL1Boss : MonoBehaviour
             //rb.velocity = Vector2.zero;
             //rb.bodyType= RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Player.SendMessage("takeDamage", 2);
+            Player.SendMessage("takeDamage", 1);
             //_gm.LivesDecrease(2);
 
 
@@ -213,7 +222,7 @@ public class LVL1Boss : MonoBehaviour
             //countAtt = 0;
         }
         //cooldown for each attack
-        if(countAtt==6)
+        if(countAtt==7)
         {
             countAtt = 0;
             coolDownAttack=false;
