@@ -17,6 +17,8 @@ public class Player_Movement : MonoBehaviour {
     private int currentColliderIndex = 0;
     private GameManager _gm = null;
     public int currentHealth;
+    public int KillCount;
+    public bool hasKilled;
 
     void Start () {
 		animator = GetComponent<Animator> ();
@@ -24,7 +26,10 @@ public class Player_Movement : MonoBehaviour {
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
         currentHealth = 6;
-	}
+        KillCount = 0;
+        hasKilled = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,9 +37,23 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
+            checkKills();
         }
 
 	}
+    public void addKill()
+    {
+        KillCount++;
+        hasKilled = true;
+    }
+    public void checkKills()
+    {
+        if(KillCount%5==0&&hasKilled==true)
+        {
+            _gm.LivesIncrease(1);
+            hasKilled = false;
+        }
+    }
     public void takeDamage(int amount)
     {   
         //_gm.LivesDecrease(amount);

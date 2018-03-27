@@ -76,7 +76,9 @@ public class Enemy_movement : MonoBehaviour {
         _gm = GameManager.Instance;
         _gm.ScoreIncrease(10);
         //_gm.LivesDecrease(1);
+        Player.SendMessage("addKill");
         Destroy(gameObject);
+        
     }
 
     private void OnCollisionStay2D(Collision2D coll)
