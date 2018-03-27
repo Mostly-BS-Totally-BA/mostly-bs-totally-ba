@@ -52,6 +52,7 @@ public class Player_Movement : MonoBehaviour {
         {
             _gm.LivesIncrease(1);
             hasKilled = false;
+            currentHealth++;
         }
     }
     public void takeDamage(int amount)
