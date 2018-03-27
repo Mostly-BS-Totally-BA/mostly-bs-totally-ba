@@ -87,7 +87,11 @@ public class LVL1Boss : MonoBehaviour
     }
     private void send_damage()
     {
-        Player.SendMessage("takeDamage", 2);
+        if(Player!=null)
+        { 
+            Player.SendMessage("takeDamage", 2);
+        }
+        
     }
     private void OnCollisionStay2D(Collision2D coll)
     {
@@ -156,7 +160,10 @@ public class LVL1Boss : MonoBehaviour
         Debug.Log("Blue: " + blue + "Green: " + green);
         Debug.Log("Sprite:" + SpriteR.color.ToString());
     }
-
+    public void onAggro()
+    {
+        aggro = true;
+    }
     public void attack()
     {
 

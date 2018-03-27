@@ -6,7 +6,7 @@ public class Enemy_movement : MonoBehaviour {
     public float currentHealth;
     public float maxHealth;
     public float speed;
-    public GameObject smallrat;
+    public GameObject CloseEmeny;
     private GameObject Player;
     private Animator animator;
     private Transform target;
@@ -36,7 +36,7 @@ public class Enemy_movement : MonoBehaviour {
         //polygonCol2D = GetComponent<PolygonCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         //Player = GameObject.FindWithTag("Player");
-        smallrat = GameObject.FindWithTag("Enemy");
+        
         //playerColl = GetComponent<PolygonCollider2D>();
         timeCount = .5f;
         SpriteR = GetComponent<SpriteRenderer>();
@@ -185,7 +185,10 @@ public class Enemy_movement : MonoBehaviour {
 
 
     }
-
+    public void onAggro()
+    {
+        aggro = true;
+    }
     public void MoveEnemy()
     {
         if(aggro== false && target != null)
@@ -193,6 +196,12 @@ public class Enemy_movement : MonoBehaviour {
             if (Vector2.Distance(transform.position,target.position)<=2)
             {
                 aggro = true;
+                if(CloseEmeny!=null)
+                {
+                    CloseEmeny.SendMessage("onAggro");
+                }
+                
+                
             }
         }
 

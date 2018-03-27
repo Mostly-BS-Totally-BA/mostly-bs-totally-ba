@@ -13979,6 +13979,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4116234991961286, guid: 21b09738c3a9d3249bd53d57015a7628,
     type: 2}
   m_PrefabInternal: {fileID: 170073596}
+--- !u!1 &170728096 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1469125076471394, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 196081438}
 --- !u!1001 &177486811
 Prefab:
   m_ObjectHideFlags: 0
@@ -14516,6 +14521,11 @@ Prefab:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 375479161}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f21a8bbb20c1c3449686f0d8890b62c, type: 2}
   m_IsPrefabParent: 0
@@ -17584,6 +17594,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4163199421131466, guid: 37fefab1b50277448ab109f3a1f151cc,
     type: 2}
   m_PrefabInternal: {fileID: 346515036}
+--- !u!1 &347398976 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1793988373368306, guid: f61c5dad38908ab4b8b27a0def305bac,
+    type: 2}
+  m_PrefabInternal: {fileID: 624974678}
 --- !u!1001 &349560423
 Prefab:
   m_ObjectHideFlags: 0
@@ -18032,6 +18047,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4265694041449566, guid: f0967f36c0928cd4ca5d538fa08063d6,
     type: 2}
   m_PrefabInternal: {fileID: 372620234}
+--- !u!1 &375479161 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1469125076471394, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2052708535}
 --- !u!1001 &377225606
 Prefab:
   m_ObjectHideFlags: 0
@@ -22239,6 +22259,11 @@ Prefab:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114598774069667104, guid: f61c5dad38908ab4b8b27a0def305bac,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 347398976}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f61c5dad38908ab4b8b27a0def305bac, type: 2}
   m_IsPrefabParent: 0
@@ -24349,6 +24374,11 @@ Prefab:
       propertyPath: m_Name
       value: BigRat (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 114598774069667104, guid: f61c5dad38908ab4b8b27a0def305bac,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 1982727020}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f61c5dad38908ab4b8b27a0def305bac, type: 2}
   m_IsPrefabParent: 0
@@ -28746,6 +28776,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Press 'e' to open
   player: {fileID: 0}
+--- !u!1 &759339130 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1469125076471394, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 806742393}
 --- !u!1001 &760350127
 Prefab:
   m_ObjectHideFlags: 0
@@ -30072,6 +30107,11 @@ Prefab:
       propertyPath: m_Name
       value: SmallRat (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 1701680260}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f21a8bbb20c1c3449686f0d8890b62c, type: 2}
   m_IsPrefabParent: 0
@@ -34202,6 +34242,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4163199421131466, guid: 37fefab1b50277448ab109f3a1f151cc,
     type: 2}
   m_PrefabInternal: {fileID: 1050998966}
+--- !u!1 &1053561774 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1793988373368306, guid: f61c5dad38908ab4b8b27a0def305bac,
+    type: 2}
+  m_PrefabInternal: {fileID: 537005280}
 --- !u!1001 &1059967680
 Prefab:
   m_ObjectHideFlags: 0
@@ -41225,6 +41270,11 @@ Prefab:
       propertyPath: m_Name
       value: BigRat (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 114598774069667104, guid: f61c5dad38908ab4b8b27a0def305bac,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 1053561774}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f61c5dad38908ab4b8b27a0def305bac, type: 2}
   m_IsPrefabParent: 0
@@ -48348,6 +48398,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 1698074956}
+--- !u!1 &1701680260 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1469125076471394, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1907126061}
 --- !u!1001 &1703655700
 Prefab:
   m_ObjectHideFlags: 0
@@ -54137,6 +54192,11 @@ Prefab:
       propertyPath: m_Name
       value: SmallRat (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 759339130}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f21a8bbb20c1c3449686f0d8890b62c, type: 2}
   m_IsPrefabParent: 0
@@ -55870,6 +55930,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 1975705508}
+--- !u!1 &1982727020 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1793988373368306, guid: f61c5dad38908ab4b8b27a0def305bac,
+    type: 2}
+  m_PrefabInternal: {fileID: 1361268711}
 --- !u!1001 &1986848022
 Prefab:
   m_ObjectHideFlags: 0
@@ -57545,6 +57610,11 @@ Prefab:
       propertyPath: m_Name
       value: SmallRat (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114997746215770816, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: CloseEmeny
+      value: 
+      objectReference: {fileID: 170728096}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f21a8bbb20c1c3449686f0d8890b62c, type: 2}
   m_IsPrefabParent: 0
@@ -60008,7 +60078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2117242111
 Transform:
   m_ObjectHideFlags: 0
