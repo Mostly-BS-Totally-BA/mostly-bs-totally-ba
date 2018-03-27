@@ -66,8 +66,9 @@ public class Player_Movement : MonoBehaviour {
     }
     public void death()
     {
-        //_gm.LivesDecrease(1);
         Destroy(gameObject);
+        _gm.endGame();
+        
     }
     public void SetColliderForSprite(int spriteNum)
     {

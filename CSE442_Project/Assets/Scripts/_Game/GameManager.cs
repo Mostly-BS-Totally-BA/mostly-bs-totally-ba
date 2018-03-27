@@ -124,6 +124,12 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void endGame()
+    {
+        _gm.SetGameState(GameState.PlayerDead);
+        PlayerDead();
+    }
+
     public void EscPressed(){
         Debug.Log("ESC1");
         if (_gm.gameState == GameState.Game || _gm.gameState == GameState.Paused){
