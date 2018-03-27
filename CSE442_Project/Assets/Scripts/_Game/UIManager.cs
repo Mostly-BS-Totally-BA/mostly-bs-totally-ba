@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     protected UIManager() { }
 
     [SerializeField]
-    private Sprite[] lives;
+    public Sprite[] lives;
     [SerializeField]
     private Image livesImageDisplay;
     [SerializeField]
@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 	public void UpdateLives()
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        Debug.Log("Lives: " + _gm.LivesCount);
+        //Debug.Log("Lives: " + _gm.LivesCount);
 
         _ui.livesImageDisplay.sprite = lives[_gm.LivesCount];
     }

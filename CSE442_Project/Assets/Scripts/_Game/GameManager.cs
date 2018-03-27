@@ -18,7 +18,7 @@ public class GameManager : Singleton<GameManager>
 
     public int LivesCount { get; private set; }
     [SerializeField]
-    private int _livesMax = 10;
+    private int _livesMax = 5;
     public int Score { get; private set; }
     public int Level { get; private set; }
 
@@ -47,7 +47,7 @@ public class GameManager : Singleton<GameManager>
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
         //_gm.SetGameState(GameState.Game);
-        _gm.LivesCount = 4;
+        _gm.LivesCount = 5;
         _gm.Level = 1;
         _gm.Score = 0;
         timeCount = 2.0f;
@@ -122,6 +122,12 @@ public class GameManager : Singleton<GameManager>
             _gm.LivesCount = newLives;
             _ui.UpdateLives();
         }
+    }
+
+    public void endGame()
+    {
+        _gm.SetGameState(GameState.PlayerDead);
+        PlayerDead();
     }
 
     public void EscPressed(){
