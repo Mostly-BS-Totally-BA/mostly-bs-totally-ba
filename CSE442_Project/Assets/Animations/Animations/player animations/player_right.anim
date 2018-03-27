@@ -393,33 +393,33 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 4
+    intParameter: 0
     messageOptions: 0
   - time: 0.33333334
     functionName: SetColliderForSprite
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 7
+    intParameter: 1
     messageOptions: 0
   - time: 0.6666667
     functionName: SetColliderForSprite
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 6
+    intParameter: 0
     messageOptions: 0
   - time: 1
     functionName: SetColliderForSprite
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 5
+    intParameter: 1
     messageOptions: 0
   - time: 1.3333334
     functionName: SetColliderForSprite
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 5
+    intParameter: 1
     messageOptions: 0

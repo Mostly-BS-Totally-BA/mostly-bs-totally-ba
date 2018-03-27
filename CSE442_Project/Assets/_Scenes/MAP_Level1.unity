@@ -13801,6 +13801,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 212835027226494000, guid: 6f21a8bbb20c1c3449686f0d8890b62c,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f21a8bbb20c1c3449686f0d8890b62c, type: 2}
   m_IsPrefabParent: 0
@@ -33961,6 +33966,10 @@ Prefab:
       propertyPath: overlays.Array.data[1]
       value: 
       objectReference: {fileID: 894604731}
+    - target: {fileID: 1669888571906090, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
   m_IsPrefabParent: 0
