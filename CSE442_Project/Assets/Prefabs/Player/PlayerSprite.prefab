@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575102054125136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -4.3, z: 0}
+  m_LocalPosition: {x: -0.52, y: -7.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4466824504031186}
@@ -529,15 +529,7 @@ MonoBehaviour:
   swordCollider: {fileID: 60674070633304220}
   attack_duration: 0.4
   canMove: 1
-  colliders:
-  - {fileID: 60197618634418896}
-  - {fileID: 60422627853183540}
-  - {fileID: 60197618634418896}
-  - {fileID: 60951562301504132}
-  - {fileID: 60028680929577962}
-  - {fileID: 60323306175913218}
-  - {fileID: 60028680929577962}
-  - {fileID: 60728411508503052}
+  colliders: []
   currentHealth: 0
 --- !u!114 &114879458552026008
 MonoBehaviour:
