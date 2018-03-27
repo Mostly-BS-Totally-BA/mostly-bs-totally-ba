@@ -146,11 +146,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives:
-  - {fileID: 21300030, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   - {fileID: 21300028, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   - {fileID: 21300026, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   - {fileID: 21300024, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   - {fileID: 21300022, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
+  - {fileID: 21300000, guid: 55b2106b752fbf446b9785ae315bb6e6, type: 3}
+  - {fileID: 21300020, guid: 7cd7008adda3bf942b9754732422d314, type: 3}
   livesImageDisplay: {fileID: 114770931355849854}
   scoreText: {fileID: 114083963734910470}
   escMenu: {fileID: 0}

@@ -12,15 +12,24 @@ public class Player_Movement : MonoBehaviour {
 	private bool isAttacking;
 	private Vector2 lastMove;
     public bool canMove = true;
-
+    [SerializeField]
+    private PolygonCollider2D[] colliders;
+    private int currentColliderIndex;
     private GameManager _gm = null;
+    public int currentHealth;
+    public int KillCount;
+    public bool hasKilled;
 
-	void Start () {
+    void Start () {
 		animator = GetComponent<Animator> ();
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
-	}
+        currentHealth = 6;
+        KillCount = 0;
+        hasKilled = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,10 +37,46 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
+            checkKills();
         }
 
 	}
-
+    public void addKill()
+    {
+        KillCount++;
+        hasKilled = true;
+    }
+    public void checkKills()
+    {
+        if(KillCount%5==0&&hasKilled==true)
+        {
+            _gm.LivesIncrease(1);
+            hasKilled = false;
+            currentHealth++;
+        }
+    }
+    public void takeDamage(int amount)
+    {   
+        //_gm.LivesDecrease(amount);
+        currentHealth -= amount;
+        if (currentHealth <= 0)
+        {
+            death();
+        }
+        _gm.LivesDecrease(amount);
+    }
+    public void death()
+    {
+        Destroy(gameObject);
+        _gm.endGame();
+        
+    }
+    public void SetColliderForSprite(int spriteNum)
+    {
+        colliders[currentColliderIndex].enabled = false;
+        currentColliderIndex = spriteNum;
+        colliders[currentColliderIndex].enabled = true;
+    }
     void MovePlayer(){
 
         if (!canMove)
