@@ -14,7 +14,7 @@ public class Player_Movement : MonoBehaviour {
     public bool canMove = true;
     [SerializeField]
     private PolygonCollider2D[] colliders;
-    private int currentColliderIndex = 0;
+    private int currentColliderIndex;
     private GameManager _gm = null;
     public int currentHealth;
     public int KillCount;

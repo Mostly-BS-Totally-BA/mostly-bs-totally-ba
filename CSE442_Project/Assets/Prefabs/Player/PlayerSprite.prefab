@@ -72,7 +72,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4060349554204544
 Transform:
   m_ObjectHideFlags: 1
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.38761407
+  m_Mass: 0.41286474
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -140,7 +140,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575102054125136}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -404,7 +404,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575102054125136}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -529,8 +529,15 @@ MonoBehaviour:
   swordCollider: {fileID: 60674070633304220}
   attack_duration: 0.4
   canMove: 1
-  colliders: []
+  colliders:
+  - {fileID: 60028680929577962}
+  - {fileID: 60323306175913218}
+  - {fileID: 60728411508503052}
+  - {fileID: 60422627853183540}
+  - {fileID: 60951562301504132}
   currentHealth: 0
+  KillCount: 0
+  hasKilled: 0
 --- !u!114 &114879458552026008
 MonoBehaviour:
   m_ObjectHideFlags: 1
