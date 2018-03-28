@@ -28,6 +28,24 @@ https://www.youtube.com/watch?v=tOTkq1Pvyuw
 Alpha Release Video:
 https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 
+Alpha Release Instructions
+=========================
+Mac
+------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the tar.gz to your computer
+3) Unzip the contents
+4) Locate the file named "IoM_MacOS.app"
+5) Run this file to begin playing
+
+Windows
+------------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the zip to your computer
+3) Unzip the contents
+4) Locate the file IoM_Windows.zip and unzip this
+5) Within this folder locate the file named "IoM_Windows.exe"
+6) Run this file to begin playing
 
 Prototype Instructions
 =========================
