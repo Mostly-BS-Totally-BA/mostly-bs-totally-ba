@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//no longer active script, keeping for possible later use
 public class From_Transition_to_2 : MonoBehaviour
 {
 
