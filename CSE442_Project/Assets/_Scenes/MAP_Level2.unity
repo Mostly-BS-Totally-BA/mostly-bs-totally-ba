@@ -15929,6 +15929,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224788063565829726, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
     type: 2}
   m_PrefabInternal: {fileID: 506851986}
+--- !u!114 &506851988 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114731046777947640, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 506851986}
+  m_Script: {fileID: 11500000, guid: 7527a2e5aa25540478e1b871ac2bf64b, type: 3}
 --- !u!1001 &512574561
 Prefab:
   m_ObjectHideFlags: 0
@@ -53926,6 +53932,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114580073775655630, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 506851988}
+    - target: {fileID: 114580073775655630, guid: 7109aa3026cb0413ba8511a1f7e9fd57,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ExitGame
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
