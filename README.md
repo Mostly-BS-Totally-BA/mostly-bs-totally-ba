@@ -33,11 +33,12 @@ Alpha Release Instructions
 Mac
 ------
 1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
-2) Download the IoM Alpha MacOS.zip
+2) Download the .zip or tar.gz to your computer
 3) Unzip the contents
-4) Locate the file named "IoM_Alpha_MacOS"
-5) Double click this file to run it
-6) Screen to select graphics options should open, then press Play!
+4) Locate the IoM Alpha MacOS.zip and open
+5) Locate the file named "IoM_Alpha_MacOS"
+6) Double click this file to run it
+7) Screen to select graphics options should open, then press Play!
 
 Windows
 ------------
