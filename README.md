@@ -43,9 +43,10 @@ Windows
 1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
 2) Download the zip to your computer
 3) Unzip the contents
-4) Locate the file IoM_Windows.zip and unzip this
-5) Within this folder locate the file named "IoM_Windows.exe"
-6) Run this file to begin playing
+4) Locate the file IoM_Windows_Build.zip and unzip this
+5) Go into the folder Windows Build
+6) Within this folder locate the file named "Images_of_Morphia.exe"
+7) Run this file to begin playing
 
 Prototype Instructions
 =========================
