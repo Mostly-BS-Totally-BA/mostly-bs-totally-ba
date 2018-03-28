@@ -20,10 +20,13 @@ Gitter Badge
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MostlyBSTotallyBA/Project_Discussion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
-Project Video
+Project Videos
 ===========
+Prototype Video:
 https://www.youtube.com/watch?v=tOTkq1Pvyuw
 
+Alpha Release Video:
+https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 
 
 Prototype Instructions
