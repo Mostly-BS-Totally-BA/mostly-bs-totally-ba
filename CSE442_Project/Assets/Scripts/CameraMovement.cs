@@ -10,6 +10,7 @@ public class CameraMovement : MonoBehaviour {
 
 	void LateUpdate()
 	{
+		//updates the camera position relative to the player
         if(camera_target!=null)
         {
             Vector3 des_position = camera_target.position + camera_offset;

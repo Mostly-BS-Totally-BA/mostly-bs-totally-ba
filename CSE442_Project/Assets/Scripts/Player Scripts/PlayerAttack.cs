@@ -17,6 +17,8 @@ public class PlayerAttack : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D _enemy)
 	{
 		GameObject enemy = _enemy.gameObject;
+
+		//If the game object is an enemy send that enemy damage to take
 		if (_enemy.gameObject.CompareTag("Enemy")) {
 			enemy.SendMessage("takeDamage", 50);
 		}
