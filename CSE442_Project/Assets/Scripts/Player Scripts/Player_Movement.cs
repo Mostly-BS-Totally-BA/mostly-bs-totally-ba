@@ -21,8 +21,13 @@ public class Player_Movement : MonoBehaviour {
     public bool hasKilled;
 
     void Start () {
+		//Get the animator for the player
 		animator = GetComponent<Animator> ();
+
+		//Get players rigid2D Body
 		player_rigid = GetComponent <Rigidbody2D> ();
+
+		//Get swords collider object
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
         //currentHealth = 6;
@@ -34,6 +39,7 @@ public class Player_Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		//Check if not in the game over state
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
@@ -43,11 +49,13 @@ public class Player_Movement : MonoBehaviour {
 	}
     public void addKill()
     {
+		//Add kill to kill counter
         KillCount++;
         hasKilled = true;
     }
     public void checkKills()
     {
+		//If it has been 5 kills add 1 health to player
         if(KillCount%5==0&&hasKilled==true)
         {
             _gm.LivesIncrease(1);
@@ -84,6 +92,7 @@ public class Player_Movement : MonoBehaviour {
             return;
         }
 
+		//Get horiztontal and vertical position of the player
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -91,6 +100,7 @@ public class Player_Movement : MonoBehaviour {
 
         if (!isAttacking)
         {
+			//moves left or right
             if (horizontal > 0.5f || horizontal < -0.5f)
             {
                 transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0f, 0f));
@@ -98,6 +108,7 @@ public class Player_Movement : MonoBehaviour {
                 lastMove = new Vector2(horizontal, 0f);
             }
 
+			//moves up or down
             if (vertical > 0.5f || vertical < -0.5f)
             {
 
@@ -108,7 +119,7 @@ public class Player_Movement : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
+				//On attack, enables sword colliders and set attack duration
                 swordCollider.enabled = true;
                 counter = attack_duration;
                 isAttacking = true;
@@ -125,12 +136,13 @@ public class Player_Movement : MonoBehaviour {
 
         else
         {
-
+			//Player no longer attacking
             swordCollider.enabled = false;
             isAttacking = false;
             animator.SetBool("isAttacking", false);
         }
 
+		//Used for animation transitions
         animator.SetFloat("x_movement", horizontal);
         animator.SetFloat("y_movement", vertical);
         animator.SetBool("moving", moving);
