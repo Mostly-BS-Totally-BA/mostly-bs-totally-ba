@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex;
     private GameManager _gm = null;
-    public int currentHealth;
+    //public int currentHealth;
     public int KillCount;
     public bool hasKilled;
 
@@ -25,7 +25,7 @@ public class Player_Movement : MonoBehaviour {
 		player_rigid = GetComponent <Rigidbody2D> ();
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
-        currentHealth = 6;
+        //currentHealth = 6;
         KillCount = 0;
         hasKilled = false;
 
@@ -52,23 +52,23 @@ public class Player_Movement : MonoBehaviour {
         {
             _gm.LivesIncrease(1);
             hasKilled = false;
-            currentHealth++;
+            //currentHealth++;
         }
     }
     public void takeDamage(int amount)
     {   
         //_gm.LivesDecrease(amount);
-        currentHealth -= amount;
+/*        currentHealth -= amount;
         if (currentHealth <= 0)
         {
             death();
-        }
+        }*/
         _gm.LivesDecrease(amount);
     }
     public void death()
     {
         Destroy(gameObject);
-        _gm.endGame();
+        //_gm.endGame();
         
     }
     public void SetColliderForSprite(int spriteNum)

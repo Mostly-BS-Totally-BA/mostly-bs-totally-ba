@@ -1,5 +1,16 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/Player_Movement.cs">
+    <Files>
+      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="10" Column="4" />
+      <File FileName="Assets/Scripts/_Game/LoadScene.cs" Line="18" Column="1" />
+      <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="61" Column="1" />
+      <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/_Game/Singleton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="19" Column="26" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerAttack.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
