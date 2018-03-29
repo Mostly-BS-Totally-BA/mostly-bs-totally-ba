@@ -2,21 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Script pushes text to screen when player is within the collider of the object this is a component of
-public class Interact_Text : MonoBehaviour
+public class Unlock_Door_lvl3 : MonoBehaviour
 {
+    public GameObject unlocked_door;                //variable for sprite of unlocked door, set in Unity
+    public Lvl3_Keys keys;                          //links to lvl2 keys to access values and functions
+
     bool showGUI = false;                           //variable that determines if text is on screen
     public string text;                             //text that is displayed, can be set in Unity
-    public Player_Interact player;                  //Links script to the player sprite, can be set in Unity
+
+
+    //Called via Player_Interact script when player presses 'e' on locked door
+    public void RunInteraction()
+    {
+        if (keys.has_Keys > 0)                   //If player has a key to unlock the door, sets locked door to inactive and activates unlocked_door
+        {
+            gameObject.SetActive(false);
+            unlocked_door.SetActive(true);
+            keys.UsedKey();
+        }
+    }
 
     //activates when something enters the object's trigger collider
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))                     //if the object that enters the collider is the player, displays text on screen
-            showGUI = true;
-        if(gameObject.CompareTag("Door_Inter_Locked"))          //if the object this is attached to is the locked door to level2
+        if (gameObject.CompareTag("Door_Inter_Locked"))          //if the object this is attached to is the locked door to level2
         {
-            if (player.has_lvl1_Key == false)    //and if the player does not have the key to proceed, alters text that is displayed
+            if (keys.has_Keys == 0)    //and if the player does not have the key to proceed, alters text that is displayed
             {
                 text = "You need a key...";
                 showGUI = true;
@@ -34,17 +45,15 @@ public class Interact_Text : MonoBehaviour
     {
         if (collision.CompareTag("Player"))                         //if the exiting object was the player, removes the text from screen
             showGUI = false;
-
-        if (gameObject.CompareTag("Chest_Open"))                    //if the object that this is attached to is an open chest, removes trigger collider
-            Destroy(gameObject.GetComponent("BoxCollider2D"));      //so text no longer appears when you approach
     }
 
     //Checks if showGUI is true
     private void OnGUI()
     {
-        if (showGUI == true)                                     
+        if (showGUI == true)
         {
             GUI.Label(new Rect(10, 10, 500, 20), text);             //places text on screen
         }
     }
 }
+
