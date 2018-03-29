@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349537582191628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.58, y: 1.53, z: -0.0466605}
+  m_LocalPosition: {x: 17.53, y: 48.53, z: -0.0466605}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.97551405
+  m_Mass: 2.0175939
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -88,13 +88,28 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.40516245, y: 0.07601325}
-      - {x: -0.3919962, y: -0.38631174}
-      - {x: -0.15286736, y: -0.39199615}
-      - {x: 0.04608679, y: -0.39199615}
-      - {x: 0.3465205, y: -0.36357403}
-      - {x: 0.36357403, y: 0.17030399}
-      - {x: -0.3863116, y: 0.21009485}
+    - - {x: -0.55742264, y: 0.12297058}
+      - {x: -0.5578232, y: -0.14247894}
+      - {x: -0.56313324, y: -0.17817688}
+      - {x: -0.59213895, y: -0.34044394}
+      - {x: -0.5641136, y: -0.45658875}
+      - {x: -0.48111725, y: -0.46168774}
+      - {x: -0.1690216, y: -0.48114523}
+      - {x: 0.058353424, y: -0.46827698}
+      - {x: 0.3453433, y: -0.47544608}
+      - {x: 0.42318472, y: -0.42268628}
+      - {x: 0.4349912, y: -0.39599866}
+      - {x: 0.47961044, y: -0.31843567}
+      - {x: 0.5138258, y: -0.2992681}
+      - {x: 0.56936646, y: -0.17617798}
+      - {x: 0.5505905, y: 0.08357748}
+      - {x: 0.47667822, y: 0.18084209}
+      - {x: 0.39648438, y: 0.23672995}
+      - {x: 0.21930823, y: 0.33269757}
+      - {x: 0.07876842, y: 0.3718338}
+      - {x: -0.0031725566, y: 0.41626233}
+      - {x: -0.39547348, y: 0.4327825}
+      - {x: -0.52362317, y: 0.39014435}
 --- !u!95 &95168995118857192
 Animator:
   serializedVersion: 3
@@ -132,6 +147,7 @@ MonoBehaviour:
   touchWeapon: 0
   timeCount: 0
   coolDownAttack: 0
+  key: {fileID: 0}
 --- !u!212 &212703390389287274
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -165,7 +181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300018, guid: 235c77566f07eb245944bc35aa7020cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

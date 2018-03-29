@@ -25,6 +25,8 @@ public class LVL1Boss : MonoBehaviour
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
     public bool coolDownAttack;
+    public GameObject key;
+    private float attackCount;
 
 
     private GameManager _gm = null;
@@ -49,6 +51,9 @@ public class LVL1Boss : MonoBehaviour
         attackS = false;
         countAtt = 0;
         coolDownAttack = false;
+        key.SetActive(false);
+        attackCount = 2;
+
     }
 
     // Update is called once per frame
@@ -60,7 +65,13 @@ public class LVL1Boss : MonoBehaviour
             //animator.SetBool("SmallRat", true);
             if (attackS == true)
             {
-                
+                attackCount -= Time.deltaTime;
+                if(attackCount<=0)
+                {
+                    send_damage();
+                    attackCount = 2;
+                    attackS = false;
+                }
             }
         }
     }
@@ -80,8 +91,17 @@ public class LVL1Boss : MonoBehaviour
         _gm.ScoreIncrease(10);
         //_gm.LivesDecrease(1);
         Destroy(gameObject);
+        key.SetActive(true);
+        //Destroy(gameObject);
     }
-
+    private void send_damage()
+    {
+        if(Player!=null)
+        { 
+            Player.SendMessage("takeDamage", 1);
+        }
+        
+    }
     private void OnCollisionStay2D(Collision2D coll)
     {
 
@@ -89,7 +109,8 @@ public class LVL1Boss : MonoBehaviour
         {
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-
+            //Invoke("send_damage", 3);
+            //_gm.LivesDecrease(1);
             //Invoke("colorChange", 1);
             //Invoke("defaultColor", 3);
             attackS = true;
@@ -105,7 +126,8 @@ public class LVL1Boss : MonoBehaviour
             //rb.velocity = Vector2.zero;
             //rb.bodyType= RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Player.SendMessage("takeDamage", 20);
+            Player.SendMessage("takeDamage", 1);
+            //_gm.LivesDecrease(2);
 
 
         }
@@ -147,7 +169,10 @@ public class LVL1Boss : MonoBehaviour
         Debug.Log("Blue: " + blue + "Green: " + green);
         Debug.Log("Sprite:" + SpriteR.color.ToString());
     }
-
+    public void onAggro()
+    {
+        aggro = true;
+    }
     public void attack()
     {
 
@@ -196,7 +221,8 @@ public class LVL1Boss : MonoBehaviour
             green = 255;
             //countAtt = 0;
         }
-        if(countAtt==10)
+        //cooldown for each attack
+        if(countAtt==7)
         {
             countAtt = 0;
             coolDownAttack=false;

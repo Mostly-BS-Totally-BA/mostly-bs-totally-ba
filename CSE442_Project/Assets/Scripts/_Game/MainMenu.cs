@@ -3,41 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour 
+public class MainMenu : MonoBehaviour
 {
     public GameManager GameManager;
     private GameManager _gm;
+    [SerializeField]
+    private GameObject mCanvas;
+    [SerializeField]
+    private GameObject mMenu;
+    [SerializeField]
+    private GameObject mCredits;
+    [SerializeField]
+    private GameObject mOptions;
+    [SerializeField]
+    private GameObject mInstruct;
+    [SerializeField]
+    private GameObject mStory;
 
-    void Awake(){
+    //Gets GameManager Instance
+    //Set game state to mainmenu
+    void Awake()
+    {
         _gm = GameManager.Instance;
-        _gm.OnStateChange += HandleOnStateChange;
-
-        //Debug.Log("Current game state when Awakes: " + _gm.gameState);
-
+        //_gm.OnStateChange += HandleOnStateChange;
         _gm.SetGameState(GameState.MainMenu);
     }
 
-    void Start() {
-        //Debug.Log("Current game state when Starts: " + _gm.gameState);
-    }
-    
+    //Linked to button to start new game
     public void NewGame()
     {
         Debug.Log("New Game");
         _gm.StartNewGame();
-        //_gm.SetGameState(GameState.Game);
-        //SceneManager.LoadScene(1);
     }
 
-    public void QuitGame ()
+    //Linked to button to quit game
+    public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void HandleOnStateChange(){
-        //Debug.Log("Handling state change to: " + _gm.gameState);
-        
+    //Manual handling of loading main menu while hiding all children
+    public void escPressed()
+    {
+        mMenu.SetActive(true);
+        mCredits.SetActive(false);
+        mOptions.SetActive(false);
+        mInstruct.SetActive(false);
+        mStory.SetActive(false);
     }
 
+    public void HandleOnStateChange()
+    {
+        //Debug.Log("Handling state change to: " + _gm.gameState);
 
+    }
 }

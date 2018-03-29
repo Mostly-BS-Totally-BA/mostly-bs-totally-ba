@@ -14,39 +14,70 @@ public class Player_Movement : MonoBehaviour {
     public bool canMove = true;
     [SerializeField]
     private PolygonCollider2D[] colliders;
-    private int currentColliderIndex = 0;
+    private int currentColliderIndex;
     private GameManager _gm = null;
-    public int currentHealth;
+    //public int currentHealth;
+    public int KillCount;
+    public bool hasKilled;
 
     void Start () {
+		//Get the animator for the player
 		animator = GetComponent<Animator> ();
+
+		//Get players rigid2D Body
 		player_rigid = GetComponent <Rigidbody2D> ();
+
+		//Get swords collider object
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
-        currentHealth = 100;
-	}
+        //currentHealth = 6;
+        KillCount = 0;
+        hasKilled = false;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 
+		//Check if not in the game over state
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
+            checkKills();
         }
 
 	}
-    public void takeDamage(int amount)
+    public void addKill()
     {
-        currentHealth -= amount;
+		//Add kill to kill counter
+        KillCount++;
+        hasKilled = true;
+    }
+    public void checkKills()
+    {
+		//If it has been 5 kills add 1 health to player
+        if(KillCount%5==0&&hasKilled==true)
+        {
+            _gm.LivesIncrease(1);
+            hasKilled = false;
+            //currentHealth++;
+        }
+    }
+    public void takeDamage(int amount)
+    {   
+        //_gm.LivesDecrease(amount);
+/*        currentHealth -= amount;
         if (currentHealth <= 0)
         {
             death();
-        }
+        }*/
+        _gm.LivesDecrease(amount);
     }
     public void death()
     {
-        //_gm.LivesDecrease(1);
         Destroy(gameObject);
+        //_gm.endGame();
+        
     }
     public void SetColliderForSprite(int spriteNum)
     {
@@ -61,6 +92,7 @@ public class Player_Movement : MonoBehaviour {
             return;
         }
 
+		//Get horiztontal and vertical position of the player
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -68,6 +100,7 @@ public class Player_Movement : MonoBehaviour {
 
         if (!isAttacking)
         {
+			//moves left or right
             if (horizontal > 0.5f || horizontal < -0.5f)
             {
                 transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0f, 0f));
@@ -75,6 +108,7 @@ public class Player_Movement : MonoBehaviour {
                 lastMove = new Vector2(horizontal, 0f);
             }
 
+			//moves up or down
             if (vertical > 0.5f || vertical < -0.5f)
             {
 
@@ -85,7 +119,7 @@ public class Player_Movement : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
+				//On attack, enables sword colliders and set attack duration
                 swordCollider.enabled = true;
                 counter = attack_duration;
                 isAttacking = true;
@@ -102,12 +136,13 @@ public class Player_Movement : MonoBehaviour {
 
         else
         {
-
+			//Player no longer attacking
             swordCollider.enabled = false;
             isAttacking = false;
             animator.SetBool("isAttacking", false);
         }
 
+		//Used for animation transitions
         animator.SetFloat("x_movement", horizontal);
         animator.SetFloat("y_movement", vertical);
         animator.SetBool("moving", moving);

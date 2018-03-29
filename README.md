@@ -20,11 +20,35 @@ Gitter Badge
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MostlyBSTotallyBA/Project_Discussion?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
-Project Video
+Project Videos
 ===========
+Prototype Video:
 https://www.youtube.com/watch?v=tOTkq1Pvyuw
 
+Alpha Release Video:
+https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 
+Alpha Release Instructions
+=========================
+Mac
+------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the .zip or tar.gz to your computer
+3) Unzip the contents
+4) Locate the IoM Alpha MacOS.zip and open
+5) Locate the file named "IoM_Alpha_MacOS"
+6) Double click this file to run it
+7) Screen to select graphics options should open, then press Play!
+
+Windows
+------------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the zip to your computer
+3) Unzip the contents
+4) Locate the file IoM_Windows_Build.zip and unzip this
+5) Go into the folder Windows Build
+6) Within this folder locate the file named "Images_of_Morphia.exe"
+7) Run this file to begin playing
 
 Prototype Instructions
 =========================
