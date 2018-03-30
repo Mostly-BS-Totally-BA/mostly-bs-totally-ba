@@ -25,4 +25,10 @@ public class PauseMenu : MonoBehaviour
         _gm.SetGameState(GameState.GameOver);
         _ui.ExitGame();
     }
+
+    public void SaveGame(){
+        SaveLoad.SaveGame();
+        _gm = GameManager.Instance;
+        _gm.EscPressed();
+    }
 }

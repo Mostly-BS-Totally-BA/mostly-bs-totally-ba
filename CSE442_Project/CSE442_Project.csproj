@@ -350,6 +350,8 @@
     <Compile Include="Assets\Scripts\_Game\MainMenu.cs" />
     <Compile Include="Assets\Scripts\_Game\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\_Game\Properties.cs" />
+    <Compile Include="Assets\Scripts\_Game\Save.cs" />
+    <Compile Include="Assets\Scripts\_Game\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\_Game\Singleton.cs" />
     <Compile Include="Assets\Scripts\_Game\UIManager.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />

@@ -23,15 +23,14 @@ public class GameManager : Singleton<GameManager>
     public GameState gameState { get; private set; }
     protected GameManager() { }
 
-    public int LivesCount { get; private set; }
-    [SerializeField]
-    private int _livesMax = 5;
-    public int Score { get; private set; }
     public int Level { get; private set; }
+    public int livesMax { get; private set; }
+    public int LivesCount { get; private set; }
+    public int Score { get; private set; }
 
     private float timeCount = 2.0f;
 
-    public UIManager UIManager;
+    //public UIManager UIManager;
     private UIManager _ui;
     private MainMenu _mm;
 
@@ -58,11 +57,20 @@ public class GameManager : Singleton<GameManager>
     public void StartNewGame()
     {
         _gm = GameManager.Instance;
+        _gm.livesMax = 5;
         _gm.LivesCount = 5;
         _gm.Level = 1;
         _gm.Score = 0;
         timeCount = 2.0f;
         _gm.StartLevel();
+    }
+
+    //Called from SaveLoad.cs to set game values
+    public void LoadGame(Save save){
+        _gm.Level = save.level;
+        _gm.livesMax = save.livesmax;
+        _gm.LivesCount = save.lives;
+        _gm.Score = save.score;
     }
 
     //Used to begin currently set level, including for new game or for next level
@@ -98,17 +106,8 @@ public class GameManager : Singleton<GameManager>
         _ui.SetLevelTransition(true);
     }
 
-
-    //Decreases Score
-    public void ScoreDecrease(int score)
-    {
-        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _gm.Score -= score;
-        _ui.UpdateScore();
-    }
-
-    //Increases Score
-    public void ScoreIncrease(int score)
+    //Updates Score with positive or negative value
+    public void UpdateScore(int score)
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.Score += score;
@@ -132,12 +131,12 @@ public class GameManager : Singleton<GameManager>
     }
 
     //Lives Increase
-    //Limits to currently set _livesMax value
+    //Limits to currently set livesMax value
     public void LivesIncrease(int lives)
     {
         int newLives = _gm.LivesCount + lives;
-        if (newLives > _livesMax)
-            newLives = _livesMax;
+        if (newLives > livesMax)
+            newLives = livesMax;
         if (_gm.LivesCount != newLives)
         {
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
@@ -201,4 +200,5 @@ public class GameManager : Singleton<GameManager>
             _ui.GameOver();
         }
     }
+
 }
