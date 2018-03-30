@@ -6,6 +6,8 @@ public class Unlock_Door_lvl3 : MonoBehaviour
 {
     public GameObject unlocked_door;                //variable for sprite of unlocked door, set in Unity
     public Lvl3_Keys keys;                          //links to lvl2 keys to access values and functions
+    private GUIStyle guiStyle = new GUIStyle();
+
 
     bool showGUI = false;                           //variable that determines if text is on screen
     public string text;                             //text that is displayed, can be set in Unity
@@ -52,7 +54,9 @@ public class Unlock_Door_lvl3 : MonoBehaviour
     {
         if (showGUI == true)
         {
-            GUI.Label(new Rect(10, 10, 500, 20), text);             //places text on screen
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), text, guiStyle);             //places text on screen
         }
     }
 }
