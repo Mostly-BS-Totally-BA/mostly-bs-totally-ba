@@ -215,8 +215,8 @@ public class GameManager : Singleton<GameManager>
     public void KillPlayer()
     {
         _gm.SetGameState(GameState.PlayerDead);
-        //_pm = GameObject.Find("PlayerSprite").GetComponent<Player_Movement>();
-        //_pm.death();
+        _pm = GameObject.Find("PlayerSprite").GetComponent<Player_Movement>();
+        _pm.death();
         PlayerDead();
     }
 
