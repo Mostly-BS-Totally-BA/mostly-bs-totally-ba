@@ -47,7 +47,10 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     public void UpdateLives()
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.livesImageDisplay.sprite = lives[_gm.LivesCount];
+        int livesCount = _gm.LivesCount;
+        if (livesCount > 4)
+            livesCount = 4;
+        _ui.livesImageDisplay.sprite = lives[livesCount];
     }
 
     //Update text to match current Score value
@@ -75,6 +78,24 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.newLevel.SetActive(show);
+    }
+
+    public void StatBoostPickHealth()
+    {
+        _gm.StatBoostHealthInc();
+        StartLevel();
+    }
+
+    public void StatBoostPickRun()
+    {
+        _gm.StatBoostRunInc();
+        StartLevel();
+    }
+
+    public void StatBoostPickAttack()
+    {
+        _gm.StatBoostAttackInc();
+        StartLevel();
     }
 
     //Calls to begin currently set level
@@ -105,6 +126,22 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         foreach (Transform escChild in _ui.escMenu.transform)
         {
             if (escChild.name == menu)
+                escChild.gameObject.SetActive(true);
+            else
+                escChild.gameObject.SetActive(false);
+        }
+    }
+
+    private void activateStory(string menu)
+    {
+        //_ui.escMenu.SetActive(true);
+        //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _ui = GameObject.FindWithTag("HUD").GetComponent<UIManager>();
+        _ui.newLevel.SetActive(true);
+        foreach (Transform escChild in _ui.newLevel.transform)
+        {
+            Debug.Log("Tag: " + escChild.tag);
+            if (escChild.name == menu && escChild.tag == "NewLevel")
                 escChild.gameObject.SetActive(true);
             else
                 escChild.gameObject.SetActive(false);

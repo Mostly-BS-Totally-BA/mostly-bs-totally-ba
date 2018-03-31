@@ -42,6 +42,10 @@ public class SaveLoad {
         Save save = new Save();
         _gm = GameManager.Instance;
 
+        save.playerSpeedNorm = _gm.playerSpeedNorm;
+        save.playerSpeed = _gm.playerSpeed;
+        save.playerAttackSpeedNorm = _gm.playerAttackSpeedNorm;
+        save.playerAttackSpeed = _gm.playerAttackSpeed;
         save.level = _gm.Level;
         save.livesmax = _gm.livesMax;
         save.lives = _gm.LivesCount;

@@ -27,12 +27,17 @@ public class GameManager : Singleton<GameManager>
     public int livesMax { get; private set; }
     public int LivesCount { get; private set; }
     public int Score { get; private set; }
+    public float playerSpeedNorm { get; private set; }
+    public float playerSpeed { get; private set; }
+    public float playerAttackSpeedNorm { get; private set; }
+    public float playerAttackSpeed { get; private set; }
 
     private float timeCount = 2.0f;
 
     //public UIManager UIManager;
     private UIManager _ui;
     private MainMenu _mm;
+    private Player_Movement _pm;
 
     //Changes the current Game State
     public void SetGameState(GameState gameState)
@@ -57,8 +62,14 @@ public class GameManager : Singleton<GameManager>
     public void StartNewGame()
     {
         _gm = GameManager.Instance;
-        _gm.livesMax = 5;
-        _gm.LivesCount = 5;
+        _gm.livesMax = 4;
+        _gm.playerSpeedNorm = 2.25f;
+        _gm.playerAttackSpeedNorm = 1.0f;
+
+        _gm.LivesCount = _gm.livesMax;
+        _gm.playerSpeed = _gm.playerSpeedNorm;
+        _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
+
         _gm.Level = 1;
         _gm.Score = 0;
         timeCount = 2.0f;
@@ -67,6 +78,10 @@ public class GameManager : Singleton<GameManager>
 
     //Called from SaveLoad.cs to set game values
     public void LoadGame(Save save){
+        _gm.playerSpeedNorm = save.playerSpeedNorm;
+        _gm.playerSpeed = save.playerSpeed;
+        _gm.playerAttackSpeedNorm = save.playerAttackSpeedNorm;
+        _gm.playerAttackSpeed = save.playerAttackSpeed;
         _gm.Level = save.level;
         _gm.livesMax = save.livesmax;
         _gm.LivesCount = save.lives;
@@ -80,13 +95,13 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.Game);
         SceneManager.LoadScene(_gm.Level);
-        if (_gm.Level > 1)
+/*        if (_gm.Level > 1)
         {
             Debug.Log("StartLevel");
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _ui.UpdateScore();
             _ui.UpdateLives();
-        }
+        }*/
     }
 
     //Sets value for Level
@@ -103,7 +118,28 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.LevelTransition);
         SetLevel(_gm.Level += 1);
-        _ui.SetLevelTransition(true);
+        _ui.SetLevelTransition(true); //_ui.StartLevelTransition();
+    }
+
+    public void StatBoostHealthInc()
+    {
+        _gm = GameManager.Instance;
+        _gm.livesMax += 5;
+        _gm.LivesCount = _gm.livesMax;
+    }
+
+    public void StatBoostRunInc()
+    {
+        _gm = GameManager.Instance;
+        _gm.playerSpeedNorm += 1f;
+        _gm.playerSpeed = _gm.playerSpeedNorm;
+    }
+
+    public void StatBoostAttackInc()
+    {
+        _gm = GameManager.Instance;
+        _gm.playerAttackSpeedNorm += 0.5f;
+        _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
     }
 
     //Updates Score with positive or negative value
@@ -122,8 +158,7 @@ public class GameManager : Singleton<GameManager>
         if (newLives < 0)
         {
             newLives = 0;
-            _gm.SetGameState(GameState.PlayerDead);
-            PlayerDead();
+            _gm.KillPlayer();
         }
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.LivesCount = newLives;
@@ -174,17 +209,25 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void KillPlayer()
+    {
+        _gm.SetGameState(GameState.PlayerDead);
+        //_pm = GameObject.Find("PlayerSprite").GetComponent<Player_Movement>();
+        //_pm.death();
+        PlayerDead();
+    }
+
     //Switches to PlayerDead state
     //Currently just freezes game for 2 seconds before triggering gameover
     public void PlayerDead()
     {
+        _gm = GameManager.Instance;
         if (_gm.gameState == GameState.PlayerDead)
         {
-            timeCount -= Time.deltaTime;
-
-            if (timeCount <= 0)
+            _gm.timeCount -= Time.deltaTime;
+            if (_gm.timeCount <= 0)
             {
-                timeCount = 2f;
+                _gm.timeCount = 2f;
                 _gm.gameState = GameState.GameOver;
             }
         }
@@ -194,6 +237,7 @@ public class GameManager : Singleton<GameManager>
     //Calls UI process for GameOver state
     public void GameOver()
     {
+        _gm = GameManager.Instance;
         if (_gm.gameState == GameState.GameOver)
         {
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
