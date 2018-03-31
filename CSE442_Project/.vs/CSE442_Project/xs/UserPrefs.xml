@@ -1,14 +1,13 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/Player_Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/_Game/LoadScene.cs">
     <Files>
-      <File FileName="Assets/Scripts/_Game/SaveLoad.cs" Line="49" Column="9" />
-      <File FileName="Assets/Scripts/_Game/Save.cs" Line="10" Column="5" />
-      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="83" Column="20" />
-      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="39" Column="25" />
-      <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="32" Column="26" />
-      <File FileName="Assets/Scripts/Enemies/Enemy_movement.cs" Line="77" Column="29" />
+      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="119" Column="53" />
+      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="111" Column="38" />
+      <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="15" Column="36" />
+      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="133" Column="10" />
+      <File FileName="Assets/Scripts/Enemies/Enemy_movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/_Game/LoadScene.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />
