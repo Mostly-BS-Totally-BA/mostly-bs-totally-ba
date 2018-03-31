@@ -138,7 +138,7 @@ public class GameManager : Singleton<GameManager>
     public void StatBoostAttackInc()
     {
         _gm = GameManager.Instance;
-        _gm.playerAttackSpeedNorm += 0.5f;
+        _gm.playerAttackSpeedNorm += 0.75f;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
     }
 
