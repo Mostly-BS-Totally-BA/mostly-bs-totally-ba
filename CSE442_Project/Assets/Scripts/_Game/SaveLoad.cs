@@ -9,6 +9,7 @@ public class SaveLoad {
     //public static List<Game> savedGames = new List<Game>();
     private static GameManager _gm = null;
 
+    //Saves the current state of the game
     public static void SaveGame(){
         Save save = CreateSaveGameObject();
 
@@ -21,6 +22,7 @@ public class SaveLoad {
         Debug.Log("Game Saved");
     }
 
+    //Loads up an existing save and starts level
     public static void Load(){
         if(File.Exists(Application.persistentDataPath + "/gamesave.save")) {
             _gm = GameManager.Instance;
@@ -38,6 +40,7 @@ public class SaveLoad {
         }
     }
 
+    //Builds up the details that go into a save game object
     private static Save CreateSaveGameObject(){
         Save save = new Save();
         _gm = GameManager.Instance;

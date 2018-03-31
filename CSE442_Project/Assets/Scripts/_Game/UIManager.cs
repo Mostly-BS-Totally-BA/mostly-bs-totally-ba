@@ -81,18 +81,21 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _ui.newLevel.SetActive(show);
     }
 
+    //Selection of health for stat boost
     public void StatBoostPickHealth()
     {
         _gm.StatBoostHealthInc();
         StartLevel();
     }
 
+    //Selection of run speed for stat boost
     public void StatBoostPickRun()
     {
         _gm.StatBoostRunInc();
         StartLevel();
     }
 
+    //Selection of attack speed for stat boost
     public void StatBoostPickAttack()
     {
         _gm.StatBoostAttackInc();
@@ -133,6 +136,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         }
     }
 
+    //To be used for swapping out tranisition stories
     private void activateStory(string menu)
     {
         //_ui.escMenu.SetActive(true);

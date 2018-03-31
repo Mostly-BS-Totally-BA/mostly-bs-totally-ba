@@ -121,6 +121,7 @@ public class GameManager : Singleton<GameManager>
         _ui.SetLevelTransition(true); //_ui.StartLevelTransition();
     }
 
+    //Stat boost for health
     public void StatBoostHealthInc()
     {
         _gm = GameManager.Instance;
@@ -128,6 +129,7 @@ public class GameManager : Singleton<GameManager>
         _gm.LivesCount = _gm.livesMax;
     }
 
+    //Stat boost for run speed
     public void StatBoostRunInc()
     {
         _gm = GameManager.Instance;
@@ -135,6 +137,7 @@ public class GameManager : Singleton<GameManager>
         _gm.playerSpeed = _gm.playerSpeedNorm;
     }
 
+    //Stat boost for attack speed
     public void StatBoostAttackInc()
     {
         _gm = GameManager.Instance;
