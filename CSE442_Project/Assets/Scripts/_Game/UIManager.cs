@@ -50,6 +50,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         int livesCount = _gm.LivesCount;
         if (livesCount > 4)
             livesCount = 4;
+        Debug.Log("lives: " + livesCount);
         _ui.livesImageDisplay.sprite = lives[livesCount];
     }
 
