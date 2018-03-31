@@ -36,6 +36,10 @@ public class MainMenu : MonoBehaviour
         _gm.StartNewGame();
     }
 
+    public void LoadGame(){
+        SaveLoad.Load();
+    }
+
     //Linked to button to quit game
     public void QuitGame()
     {

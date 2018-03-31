@@ -17,7 +17,7 @@ public class Enemy_movement : MonoBehaviour {
     private float red;
     private float green;
     private float blue;
-    private Color mColor;
+    //private Color mColor; Getting errors because of not being used
     public bool aggro;
     //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
     public bool touchPlayer;
@@ -43,7 +43,7 @@ public class Enemy_movement : MonoBehaviour {
         red = 255f;
         blue = 255f;
         green = 255f;
-        mColor = new Color(red, green, blue);
+        //mColor = new Color(red, green, blue);
         _gm = GameManager.Instance;
         attackS = false;
         countAtt = 0;
@@ -74,7 +74,7 @@ public class Enemy_movement : MonoBehaviour {
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.ScoreIncrease(10);
+        _gm.UpdateScore(10);
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);
