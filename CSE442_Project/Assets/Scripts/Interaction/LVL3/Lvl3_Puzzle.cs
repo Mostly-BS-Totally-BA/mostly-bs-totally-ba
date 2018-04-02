@@ -11,27 +11,14 @@ public class Lvl3_Puzzle : MonoBehaviour
     public GameObject[] bridgeSections;             //array of game objects for the bridge sections
     public GameObject[] pitSections;                //array of game objects for the pit sections
 
-    float timer = 1;                               //timer
     GameObject plate = null;                       //plate currently being interacted with
-    bool showGUI = false;
-    string text = "Press 'e' to activate";
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.CompareTag("Player"))                               //if it is a puzzle collider
+       if(collision.CompareTag("Puzzle_Trigger"))                               //if it is a puzzle collider
        {
             plate = gameObject;                                          //set plate to current game object
-            showGUI = true;
-       }
-      else
-      {
-      }
-    }
 
-    public void Update()
-    {
-        if(Input.GetButtonDown("Interaction") && plate)
-        {
             if (plate.name == "plate1")                                  //if it is the first plate (activates sections 1,3,5)
             {
                 if (bridgeSections[0].activeInHierarchy)                 //check if bridge section 1 is active or not                 
@@ -386,20 +373,13 @@ public class Lvl3_Puzzle : MonoBehaviour
                 }
             }
         }
+      else
+      {
+      }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         plate = null;
-        showGUI = false;
-    }
-
-    //Function to display text
-    private void OnGUI()
-    {
-        if (showGUI == true)
-        {
-            GUI.Label(new Rect(10, 10, 500, 20), text);
-        }
     }
 }
