@@ -2,7 +2,7 @@
 
 public class Player_Movement : MonoBehaviour {
 
-	public float speed;
+	//public float speed;
 	private Animator animator;
 	private Rigidbody2D player_rigid;
 	public PolygonCollider2D swordCollider;
@@ -103,7 +103,7 @@ public class Player_Movement : MonoBehaviour {
 			//moves left or right
             if (horizontal > 0.5f || horizontal < -0.5f)
             {
-                transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0f, 0f));
+                transform.Translate(new Vector3(horizontal * _gm.playerSpeed * Time.deltaTime, 0f, 0f));
                 moving = true;
                 lastMove = new Vector2(horizontal, 0f);
             }
@@ -112,7 +112,7 @@ public class Player_Movement : MonoBehaviour {
             if (vertical > 0.5f || vertical < -0.5f)
             {
 
-                transform.Translate(new Vector3(0f, vertical * speed * Time.deltaTime, 0f));
+                transform.Translate(new Vector3(0f, vertical * _gm.playerSpeed * Time.deltaTime, 0f));
                 moving = true;
                 lastMove = new Vector2(0f, vertical);
             }
@@ -131,7 +131,7 @@ public class Player_Movement : MonoBehaviour {
 
         if (counter > 0)
         {
-            counter = counter - Time.deltaTime;
+            counter = counter - (Time.deltaTime * _gm.playerAttackSpeed);
         }
 
         else

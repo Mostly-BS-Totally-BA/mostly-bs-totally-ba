@@ -62,9 +62,9 @@ public class GameManager : Singleton<GameManager>
     public void StartNewGame()
     {
         _gm = GameManager.Instance;
-        _gm.livesMax = 4;
+        _gm.livesMax = 12;
         _gm.playerSpeedNorm = 2.25f;
-        _gm.playerAttackSpeedNorm = 1.0f;
+        _gm.playerAttackSpeedNorm = 1.5f;
 
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
@@ -92,9 +92,12 @@ public class GameManager : Singleton<GameManager>
     //Loads scene found in Level. If not new game, makes sure HUD updates
     public void StartLevel()
     {
+        Debug.Log("StartLevel");
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.Game);
+        Debug.Log("SL1: " + _gm.gameState);
         SceneManager.LoadScene(_gm.Level);
+        Debug.Log("SL2: " + _gm.gameState);
 /*        if (_gm.Level > 1)
         {
             Debug.Log("StartLevel");
@@ -118,31 +121,35 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         _gm.SetGameState(GameState.LevelTransition);
         SetLevel(_gm.Level += 1);
-        _ui.SetLevelTransition(true); //_ui.StartLevelTransition();
+        _ui.LoadStatBoost(true); //_ui.StartLevelTransition();
     }
 
     //Stat boost for health
     public void StatBoostHealthInc()
     {
         _gm = GameManager.Instance;
-        _gm.livesMax += 5;
+        _gm.livesMax += 4;
         _gm.LivesCount = _gm.livesMax;
     }
 
     //Stat boost for run speed
     public void StatBoostRunInc()
     {
+        //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
         _gm.playerSpeedNorm += 1f;
         _gm.playerSpeed = _gm.playerSpeedNorm;
+        //_ui.UpdateHUDRunSpeed();
     }
 
     //Stat boost for attack speed
     public void StatBoostAttackInc()
     {
+        //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
         _gm.playerAttackSpeedNorm += 0.75f;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
+        //_ui.UpdateHUDRunSpeed();
     }
 
     //Updates Score with positive or negative value
@@ -158,7 +165,7 @@ public class GameManager : Singleton<GameManager>
     public void LivesDecrease(int lives)
     {
         int newLives = _gm.LivesCount - lives;
-        if (newLives < 0)
+        if (newLives <= 0)
         {
             newLives = 0;
             _gm.KillPlayer();
