@@ -64,7 +64,7 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         _gm.livesMax = 12;
         _gm.playerSpeedNorm = 2.25f;
-        _gm.playerAttackSpeedNorm = 1.0f;
+        _gm.playerAttackSpeedNorm = 1.5f;
 
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;

@@ -22,9 +22,9 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     [SerializeField]
     private Text scoreText;
     [SerializeField]
-    private Text runText;
+    private GameObject runImg;
     [SerializeField]
-    private Text attackText;
+    private GameObject attackImg;
     [SerializeField]
     private GameObject escMenu;
     [SerializeField]
@@ -75,14 +75,24 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     public void UpdateHUDAttackSpeed()
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.attackText.text = "Attack Speed: " + _gm.playerAttackSpeed;
+        //_ui.attackText.text = "Attack Speed: " + _gm.playerAttackSpeed;
+        Debug.Log("Attack Speed: " + _gm.playerAttackSpeed);
+        if (_gm.playerAttackSpeed > 1.5f)
+            _ui.attackImg.SetActive(true);
+        else
+            _ui.attackImg.SetActive(false);
     }
 
     //Update text to match current Score value
     public void UpdateHUDRunSpeed()
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
-        _ui.runText.text = "Run Speed: " + _gm.playerSpeed;
+        //_ui.runText.text = "Run Speed: " + _gm.playerSpeed;
+        Debug.Log("Run Speed: " + _gm.playerSpeed);
+        if (_gm.playerSpeed > 2.25f)
+            _ui.runImg.SetActive(true);
+        else
+            _ui.runImg.SetActive(false);
     }
 
     //Loads pause menu
@@ -222,5 +232,4 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
             }
         }
     }
-
 }
