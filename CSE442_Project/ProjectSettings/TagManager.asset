@@ -18,6 +18,9 @@ TagManager:
   - Chest_Open
   - Platino_Candle_NonInter
   - Platino_Text
+  - NewLevel
+  - HUD
+  - Puzzle_Trigger
   layers:
   - Default
   - TransparentFX

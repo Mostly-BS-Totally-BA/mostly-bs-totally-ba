@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlocked_door: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &212520824607369380
 SpriteRenderer:
   m_ObjectHideFlags: 1
