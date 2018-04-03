@@ -70,14 +70,14 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
 
-            if (plate.name == "plate2")                                  //if it is the 2nd plate (activates sections 1,2,4)
+            else if (plate.name == "plate2")                             //if it is the 2nd plate (activates sections 1,2,4)
             {
                 if (bridgeSections[0].activeInHierarchy)                 //check if bridge section 1 is active or not                 
                 {
@@ -129,14 +129,14 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
 
-            if (plate.name == "plate3")                                  //if it is the 3rd plate (activates sections 3,4,5)
+            else if (plate.name == "plate3")                              //if it is the 3rd plate (activates sections 3,4,5)
             {
                 if (bridgeSections[4].activeInHierarchy)                 //check if bridge section 3 is active or not                 
                 {
@@ -188,14 +188,14 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
 
-            if (plate.name == "plate4")                                  //if it is the 4th plate (activates sections 2,3,4)
+            else if (plate.name == "plate4")                              //if it is the 4th plate (activates sections 2,3,4)
             {
                 if (bridgeSections[2].activeInHierarchy)                 //check if bridge section 2 is active or not                 
                 {
@@ -247,14 +247,14 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
 
-            if (plate.name == "plate5")                                  //if it is the 5th plate (activates sections 1,2,3)
+            else if (plate.name == "plate5")                            //if it is the 5th plate (activates sections 1,2,3)
             {
                 if (bridgeSections[0].activeInHierarchy)                 //check if bridge section 1 is active or not                 
                 {
@@ -307,14 +307,14 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
 
-            if (plate.name == "plate6")                                  //if it is the 6th plate (activates sections 2,4,5)
+            else if (plate.name == "plate6")                             //if it is the 6th plate (activates sections 2,4,5)
             {
                 if (bridgeSections[2].activeInHierarchy)                 //check if bridge section 2 is active or not                 
                 {
@@ -366,13 +366,24 @@ public class Lvl3_Puzzle : MonoBehaviour
                 if (bridgeSections[0].activeInHierarchy && bridgeSections[2].activeInHierarchy && bridgeSections[4].activeInHierarchy && bridgeSections[6].activeInHierarchy && bridgeSections[8].activeInHierarchy)
                 {
                     solved = true;
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < pressurePlates.Length; i++)
                     {
                         Destroy(pressurePlates[i].GetComponent<Lvl3_Puzzle>());
                     }
                 }
             }
-        }
+            else if (plate.name == "plate7")                             //if it is the 7th plate (resets puzzle)
+            {
+                for (int i = 0; i < bridgeSections.Length; i++)
+                {
+                    bridgeSections[i].SetActive(false);
+                }
+                for (int i = 0; i < pitSections.Length; i++)
+                {
+                    pitSections[i].SetActive(true);
+                }
+            }
+       }
       else
       {
       }
