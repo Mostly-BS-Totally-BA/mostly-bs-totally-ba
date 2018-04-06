@@ -21,6 +21,8 @@ TagManager:
   - NewLevel
   - HUD
   - Puzzle_Trigger
+  - EnemyProjectile
+  - EnemyWayPoint
   layers:
   - Default
   - TransparentFX

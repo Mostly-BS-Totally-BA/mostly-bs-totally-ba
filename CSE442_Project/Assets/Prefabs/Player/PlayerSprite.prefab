@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19beecc8d2e344744a125c0c9c22cc8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.25
   swordCollider: {fileID: 60674070633304220}
   attack_duration: 0.4
   canMove: 1
@@ -535,7 +534,6 @@ MonoBehaviour:
   - {fileID: 60728411508503052}
   - {fileID: 60422627853183540}
   - {fileID: 60951562301504132}
-  currentHealth: 0
   KillCount: 0
   hasKilled: 0
 --- !u!114 &114879458552026008
