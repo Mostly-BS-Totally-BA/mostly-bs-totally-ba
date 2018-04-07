@@ -14,6 +14,7 @@ public class SatanBall : MonoBehaviour {
     private float timeCount;
     private bool coolDownAttack;
     private bool created;
+    private bool firstHit;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,7 @@ public class SatanBall : MonoBehaviour {
         timeCount = .1f;
         coolDownAttack = false;
         created = false;
+        firstHit = false;
 
     }
 	
@@ -56,7 +58,12 @@ public class SatanBall : MonoBehaviour {
                 //coll.rigidbody.isKinematic = true;
                 //rb.velocity = Vector2.zero;
                 //rb.bodyType= RigidbodyType2D.Static;
-                Player.SendMessage("takeDamage", 1);
+                if(firstHit==false)
+                {
+                    Player.SendMessage("takeDamage", 1);
+                    firstHit = true;
+                }
+                
                 rb.velocity = Vector2.zero;
                 Destroy(gameObject);
                 

@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlackSpector : MonoBehaviour
+public class Zombie : MonoBehaviour
 {
-    public GameObject projectile;
     public float currentHealth;
     public float maxHealth;
     public float speed;
     public GameObject CloseEmeny;
     private GameObject Player;
-    public GameObject[] Waypoints;
-    public bool[] WaypointFlag;
     private Animator animator;
     private Transform target;
     private Rigidbody2D rb;
@@ -28,8 +25,6 @@ public class BlackSpector : MonoBehaviour
     public bool touchWeapon;
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
-    private int pick=-1;
-    public Vector3 OffsetPosition = new Vector3(.1f,0, 0);
 
 
     private GameManager _gm = null;
@@ -40,7 +35,6 @@ public class BlackSpector : MonoBehaviour
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Player = GameObject.FindWithTag("Player");
-    
         //polygonCol2D = GetComponent<PolygonCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         //Player = GameObject.FindWithTag("Player");
@@ -113,7 +107,6 @@ public class BlackSpector : MonoBehaviour
             //rb.velocity = Vector2.zero;
             //rb.bodyType= RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
-            Player.SendMessage("zeroVel");
 
 
         }
@@ -133,7 +126,6 @@ public class BlackSpector : MonoBehaviour
         this.SpriteR.color = new Color(1, 1, 1);
         blue = 255;
         green = 255;
-        Player.SendMessage("zeroVel");
     }
 
     public void defaultColor()
@@ -178,7 +170,7 @@ public class BlackSpector : MonoBehaviour
             Debug.Log("Sprite:" + SpriteR.color.ToString());
             timeCount = .5f;
             countAtt++;
-            if (countAtt == 2 && countAtt != 3)
+            if (countAtt == 1 && countAtt != 3)
             {
                 Player.SendMessage("takeDamage", 1);
                 //_gm.LivesDecrease(1);
@@ -202,10 +194,9 @@ public class BlackSpector : MonoBehaviour
     }
     public void MoveEnemy()
     {
-        
         if (aggro == false && target != null)
         {
-            if (Vector2.Distance(transform.position, target.position) <= 4)
+            if (Vector2.Distance(transform.position, target.position) <= 2)
             {
                 aggro = true;
                 if (CloseEmeny != null)
@@ -221,88 +212,14 @@ public class BlackSpector : MonoBehaviour
 
         if (aggro == true && target != null)
         {
-            
-            if(pick==-1|| Vector2.Distance(transform.position, Waypoints[pick].transform.position)<=.2)
-            {
-                for (int i = 0; i <= Waypoints.Length - 1; i++)
-                {
-                    GameObject bullet = Instantiate(projectile, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
-                    //bullet.SendMessage("targetLoc");
-                    float Way_Player = Vector2.Distance(target.position, Waypoints[i].transform.position);
-                    float Way_Spec = Vector2.Distance(transform.position, Waypoints[i].transform.position);
-                    if (Way_Player <= Way_Spec)
-                    {
-                        WaypointFlag[i] = false;
-                        if(Vector2.Distance(target.position, transform.position)<=2)
-                        {
-                            WaypointFlag[i] = true;
-                        }
-                    }
-                    else
-                    {
-
-                        WaypointFlag[i] = true;
-                        if(Way_Spec <= .2)
-                        {
-                            WaypointFlag[i] = false;
-                        }
-                    }
-                }
-                bool done = false;
-                bool check = false;
-                int count = 0;
-                for (int i = 0; i <= WaypointFlag.Length - 1; i++)
-                {
-                    if(WaypointFlag[i]==false)
-                    {
-                        count++;
-                    }
-                }
-                if(count==4)
-                {
-                    check = true;
-                }
-
-                    while (done != true)
-                {
-                    pick = Random.Range(0, 4);
-
-                    if (WaypointFlag[pick] == true||check==true)
-                    {
-                        done = true;
-                    }
-                }
-            }
-           
-
-
-
-            Vector2 direction = Waypoints[pick].transform.position - transform.position;
+            Vector2 direction = target.position - transform.position;
             Vector2 newvector = direction.normalized * speed * Time.deltaTime;
 
             if (rb.bodyType != RigidbodyType2D.Static)
             {
                 rb.velocity = newvector;
             }
-            //rb.position
-
-            //transform.Translate(new Vector3(rb.position.x-newvector.x, rb.position.y-newvector.y, 0f));
-            //Vector3 vect = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
-            //transform.Translate(vect.x * speed * Time.deltaTime, vect.y * speed * Time.deltaTime, 0f)
-            if (touchPlayer == true)
-            {
-                // attack();
-            }
-            /*
-            if (Vector2.Distance(transform.position, target.position) >= 4.5 || touchPlayer == true)
-            {
-                aggro = false;
-                if (rb.bodyType != RigidbodyType2D.Static)
-                {
-                    rb.velocity = Vector2.zero;
-                }
-            }
-            */
+     
 
         }
     }

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95282869120750580}
   - component: {fileID: 50336779330575714}
   - component: {fileID: 60152685465369064}
-  - component: {fileID: 114053937365451914}
+  - component: {fileID: 114991508887576736}
   m_Layer: 0
   m_Name: Necromancer
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551800802132576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6375923, y: -0.97510135, z: 0.03515625}
+  m_LocalPosition: {x: -24.62, y: 24.91, z: 0.03515625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1551800802132576}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -122,7 +122,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114053937365451914
+--- !u!114 &114991508887576736
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -130,17 +130,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1551800802132576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25271fda392439f4b84aef948f629b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 93c46d2c2a0b7ab4c96482830cb2f166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  summon: {fileID: 1178550924585484, guid: ef101c734d850194088d40b9109ba080, type: 2}
+  summonCir: {fileID: 1728031938346088, guid: 2106aeacd83bb274bbe5101ec483e369, type: 2}
   currentHealth: 0
-  maxHealth: 150
-  speed: 150
+  maxHealth: 200
+  speed: 0
   CloseEmeny: {fileID: 0}
+  Waypoints: []
+  WaypointFlag: 
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0
   timeCount: 0
+  OffsetPosition: {x: 2, y: 0, z: 0}
 --- !u!212 &212849335152337878
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -165,5 +165,9 @@ public class Player_Movement : MonoBehaviour {
     {
         //coll.rigidbody.isKinematic = false;
     }
+    public void ZeroVel()
+    {
+        player_rigid.velocity = Vector2.zero;
+    }
     
 }

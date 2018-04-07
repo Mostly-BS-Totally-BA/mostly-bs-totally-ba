@@ -334,7 +334,9 @@
     <Compile Include="Assets\Scripts\Enemies\Enemy_movement.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL1Boss.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\BlackSpector.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL2\Necromancer.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\SatanBall.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL2\Zombie.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\From_lvl1_to_Transition.cs" />
