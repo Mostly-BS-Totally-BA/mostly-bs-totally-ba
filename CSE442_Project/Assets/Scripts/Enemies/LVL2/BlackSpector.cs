@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlackSpector : MonoBehaviour
 {
+    public GameObject projectile;
     public float currentHealth;
     public float maxHealth;
     public float speed;
@@ -28,6 +29,7 @@ public class BlackSpector : MonoBehaviour
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
     private int pick=-1;
+    public Vector3 OffsetPosition = new Vector3(.1f,0, 0);
 
 
     private GameManager _gm = null;
@@ -218,10 +220,12 @@ public class BlackSpector : MonoBehaviour
         if (aggro == true && target != null)
         {
             
-            if(pick==-1|| Vector2.Distance(transform.position, Waypoints[pick].transform.position)<=.1)
+            if(pick==-1|| Vector2.Distance(transform.position, Waypoints[pick].transform.position)<=.2)
             {
                 for (int i = 0; i <= Waypoints.Length - 1; i++)
                 {
+                    GameObject bullet = Instantiate(projectile, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+                    //bullet.SendMessage("targetLoc");
                     float Way_Player = Vector2.Distance(target.position, Waypoints[i].transform.position);
                     float Way_Spec = Vector2.Distance(transform.position, Waypoints[i].transform.position);
                     if (Way_Player <= Way_Spec)
