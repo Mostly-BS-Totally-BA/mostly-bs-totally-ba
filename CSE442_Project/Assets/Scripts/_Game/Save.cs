@@ -16,5 +16,6 @@ public class Save {
     public int livesmax = 0;
     public int lives = 0;
     public int score = 0;
+	public int potionCount = 0;
 
 }

@@ -17,8 +17,6 @@ public class Player_Movement : MonoBehaviour {
     private int currentColliderIndex;
     private GameManager _gm = null;
     //public int currentHealth;
-    public int KillCount;
-    public bool hasKilled;
 
     void Start () {
 		//Get the animator for the player
@@ -31,8 +29,6 @@ public class Player_Movement : MonoBehaviour {
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
         //currentHealth = 6;
-        KillCount = 0;
-        hasKilled = false;
 
     }
 	
@@ -43,26 +39,10 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
-            checkKills();
         }
 
 	}
-    public void addKill()
-    {
-		//Add kill to kill counter
-        KillCount++;
-        hasKilled = true;
-    }
-    public void checkKills()
-    {
-		//If it has been 5 kills add 1 health to player
-        if(KillCount%5==0&&hasKilled==true)
-        {
-            _gm.LivesIncrease(1);
-            hasKilled = false;
-            //currentHealth++;
-        }
-    }
+    
     public void takeDamage(int amount)
     {   
         //_gm.LivesDecrease(amount);
@@ -126,6 +106,12 @@ public class Player_Movement : MonoBehaviour {
                 player_rigid.velocity = Vector2.zero;
                 animator.SetBool("isAttacking", true);
             }
+
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				//On attack, enables sword colliders and set attack duration
+				_gm.use_potion();
+			}
 
         }
 
