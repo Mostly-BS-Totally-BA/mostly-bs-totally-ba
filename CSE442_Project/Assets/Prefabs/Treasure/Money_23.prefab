@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 15 gold!
+  score_increase: 15
 --- !u!212 &212295538583916822
 SpriteRenderer:
   m_ObjectHideFlags: 1
