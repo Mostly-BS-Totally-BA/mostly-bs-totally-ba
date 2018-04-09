@@ -53,6 +53,7 @@ public class SaveLoad {
         save.livesmax = _gm.livesMax;
         save.lives = _gm.LivesCount;
         save.score = _gm.Score;
+		save.potionCount = _gm.potionCount;
 
         return save;
     }

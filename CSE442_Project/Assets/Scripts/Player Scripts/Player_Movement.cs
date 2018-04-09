@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Player_Movement : MonoBehaviour {
 
@@ -16,9 +18,10 @@ public class Player_Movement : MonoBehaviour {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex;
     private GameManager _gm = null;
+	private float timer = 3.0f;
+	private bool showGUI = false;
+	private GUIStyle guiStyle = new GUIStyle();
     //public int currentHealth;
-    public int KillCount;
-    public bool hasKilled;
 
     void Start () {
 		//Get the animator for the player
@@ -31,8 +34,6 @@ public class Player_Movement : MonoBehaviour {
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
         //currentHealth = 6;
-        KillCount = 0;
-        hasKilled = false;
 
     }
 	
@@ -43,26 +44,10 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
-            checkKills();
         }
 
 	}
-    public void addKill()
-    {
-		//Add kill to kill counter
-        KillCount++;
-        hasKilled = true;
-    }
-    public void checkKills()
-    {
-		//If it has been 5 kills add 1 health to player
-        if(KillCount%5==0&&hasKilled==true)
-        {
-            _gm.LivesIncrease(1);
-            hasKilled = false;
-            //currentHealth++;
-        }
-    }
+    
     public void takeDamage(int amount)
     {   
         //_gm.LivesDecrease(amount);
@@ -127,6 +112,16 @@ public class Player_Movement : MonoBehaviour {
                 animator.SetBool("isAttacking", true);
             }
 
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				//On attack, enables sword colliders and set attack duration
+				_gm.use_potion();
+				if (_gm.potionCount <= 0) {
+					showGUI = true;
+					StartCoroutine (Wait (timer));
+				}
+			}
+
         }
 
         if (counter > 0)
@@ -165,5 +160,21 @@ public class Player_Movement : MonoBehaviour {
     {
         //coll.rigidbody.isKinematic = false;
     }
+
+	IEnumerator Wait(float timer)
+	{
+		yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
+		showGUI = false;                                     //removes text from screen
+	}
+
+	private void OnGUI()
+	{
+		if (showGUI == true)
+		{
+			guiStyle.fontSize = 20;                                            //change the font size
+			guiStyle.normal.textColor = Color.white;
+			GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);             //places text on screen
+		}
+	}
     
 }
