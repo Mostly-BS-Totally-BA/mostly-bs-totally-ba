@@ -10,6 +10,8 @@ public class Platino_Candles : MonoBehaviour
     GameObject candle = null;                                               //game object for what candle is being interacted with
 
     bool showGUI = false;                                                   //controls whether text appears on screen
+    private GUIStyle guiStyle = new GUIStyle();
+
     int number_pulled = 0;
     int previous_pulled = 0;
 
@@ -55,15 +57,21 @@ public class Platino_Candles : MonoBehaviour
     {
         if (showGUI == true && number_pulled == 1)                                  //If statements print different message to screen based on the number
         {                                                                           //of candles pulled thus far    
-            GUI.Label(new Rect(10, 10, 300, 20), "A tumbler turns..."); 
+            guiStyle.fontSize = 20;                                                //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 300, 20), "A tumbler turns...", guiStyle); 
         }
         else if (showGUI == true && number_pulled == 2)
         {
-            GUI.Label(new Rect(10, 10, 300, 20), "Stone grates on stone...");
+            guiStyle.fontSize = 20;                                               //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 300, 20), "Stone grates on stone...", guiStyle);
         }
         else if (showGUI == true && number_pulled == 3)
         {
-            GUI.Label(new Rect(10, 10, 300, 20), "A passage opens...");
+            guiStyle.fontSize = 20;                                              //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 300, 20), "A passage opens...", guiStyle);
         }
     }
 }

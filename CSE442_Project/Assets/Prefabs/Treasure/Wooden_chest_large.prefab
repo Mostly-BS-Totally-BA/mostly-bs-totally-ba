@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened_chest: {fileID: 0}
+  score_increase: 50
 --- !u!212 &212354826804256968
 SpriteRenderer:
   m_ObjectHideFlags: 1
