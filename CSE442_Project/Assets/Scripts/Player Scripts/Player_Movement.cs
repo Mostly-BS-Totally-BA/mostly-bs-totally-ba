@@ -175,11 +175,12 @@ public class Player_Movement : MonoBehaviour {
 
 	private void OnGUI()
 	{
-		if (showGUI == true)
-		{
-			guiStyle.fontSize = 20;                                            //change the font size
-			guiStyle.normal.textColor = Color.white;
-			GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);             //places text on screen
+        if (showGUI == true)
+        {
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);
+        }//places text on screen
 	}
 
     
