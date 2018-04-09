@@ -5,7 +5,6 @@ using UnityEngine;
 public class Pickup_Axe : MonoBehaviour
 {
     public Cutdown_Dead_Tree tree;
-    private GUIStyle guiStyle = new GUIStyle();
 
     void RunInteraction()
     {

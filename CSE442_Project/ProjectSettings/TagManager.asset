@@ -21,6 +21,7 @@ TagManager:
   - NewLevel
   - HUD
   - Puzzle_Trigger
+  - Platino_Boss
   layers:
   - Default
   - TransparentFX
