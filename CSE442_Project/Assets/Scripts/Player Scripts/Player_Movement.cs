@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Player_Movement : MonoBehaviour {
 
@@ -16,6 +18,9 @@ public class Player_Movement : MonoBehaviour {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex;
     private GameManager _gm = null;
+	private float timer = 3.0f;
+	private bool showGUI = false;
+	private GUIStyle guiStyle = new GUIStyle();
     //public int currentHealth;
 
     void Start () {
@@ -111,6 +116,10 @@ public class Player_Movement : MonoBehaviour {
 			{
 				//On attack, enables sword colliders and set attack duration
 				_gm.use_potion();
+				if (_gm.potionCount <= 0) {
+					showGUI = true;
+					StartCoroutine (Wait (timer));
+				}
 			}
 
         }
@@ -151,5 +160,21 @@ public class Player_Movement : MonoBehaviour {
     {
         //coll.rigidbody.isKinematic = false;
     }
+
+	IEnumerator Wait(float timer)
+	{
+		yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
+		showGUI = false;                                     //removes text from screen
+	}
+
+	private void OnGUI()
+	{
+		if (showGUI == true)
+		{
+			guiStyle.fontSize = 20;                                            //change the font size
+			guiStyle.normal.textColor = Color.white;
+			GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);             //places text on screen
+		}
+	}
     
 }

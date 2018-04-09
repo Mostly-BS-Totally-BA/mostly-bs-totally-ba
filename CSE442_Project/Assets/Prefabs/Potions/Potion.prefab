@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: '"Press ''e'' to pick up potion'
+  text: Press 'e' to pick up potion
   player: {fileID: 0}
 --- !u!114 &114130505939683252
 MonoBehaviour:
