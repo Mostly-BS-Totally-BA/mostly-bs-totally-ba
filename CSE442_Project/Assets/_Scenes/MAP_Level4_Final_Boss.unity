@@ -5126,8 +5126,8 @@ MonoBehaviour:
   textFile: {fileID: 0}
   textBox: {fileID: 0}
   theText: {fileID: 1222273884}
-  player: {fileID: 0}
-  platino: {fileID: 0}
+  player: {fileID: 2007428114}
+  platino: {fileID: 1591996330}
   lines: []
   currentLine: 0
   endLine: 0
@@ -7363,6 +7363,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1318502948163758, guid: c82275a1e63102a49ab15ea3e02f1117,
     type: 2}
   m_PrefabInternal: {fileID: 1616142951}
+--- !u!114 &1616142953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1616142952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4819d7f9c63e6db4ebe57c2be0ac72c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1689095011
 GameObject:
   m_ObjectHideFlags: 0
