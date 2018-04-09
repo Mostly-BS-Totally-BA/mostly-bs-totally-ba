@@ -5,6 +5,7 @@ using UnityEngine;
 //Script that allows player to complete lvl 1 puzzle by pulling wall sconces (torches) in the right order and amount (pull torch 3 once, torch 4 twice, torch 2 three times, torch 1 once) (torches are number from left to right as the appear in game)
 public class lvl1_Puzzle_Interactions : MonoBehaviour
 {
+    private GUIStyle guiStyle = new GUIStyle();
 
     int torch1_pulls = 0;                                         //variables for number of times each torch has been pulled
     int torch2_pulls = 0;
@@ -128,7 +129,9 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
     {
         if (showGUI == true)
         {
-            GUI.Label(new Rect(10, 10, 500, 20), text);
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), text, guiStyle);             //places text on screen
         }
     }
 }

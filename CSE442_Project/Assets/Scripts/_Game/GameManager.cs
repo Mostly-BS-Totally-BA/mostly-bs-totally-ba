@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
     public int livesMax { get; private set; }
     public int LivesCount { get; private set; }
     public int Score { get; private set; }
+	public int potionCount { get; private set; }
     public float playerSpeedNorm { get; private set; }
     public float playerSpeed { get; private set; }
     public float playerAttackSpeedNorm { get; private set; }
@@ -65,7 +66,7 @@ public class GameManager : Singleton<GameManager>
         _gm.livesMax = 12;
         _gm.playerSpeedNorm = 2.25f;
         _gm.playerAttackSpeedNorm = 1.5f;
-
+		_gm.potionCount = 0;
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
@@ -86,6 +87,7 @@ public class GameManager : Singleton<GameManager>
         _gm.livesMax = save.livesmax;
         _gm.LivesCount = save.lives;
         _gm.Score = save.score;
+		_gm.potionCount = save.potionCount;
     }
 
     //Used to begin currently set level, including for new game or for next level
@@ -189,6 +191,24 @@ public class GameManager : Singleton<GameManager>
             _ui.UpdateLives();
         }
     }
+
+	//Pick up a potion and increase potionCount
+	public void pickup_potion()
+	{
+		_gm.potionCount++;
+	}
+
+	public void use_potion()
+	{
+		if (_gm.potionCount > 0) {
+			_gm.potionCount--;
+			_gm.LivesIncrease (4);
+			Debug.Log ("Potion Count: " + _gm.potionCount);
+		} 
+		else {
+			Debug.Log ("Out of Potions");
+		}
+	}
 
     //Handles action when escape key pressed during different game states
     //During Game or Paused states, will swap states to pause or resume

@@ -14,6 +14,8 @@ public class Puzzle_Lvl2 : MonoBehaviour
     public GameObject[] plates;                     //array of game objects for the different pressure plates, set in Unity
 
     GameObject square = null;                       //plate currently being interacted with
+    private GUIStyle guiStyle = new GUIStyle();
+
     string text;                                    //string of text to display on screen
     bool showGUI;                                   //whether text is on screen or not
 
@@ -83,7 +85,9 @@ public class Puzzle_Lvl2 : MonoBehaviour
     {
         if (showGUI == true)
         {
-            GUI.Label(new Rect(10, 10, 500, 20), text);
+            guiStyle.fontSize = 20;                                              //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), text, guiStyle);
         }
     }
 }

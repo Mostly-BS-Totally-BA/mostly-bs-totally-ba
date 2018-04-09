@@ -46839,6 +46839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opened_chest: {fileID: 1932771759}
+  score_increase: 50
 --- !u!1001 &1537620920
 Prefab:
   m_ObjectHideFlags: 0
