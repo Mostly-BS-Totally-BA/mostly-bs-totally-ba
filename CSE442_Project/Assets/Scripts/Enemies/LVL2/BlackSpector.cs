@@ -21,12 +21,9 @@ public class BlackSpector : MonoBehaviour
     private float red;
     private float green;
     private float blue;
-    //private Color mColor; Getting errors because of not being used
     public bool aggro;
-    //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
     public bool touchPlayer;
     public bool touchWeapon;
-    //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
     private int pick=-1;
     public Vector3 OffsetPosition = new Vector3(.1f,0, 0);
@@ -40,12 +37,8 @@ public class BlackSpector : MonoBehaviour
         this.currentHealth = this.maxHealth;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Player = GameObject.FindWithTag("Player");
-    
-        //polygonCol2D = GetComponent<PolygonCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
-        //Player = GameObject.FindWithTag("Player");
 
-        //playerColl = GetComponent<PolygonCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
         timeCount = .5f;
         SpriteR = GetComponent<SpriteRenderer>();
         red = 255f;
@@ -84,7 +77,6 @@ public class BlackSpector : MonoBehaviour
     {
         _gm = GameManager.Instance;
         _gm.UpdateScore(10);
-        //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);
 
@@ -271,8 +263,6 @@ public class BlackSpector : MonoBehaviour
                 }
             }
            
-
-
 
             Vector2 direction = Waypoints[pick].transform.position - transform.position;
             Vector2 newvector = direction.normalized * speed * Time.deltaTime;
