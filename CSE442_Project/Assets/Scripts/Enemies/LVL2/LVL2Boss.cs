@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Necromancer : MonoBehaviour
+public class LVL2Boss : MonoBehaviour
 {
-    public GameObject summon;
-    public GameObject summonCir;
-    private GameObject sumCir;
-    public GameObject Door;
+    public GameObject projectile;
     public float currentHealth;
     public float maxHealth;
     public float speed;
     public GameObject CloseEmeny;
     private GameObject Player;
+    public GameObject[] Waypoints;
+    public bool[] WaypointFlag;
     private Animator animator;
     private Transform target;
     private Rigidbody2D rb;
@@ -22,15 +21,16 @@ public class Necromancer : MonoBehaviour
     private float red;
     private float green;
     private float blue;
-    
+    //private Color mColor; Getting errors because of not being used
     public bool aggro;
-    
+    //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
     public bool touchPlayer;
     public bool touchWeapon;
-    
+    //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
-    
-    public Vector3 OffsetPosition;
+    public float bulletTime;
+    private int pick = -1;
+    public Vector3 OffsetPosition = new Vector3(.1f, 0, 0);
 
 
     private GameManager _gm = null;
@@ -47,7 +47,8 @@ public class Necromancer : MonoBehaviour
         //Player = GameObject.FindWithTag("Player");
 
         //playerColl = GetComponent<PolygonCollider2D>();
-        timeCount = 1f;
+        timeCount = .5f;
+        bulletTime = 5f;
         SpriteR = GetComponent<SpriteRenderer>();
         red = 255f;
         blue = 255f;
@@ -64,6 +65,7 @@ public class Necromancer : MonoBehaviour
         if (_gm.gameState == GameState.Game)
         {
             MoveEnemy();
+            //animator.SetBool("SmallRat", true);
             if (attackS == true)
             {
                 attack();
@@ -98,8 +100,7 @@ public class Necromancer : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
 
-            //Invoke("colorChange", 1);
-            //Invoke("defaultColor", 3);
+
             attackS = true;
         }
     }
@@ -108,11 +109,10 @@ public class Necromancer : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            //touchPlayer = true;
-            //coll.rigidbody.isKinematic = true;
-            //rb.velocity = Vector2.zero;
-            //rb.bodyType= RigidbodyType2D.Static;
+            touchPlayer = true;
+
             rb.velocity = Vector2.zero;
+            Player.SendMessage("zeroVel");
 
 
         }
@@ -132,6 +132,7 @@ public class Necromancer : MonoBehaviour
         this.SpriteR.color = new Color(1, 1, 1);
         blue = 255;
         green = 255;
+        Player.SendMessage("zeroVel");
     }
 
     public void defaultColor()
@@ -194,6 +195,15 @@ public class Necromancer : MonoBehaviour
 
 
     }
+    public void bulletHell()
+    {
+        OffsetPosition = new Vector3(0, 0, 0);
+        GameObject bullet = Instantiate(projectile, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+        OffsetPosition = new Vector3(-1.2f, -.5f, 0);
+        GameObject bullet1 = Instantiate(projectile, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+        OffsetPosition = new Vector3(1.2f, -.5f, 0);
+        GameObject bullet2 = Instantiate(projectile, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+    }
     public void onAggro()
     {
         aggro = true;
@@ -203,11 +213,7 @@ public class Necromancer : MonoBehaviour
 
         if (aggro == false && target != null)
         {
-            if(Door==null&& Vector2.Distance(transform.position, target.position) <= 5.5)
-            {
-                aggro = true;
-            }
-            else if (Door!=null &&Door.active==false)
+            if (Vector2.Distance(transform.position, target.position) <= 5)
             {
                 aggro = true;
                 if (CloseEmeny != null)
@@ -223,57 +229,75 @@ public class Necromancer : MonoBehaviour
 
         if (aggro == true && target != null)
         {
-            timeCount -= Time.deltaTime;
-            //Debug.Log("time: " + timeCount);
-            if (timeCount <= 0)
+            bulletTime -= Time.deltaTime;
+            if(bulletTime<=0)
             {
-
-                blue = blue - 85;
-                red = red - 85;
-                red = red / 255;
-                blue = blue / 255;
-                green = green / 255;
-                this.SpriteR.color = new Color(red, green, blue);
-                red = red * 255;
-                blue = blue * 255;
-                green = green * 255;
-
-                timeCount = 1f;
-                countAtt++;
-                
-            }
-            if(countAtt==2)
-            {
-                
-                this.SpriteR.color = new Color(.043f, .878f, .85f);
-               
-            }
-            if(countAtt==3)
-            {
-                 sumCir = Instantiate(summonCir, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
-                this.SpriteR.color = new Color(1, 1, 1);
-                Destroy(sumCir, 1);
-            }
-            if(countAtt==4)
-            {
-                this.SpriteR.color = new Color(.878f, .349f, .043f);
-                
-            }
-            if (countAtt == 5)
-            {
-                //this.SpriteR.color = new Color(.878f, .349f, .043f);
-                //Player.SendMessage("takeDamage", 10);
-                GameObject zomb = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
-                //GameObject sumCir = Instantiate(summonCir, OffsetPosition, Quaternion.identity) as GameObject;
-                zomb.SendMessage("onAggro");
-                Destroy(sumCir);
-                this.SpriteR.color = new Color(1, 1, 1);
-                blue = 255;
-                green = 255;
-                countAtt = 0;
+                Invoke("bulletHell",1);
+                bulletTime = 5f;
             }
 
+            if (pick == -1 || Vector2.Distance(transform.position, Waypoints[pick].transform.position) <= .2)
+            {
+                for (int i = 0; i <= Waypoints.Length - 1; i++)
+                {
+                    Invoke("bulletHell",1);
 
+                    float Way_Player = Vector2.Distance(target.position, Waypoints[i].transform.position);
+                    float Way_Spec = Vector2.Distance(transform.position, Waypoints[i].transform.position);
+                    if (Way_Player <= Way_Spec)
+                    {
+                        WaypointFlag[i] = false;
+                        if (Vector2.Distance(target.position, transform.position) <= 2)
+                        {
+                            WaypointFlag[i] = true;
+                        }
+                    }
+                    else
+                    {
+
+                        WaypointFlag[i] = true;
+                        if (Way_Spec <= .2)
+                        {
+                            WaypointFlag[i] = false;
+                        }
+                    }
+                }
+                bool done = false;
+                bool check = false;
+                int count = 0;
+                for (int i = 0; i <= WaypointFlag.Length - 1; i++)
+                {
+                    if (WaypointFlag[i] == false)
+                    {
+                        count++;
+                    }
+                }
+                if (count == WaypointFlag.Length)
+                {
+                    check = true;
+                }
+
+                while (done != true)
+                {
+                    pick = Random.Range(0, WaypointFlag.Length);
+
+                    if (WaypointFlag[pick] == true || check == true)
+                    {
+                        done = true;
+                    }
+                }
+            }
+
+
+
+
+            Vector2 direction = Waypoints[pick].transform.position - transform.position;
+            Vector2 newvector = direction.normalized * speed * Time.deltaTime;
+
+            if (rb.bodyType != RigidbodyType2D.Static)
+            {
+                rb.velocity = newvector;
+            }
 
 
         }
