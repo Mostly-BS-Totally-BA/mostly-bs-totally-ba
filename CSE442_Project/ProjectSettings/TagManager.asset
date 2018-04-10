@@ -23,6 +23,7 @@ TagManager:
   - Puzzle_Trigger
   - EnemyProjectile
   - EnemyWayPoint
+  - Platino_Boss
   layers:
   - Default
   - TransparentFX
