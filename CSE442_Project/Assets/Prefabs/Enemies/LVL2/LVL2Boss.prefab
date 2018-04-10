@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95251968490698878}
   - component: {fileID: 50610269030486166}
   - component: {fileID: 60732213764390306}
-  - component: {fileID: 114260043521002100}
+  - component: {fileID: 114112481599720348}
   m_Layer: 0
   m_Name: LVL2Boss
   m_TagString: Enemy
@@ -117,7 +117,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114260043521002100
+--- !u!114 &114112481599720348
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -125,17 +125,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1522348130091814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25271fda392439f4b84aef948f629b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: b1dce34b0c1ad284483ec5cd2efae76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 1378830262858694, guid: aa3d0220b952c2343a72cff951e3811f, type: 2}
   currentHealth: 0
-  maxHealth: 150
-  speed: 150
+  maxHealth: 500
+  speed: 100
   CloseEmeny: {fileID: 0}
+  Waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  WaypointFlag: 00000000
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0
   timeCount: 0
+  bulletTime: 0
+  OffsetPosition: {x: 0.1, y: 0, z: 0}
 --- !u!212 &212232282857490300
 SpriteRenderer:
   m_ObjectHideFlags: 1
