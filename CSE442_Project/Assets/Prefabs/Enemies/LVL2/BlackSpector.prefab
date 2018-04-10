@@ -136,16 +136,13 @@ MonoBehaviour:
   maxHealth: 150
   speed: 150
   CloseEmeny: {fileID: 0}
-  Waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  WaypointFlag: 00000000
+  Waypoints: []
+  WaypointFlag: 
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0
   timeCount: 0
+  OffsetPosition: {x: 0.1, y: 0, z: 0}
 --- !u!212 &212837036931356056
 SpriteRenderer:
   m_ObjectHideFlags: 1

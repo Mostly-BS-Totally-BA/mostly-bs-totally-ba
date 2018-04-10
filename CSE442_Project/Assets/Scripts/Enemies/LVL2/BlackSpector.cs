@@ -98,8 +98,7 @@ public class BlackSpector : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
 
-            //Invoke("colorChange", 1);
-            //Invoke("defaultColor", 3);
+            
             attackS = true;
         }
     }
@@ -109,9 +108,7 @@ public class BlackSpector : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             touchPlayer = true;
-            //coll.rigidbody.isKinematic = true;
-            //rb.velocity = Vector2.zero;
-            //rb.bodyType= RigidbodyType2D.Static;
+            
             rb.velocity = Vector2.zero;
             Player.SendMessage("zeroVel");
 
@@ -227,7 +224,7 @@ public class BlackSpector : MonoBehaviour
                 for (int i = 0; i <= Waypoints.Length - 1; i++)
                 {
                     GameObject bullet = Instantiate(projectile, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
-                    //bullet.SendMessage("targetLoc");
+                    
                     float Way_Player = Vector2.Distance(target.position, Waypoints[i].transform.position);
                     float Way_Spec = Vector2.Distance(transform.position, Waypoints[i].transform.position);
                     if (Way_Player <= Way_Spec)
@@ -258,14 +255,14 @@ public class BlackSpector : MonoBehaviour
                         count++;
                     }
                 }
-                if(count==4)
+                if(count==WaypointFlag.Length)
                 {
                     check = true;
                 }
 
                     while (done != true)
                 {
-                    pick = Random.Range(0, 4);
+                    pick = Random.Range(0, WaypointFlag.Length);
 
                     if (WaypointFlag[pick] == true||check==true)
                     {
@@ -284,25 +281,7 @@ public class BlackSpector : MonoBehaviour
             {
                 rb.velocity = newvector;
             }
-            //rb.position
-
-            //transform.Translate(new Vector3(rb.position.x-newvector.x, rb.position.y-newvector.y, 0f));
-            //Vector3 vect = Vector3.MoveTowards(transform.position, target.position, speed*Time.deltaTime);
-            //transform.Translate(vect.x * speed * Time.deltaTime, vect.y * speed * Time.deltaTime, 0f)
-            if (touchPlayer == true)
-            {
-                // attack();
-            }
-            /*
-            if (Vector2.Distance(transform.position, target.position) >= 4.5 || touchPlayer == true)
-            {
-                aggro = false;
-                if (rb.bodyType != RigidbodyType2D.Static)
-                {
-                    rb.velocity = Vector2.zero;
-                }
-            }
-            */
+            
 
         }
     }

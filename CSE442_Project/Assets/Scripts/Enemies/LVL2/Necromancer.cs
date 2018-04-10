@@ -7,13 +7,12 @@ public class Necromancer : MonoBehaviour
     public GameObject summon;
     public GameObject summonCir;
     private GameObject sumCir;
+    public GameObject Door;
     public float currentHealth;
     public float maxHealth;
     public float speed;
     public GameObject CloseEmeny;
     private GameObject Player;
-    public GameObject[] Waypoints;
-    public bool[] WaypointFlag;
     private Animator animator;
     private Transform target;
     private Rigidbody2D rb;
@@ -23,14 +22,14 @@ public class Necromancer : MonoBehaviour
     private float red;
     private float green;
     private float blue;
-    //private Color mColor; Getting errors because of not being used
+    
     public bool aggro;
-    //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
+    
     public bool touchPlayer;
     public bool touchWeapon;
-    //private PolygonCollider2D playerColl; Getting errors because of not being used
+    
     public float timeCount;
-    private int pick = -1;
+    
     public Vector3 OffsetPosition;
 
 
@@ -204,7 +203,11 @@ public class Necromancer : MonoBehaviour
 
         if (aggro == false && target != null)
         {
-            if (Vector2.Distance(transform.position, target.position) <= 4.5)
+            if(Door==null&& Vector2.Distance(transform.position, target.position) <= 5.5)
+            {
+                aggro = true;
+            }
+            else if (Door.active==false)
             {
                 aggro = true;
                 if (CloseEmeny != null)
@@ -239,24 +242,24 @@ public class Necromancer : MonoBehaviour
                 countAtt++;
                 
             }
-            if(countAtt==3)
+            if(countAtt==2)
             {
                 
                 this.SpriteR.color = new Color(.043f, .878f, .85f);
                
             }
-            if(countAtt==4)
+            if(countAtt==3)
             {
                  sumCir = Instantiate(summonCir, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
                 this.SpriteR.color = new Color(1, 1, 1);
                 Destroy(sumCir, 1);
             }
-            if(countAtt==5)
+            if(countAtt==4)
             {
                 this.SpriteR.color = new Color(.878f, .349f, .043f);
                 
             }
-            if (countAtt == 6)
+            if (countAtt == 5)
             {
                 //this.SpriteR.color = new Color(.878f, .349f, .043f);
                 //Player.SendMessage("takeDamage", 10);
