@@ -105,7 +105,7 @@ public class Zombie : MonoBehaviour
             touchPlayer = true;
             //coll.rigidbody.isKinematic = true;
             //rb.velocity = Vector2.zero;
-            //rb.bodyType= RigidbodyType2D.Static;
+            rb.bodyType= RigidbodyType2D.Static;
             rb.velocity = Vector2.zero;
 
 
