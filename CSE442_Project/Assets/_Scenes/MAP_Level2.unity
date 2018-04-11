@@ -23145,6 +23145,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11f473c9b106e74a84b4e4e12719358, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &777498933 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1204236008937950, guid: d11f473c9b106e74a84b4e4e12719358,
+    type: 2}
+  m_PrefabInternal: {fileID: 777498932}
 --- !u!4 &777498935 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4734493504645070, guid: d11f473c9b106e74a84b4e4e12719358,
@@ -26620,6 +26625,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11f473c9b106e74a84b4e4e12719358, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &916256134 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1204236008937950, guid: d11f473c9b106e74a84b4e4e12719358,
+    type: 2}
+  m_PrefabInternal: {fileID: 916256133}
 --- !u!4 &916256136 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4734493504645070, guid: d11f473c9b106e74a84b4e4e12719358,
@@ -28554,6 +28564,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11f473c9b106e74a84b4e4e12719358, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &990603751 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1204236008937950, guid: d11f473c9b106e74a84b4e4e12719358,
+    type: 2}
+  m_PrefabInternal: {fileID: 990603750}
 --- !u!4 &990603753 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4734493504645070, guid: d11f473c9b106e74a84b4e4e12719358,
@@ -31332,6 +31347,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11f473c9b106e74a84b4e4e12719358, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1087044363 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1204236008937950, guid: d11f473c9b106e74a84b4e4e12719358,
+    type: 2}
+  m_PrefabInternal: {fileID: 1087044362}
 --- !u!4 &1087044365 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4734493504645070, guid: d11f473c9b106e74a84b4e4e12719358,
@@ -50166,22 +50186,22 @@ Prefab:
         type: 2}
       propertyPath: Waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1543749712}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1392979536}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1727927120}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 544145069}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e449f8d49a93e443a4c05a48340c178, type: 2}
   m_IsPrefabParent: 0
@@ -55149,22 +55169,22 @@ Prefab:
         type: 2}
       propertyPath: Waypoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1543749712}
+      objectReference: {fileID: 1087044363}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1392979536}
+      objectReference: {fileID: 916256134}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 1727927120}
+      objectReference: {fileID: 777498933}
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.data[3]
       value: 
-      objectReference: {fileID: 544145069}
+      objectReference: {fileID: 990603751}
     - target: {fileID: 1645160585642672, guid: 5e449f8d49a93e443a4c05a48340c178, type: 2}
       propertyPath: m_StaticEditorFlags
       value: 0
