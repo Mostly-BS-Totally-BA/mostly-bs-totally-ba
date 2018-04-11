@@ -161,6 +161,12 @@ public class Player_Movement : MonoBehaviour {
         //coll.rigidbody.isKinematic = false;
     }
 
+    public void ZeroVel()
+    {
+        player_rigid.velocity = Vector2.zero;
+    }
+
+
 	IEnumerator Wait(float timer)
 	{
 		yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
@@ -169,12 +175,13 @@ public class Player_Movement : MonoBehaviour {
 
 	private void OnGUI()
 	{
-		if (showGUI == true)
-		{
-			guiStyle.fontSize = 20;                                            //change the font size
-			guiStyle.normal.textColor = Color.white;
-			GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);             //places text on screen
-		}
+        if (showGUI == true)
+        {
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);
+        }//places text on screen
 	}
+
     
 }
