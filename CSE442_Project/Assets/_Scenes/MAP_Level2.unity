@@ -2129,6 +2129,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1954905574209184, guid: c76db24a443d8744da571dd8167f7e80, type: 2}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c76db24a443d8744da571dd8167f7e80, type: 2}
   m_IsPrefabParent: 0
@@ -4370,7 +4374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to open
   player: {fileID: 0}
 --- !u!1001 &140254908
 Prefab:
@@ -10445,6 +10449,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 340226195}
+--- !u!1 &340226197 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 340226195}
 --- !u!1001 &346323184
 Prefab:
   m_ObjectHideFlags: 0
@@ -11068,6 +11077,11 @@ Prefab:
 --- !u!4 &363152587 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4967999876220266, guid: 9cec0081346b0744ba59c83f1d28ce08,
+    type: 2}
+  m_PrefabInternal: {fileID: 363152586}
+--- !u!1 &363152588 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775513103223282, guid: 9cec0081346b0744ba59c83f1d28ce08,
     type: 2}
   m_PrefabInternal: {fileID: 363152586}
 --- !u!1001 &363179436
@@ -12795,6 +12809,11 @@ Prefab:
 --- !u!4 &426553792 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 426553791}
+--- !u!1 &426553793 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 426553791}
 --- !u!1001 &426805428
@@ -15952,7 +15971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to open
   player: {fileID: 0}
 --- !u!1001 &528161214
 Prefab:
@@ -19153,6 +19172,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 627576563}
+--- !u!1 &627576565 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 627576563}
 --- !u!1001 &629079557
 Prefab:
   m_ObjectHideFlags: 0
@@ -20477,6 +20501,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 670803629}
+--- !u!1 &670803631 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 670803629}
 --- !u!1001 &673532434
 Prefab:
   m_ObjectHideFlags: 0
@@ -21309,7 +21338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to pull
   player: {fileID: 0}
 --- !u!1001 &704196699
 Prefab:
@@ -21889,6 +21918,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 720203842}
+--- !u!1 &720203844 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 720203842}
 --- !u!1001 &722119239
 Prefab:
   m_ObjectHideFlags: 0
@@ -22410,7 +22444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to pull
   player: {fileID: 0}
 --- !u!1001 &747971686
 Prefab:
@@ -24857,7 +24891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to pull
   player: {fileID: 0}
 --- !u!1001 &837009032
 Prefab:
@@ -26761,6 +26795,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 918717035}
+--- !u!1 &918717037 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 918717035}
 --- !u!1001 &921113738
 Prefab:
   m_ObjectHideFlags: 0
@@ -27661,7 +27700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: You gained 100 gold!
   player: {fileID: 0}
 --- !u!61 &953952615
 BoxCollider2D:
@@ -29707,6 +29746,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4578310692435410, guid: ff292ced54641a24c871f1156252ac2d,
     type: 2}
   m_PrefabInternal: {fileID: 1030194953}
+--- !u!114 &1030194955 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114108277010988224, guid: ff292ced54641a24c871f1156252ac2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1030194953}
+  m_Script: {fileID: 11500000, guid: 5a248a43243b9284bbf71c5769c3c1b4, type: 3}
 --- !u!1001 &1034857300
 Prefab:
   m_ObjectHideFlags: 0
@@ -33829,6 +33874,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 1177294644}
+--- !u!1 &1177294646 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1177294644}
 --- !u!1001 &1177615910
 Prefab:
   m_ObjectHideFlags: 0
@@ -37609,6 +37659,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 1283756883}
+--- !u!1 &1283756885 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1283756883}
 --- !u!1001 &1284006764
 Prefab:
   m_ObjectHideFlags: 0
@@ -38340,7 +38395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to open
   player: {fileID: 0}
 --- !u!1001 &1311634274
 Prefab:
@@ -39946,6 +40001,10 @@ Prefab:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4466824504031186, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114440630807380274, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
     - {fileID: 114219534810904064, guid: 767370fb0f9604231b9cffdf68f519fd, type: 2}
@@ -39956,20 +40015,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1575102054125136, guid: 767370fb0f9604231b9cffdf68f519fd,
     type: 2}
   m_PrefabInternal: {fileID: 1388613206}
---- !u!114 &1388613208
+--- !u!114 &1388613208 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1388613207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 922e6ff09240b464385acfe1177ed90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walls: []
-  overlays: []
-  plates: []
+  m_PrefabParentObject: {fileID: 114690234178371062, guid: 767370fb0f9604231b9cffdf68f519fd,
+    type: 2}
+  m_PrefabInternal: {fileID: 1388613206}
+  m_Script: {fileID: 11500000, guid: 19beecc8d2e344744a125c0c9c22cc8a, type: 3}
 --- !u!114 &1388613209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39981,8 +40032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd6db8fa048c924798bbbff3729cb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walls: []
-  overlays: []
+  walls:
+  - {fileID: 1965770271}
+  - {fileID: 2070374584}
+  overlays:
+  - {fileID: 670803631}
 --- !u!1001 &1389979985
 Prefab:
   m_ObjectHideFlags: 0
@@ -40549,6 +40603,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4967999876220266, guid: 9cec0081346b0744ba59c83f1d28ce08,
     type: 2}
   m_PrefabInternal: {fileID: 1418418524}
+--- !u!1 &1418418526 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775513103223282, guid: 9cec0081346b0744ba59c83f1d28ce08,
+    type: 2}
+  m_PrefabInternal: {fileID: 1418418524}
 --- !u!1001 &1420903788
 Prefab:
   m_ObjectHideFlags: 0
@@ -40992,7 +41051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102, y: 106}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 308.51, y: 40.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441230864
@@ -41039,14 +41098,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c804a2b270179ac418f6b7361cb1f46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 0}
-  textBox: {fileID: 0}
-  theText: {fileID: 0}
-  player: {fileID: 0}
-  platino: {fileID: 0}
+  textFile: {fileID: 4900000, guid: d11169d66d3f63841bb75bca734c4d1e, type: 3}
+  textBox: {fileID: 1441230862}
+  theText: {fileID: 1895687528}
+  player: {fileID: 1388613208}
+  platino: {fileID: 1030194955}
   lines: []
-  currentLine: 0
-  endLine: 0
+  currentLine: 16
+  endLine: 32
 --- !u!1001 &1442847763
 Prefab:
   m_ObjectHideFlags: 0
@@ -42369,6 +42428,11 @@ Prefab:
         type: 2}
       propertyPath: text
       value: You gained 60 gold!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114330389420070408, guid: 575853d6ee3e54e469b59f53d7f4106e,
+        type: 2}
+      propertyPath: score_increase
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 575853d6ee3e54e469b59f53d7f4106e, type: 2}
@@ -44184,7 +44248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to open
   player: {fileID: 0}
 --- !u!114 &1535136745
 MonoBehaviour:
@@ -44197,8 +44261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbc1fb8d2a544346b076e8638be06e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opened_chest: {fileID: 0}
-  score_increase: 0
+  opened_chest: {fileID: 1932771759}
+  score_increase: 50
 --- !u!1001 &1537620920
 Prefab:
   m_ObjectHideFlags: 0
@@ -45137,6 +45201,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4142841207535362, guid: 8411fba9c2d52b646bd744f40a964ad7,
     type: 2}
   m_PrefabInternal: {fileID: 1566461127}
+--- !u!1 &1566461129 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1152981370176596, guid: 8411fba9c2d52b646bd744f40a964ad7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1566461127}
 --- !u!1001 &1567687247
 Prefab:
   m_ObjectHideFlags: 0
@@ -45679,7 +45748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: You gained 100 gold!
   player: {fileID: 0}
 --- !u!61 &1578712705
 BoxCollider2D:
@@ -53296,6 +53365,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1862198551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1862198552}
+  - component: {fileID: 1862198554}
+  - component: {fileID: 1862198553}
+  m_Layer: 0
+  m_Name: Puzzle Trigger
+  m_TagString: Puzzle_Trigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862198552
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862198551}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1852140876}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862198553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862198551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922e6ff09240b464385acfe1177ed90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walls:
+  - {fileID: 1418418526}
+  - {fileID: 363152588}
+  overlays:
+  - {fileID: 1283756885}
+  - {fileID: 426553793}
+  plates:
+  - {fileID: 1763771065}
+  - {fileID: 312187202}
+  - {fileID: 1911613420}
+  - {fileID: 1861001288}
+--- !u!58 &1862198554
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862198551}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000059604645, y: -0.09182075}
+  serializedVersion: 2
+  m_Radius: 0.26534554
 --- !u!1001 &1864131426
 Prefab:
   m_ObjectHideFlags: 0
@@ -53955,7 +54091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: You gained 100 gold!
   player: {fileID: 0}
 --- !u!61 &1879226981
 BoxCollider2D:
@@ -54403,6 +54539,11 @@ Prefab:
 --- !u!4 &1893716917 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1893716916}
+--- !u!1 &1893716918 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 1893716916}
 --- !u!1 &1895687525
@@ -55814,7 +55955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: Press 'e' to open
   player: {fileID: 0}
 --- !u!1001 &1949807403
 Prefab:
@@ -56183,8 +56324,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8bea7287f18c446a42d14e4e7c0abe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walls: []
-  overlays: []
+  walls:
+  - {fileID: 1893716918}
+  - {fileID: 340226197}
+  - {fileID: 720203844}
+  - {fileID: 627576565}
+  overlays:
+  - {fileID: 1177294646}
+  - {fileID: 918717037}
+  - {fileID: 1566461129}
+  - {fileID: 34518644}
+  - {fileID: 1351211777}
 --- !u!1001 &1963466735
 Prefab:
   m_ObjectHideFlags: 0
@@ -56340,6 +56490,11 @@ Prefab:
 --- !u!4 &1965770270 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1965770269}
+--- !u!1 &1965770271 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 1965770269}
 --- !u!1001 &1970474702
@@ -75568,6 +75723,11 @@ Prefab:
 --- !u!4 &2070374583 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4250613853231526, guid: 463dd8f5750d4db4aa9f85434221f21b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2070374582}
+--- !u!1 &2070374584 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1384431264972410, guid: 463dd8f5750d4db4aa9f85434221f21b,
     type: 2}
   m_PrefabInternal: {fileID: 2070374582}
 --- !u!1001 &2071107314

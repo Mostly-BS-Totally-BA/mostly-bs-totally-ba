@@ -36105,6 +36105,11 @@ Prefab:
       propertyPath: m_Radius
       value: 0.6942861
       objectReference: {fileID: 0}
+    - target: {fileID: 212458171164459034, guid: 3799447e7af7943c2a85133cf4c7187b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3799447e7af7943c2a85133cf4c7187b, type: 2}
   m_IsPrefabParent: 0
@@ -44328,6 +44333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1731782782}
+  boss: {fileID: 0}
 --- !u!1001 &1467003274
 Prefab:
   m_ObjectHideFlags: 0
@@ -52268,6 +52274,11 @@ Prefab:
       propertyPath: m_Offset.y
       value: -0.10359681
       objectReference: {fileID: 0}
+    - target: {fileID: 212458171164459034, guid: 3799447e7af7943c2a85133cf4c7187b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3799447e7af7943c2a85133cf4c7187b, type: 2}
   m_IsPrefabParent: 0
@@ -54482,7 +54493,7 @@ Transform:
   - {fileID: 141632766}
   - {fileID: 1508621565}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1878803230
 Prefab:
@@ -59288,6 +59299,11 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 0.73045254
+      objectReference: {fileID: 0}
+    - target: {fileID: 212458171164459034, guid: 3799447e7af7943c2a85133cf4c7187b,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3799447e7af7943c2a85133cf4c7187b, type: 2}
