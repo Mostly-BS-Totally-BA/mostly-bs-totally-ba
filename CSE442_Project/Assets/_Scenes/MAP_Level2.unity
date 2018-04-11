@@ -50144,7 +50144,12 @@ Prefab:
     - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
         type: 2}
       propertyPath: Waypoints.Array.size
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114631893182660696, guid: 5e449f8d49a93e443a4c05a48340c178,
+        type: 2}
+      propertyPath: WaypointFlag.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4286024528767154, guid: 5e449f8d49a93e443a4c05a48340c178, type: 2}
       propertyPath: m_LocalPosition.x
