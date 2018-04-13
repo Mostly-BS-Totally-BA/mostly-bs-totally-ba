@@ -73,7 +73,7 @@ public class DarkGas : MonoBehaviour
 
 
             }
-            Invoke("deleteGas", 3);
+            deleteGas();
 
         }
 
