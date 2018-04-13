@@ -20,6 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4830243607392584}
   - component: {fileID: 212066840093243234}
+  - component: {fileID: 114627502810941758}
+  - component: {fileID: 50336674211528416}
+  - component: {fileID: 60860644967978762}
+  - component: {fileID: 95108011987850176}
   m_Layer: 0
   m_Name: Lizard Demon
   m_TagString: Enemy
@@ -33,13 +37,106 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044945245228856}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.61, y: -8.91, z: -0.16791822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -66.879166, y: 2.2808113, z: -0.13666822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50336674211528416
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044945245228856}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.49668977
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &60860644967978762
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044945245228856}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.40016937, y: -0.43694687}
+      - {x: -0.13067627, y: -0.41917038}
+      - {x: 0.013084412, y: -0.5068855}
+      - {x: 0.3003235, y: -0.5}
+      - {x: 0.28873444, y: -0.23688889}
+      - {x: 0.44006348, y: -0.15970993}
+      - {x: 0.4313202, y: 0.044006348}
+      - {x: 0.21596527, y: -0.035621643}
+      - {x: 0.1269226, y: 0.35812378}
+      - {x: -0.2898178, y: 0.3003273}
+--- !u!95 &95108011987850176
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044945245228856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e18792deb2b982a4d957a7301c4c6cb9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114627502810941758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044945245228856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17f33b20b7b60c45bc4d4378afdb707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1762439752000044, guid: 620ccd7feb00b8b4f9ee1d0b6ef21dcc, type: 2}
+  currentHealth: 0
+  maxHealth: 150
+  speed: 100
+  CloseEmeny: {fileID: 0}
+  aggro: 0
+  touchPlayer: 0
+  touchWeapon: 0
+  timeCount: 0
+  OffsetPosition: {x: 0.1, y: 0, z: 0}
+  aggroDistance: 6
 --- !u!212 &212066840093243234
 SpriteRenderer:
   m_ObjectHideFlags: 1
