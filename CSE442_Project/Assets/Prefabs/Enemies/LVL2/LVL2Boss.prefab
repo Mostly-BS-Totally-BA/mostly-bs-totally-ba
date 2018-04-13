@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1378830262858694, guid: aa3d0220b952c2343a72cff951e3811f, type: 2}
   currentHealth: 0
-  maxHealth: 500
+  maxHealth: 300
   speed: 100
   CloseEmeny: {fileID: 0}
   Waypoints:
