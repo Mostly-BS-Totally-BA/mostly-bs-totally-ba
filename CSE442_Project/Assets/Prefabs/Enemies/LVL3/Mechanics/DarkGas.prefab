@@ -20,7 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4230084777918786}
   - component: {fileID: 212006857767158914}
-  - component: {fileID: 95994966585764324}
+  - component: {fileID: 50334714326877026}
+  - component: {fileID: 58688108063452332}
+  - component: {fileID: 95741093396928982}
+  - component: {fileID: 114359918425049028}
   m_Layer: 0
   m_Name: DarkGas
   m_TagString: EnemyProjectile
@@ -41,7 +44,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95994966585764324
+--- !u!50 &50334714326877026
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762439752000044}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &58688108063452332
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762439752000044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!95 &95741093396928982
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -50,7 +88,7 @@ Animator:
   m_GameObject: {fileID: 1762439752000044}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0db3c57640df4554184ea9e46a1d60bc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 178f39f439fbf8246afb09c4b830de2b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -58,6 +96,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114359918425049028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762439752000044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736027589f190764fbfefa0620436a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!212 &212006857767158914
 SpriteRenderer:
   m_ObjectHideFlags: 1
