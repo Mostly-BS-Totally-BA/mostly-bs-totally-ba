@@ -7,6 +7,8 @@ public class PlantDemon : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
     public float speed;
+    public GameObject spawnEnemy1;
+    public GameObject spawnEnemy2;
     public GameObject CloseEmeny;
     private GameObject Player;
     private Animator animator;
@@ -25,6 +27,7 @@ public class PlantDemon : MonoBehaviour
     public bool touchWeapon;
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
+    public int aggroDistance;
 
 
     private GameManager _gm = null;
@@ -68,6 +71,16 @@ public class PlantDemon : MonoBehaviour
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
+        if(currentHealth<=(maxHealth/2))
+        {
+
+            death();
+            GameObject smallSpore1 = Instantiate(spawnEnemy1, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+            GameObject Lizard = Instantiate(spawnEnemy2, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+            smallSpore1.SendMessage("onAggro");
+            Lizard.SendMessage("onAggro");
+
+        }
         if (currentHealth <= 0)
         {
             death();
@@ -196,7 +209,7 @@ public class PlantDemon : MonoBehaviour
     {
         if (aggro == false && target != null)
         {
-            if (Vector2.Distance(transform.position, target.position) <= 2)
+            if (Vector2.Distance(transform.position, target.position) <= aggroDistance)
             {
                 aggro = true;
                 if (CloseEmeny != null)
