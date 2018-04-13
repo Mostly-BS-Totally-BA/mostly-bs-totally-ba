@@ -8,6 +8,7 @@ public class Save {
     public List<int> livingTargetPositions = new List<int>();
     public List<int> livingTargetsTypes = new List<int>();
 
+    public string gameBuild = "";
     public float playerSpeedNorm = 2.25f;
     public float playerSpeed = 2.25f;
     public float playerAttackSpeedNorm = 1f;
