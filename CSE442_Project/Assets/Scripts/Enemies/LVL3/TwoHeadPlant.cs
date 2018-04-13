@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantDemon : MonoBehaviour
+public class TwoHeadPlant : MonoBehaviour
 {
     public float currentHealth;
     public float maxHealth;
@@ -73,7 +73,7 @@ public class PlantDemon : MonoBehaviour
     public void takeDamage(int amount)
     {
         currentHealth -= amount;
-        if(currentHealth<=(maxHealth/2))
+        if (currentHealth <= (maxHealth / 2))
         {
 
             death();

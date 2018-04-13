@@ -68,12 +68,12 @@ public class DarkGas : MonoBehaviour
                 }
 
                 rb.velocity = Vector2.zero;
-                Destroy(gameObject);
+                Invoke("deleteGas", 3);
 
 
 
             }
-            Destroy(gameObject);
+            Invoke("deleteGas", 3);
 
         }
 
@@ -81,7 +81,7 @@ public class DarkGas : MonoBehaviour
         //coll.gameObject.SendMessage("ApplyDamage", 10);
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void deleteGas()
     {
         Destroy(gameObject);
     }

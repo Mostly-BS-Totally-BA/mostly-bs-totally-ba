@@ -20,6 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4197157940471396}
   - component: {fileID: 212262734887896646}
+  - component: {fileID: 114100585514862012}
+  - component: {fileID: 60789971859824978}
+  - component: {fileID: 50372710502775466}
+  - component: {fileID: 95705199850751458}
   m_Layer: 0
   m_Name: Plant Demon
   m_TagString: Enemy
@@ -33,13 +37,112 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1044356174451104}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -9.78, z: -0.16791822}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.74, y: -24.51, z: -0.13666822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50372710502775466
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044356174451104}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.7513191
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!60 &60789971859824978
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044356174451104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.34655952, y: 0.15969849}
+      - {x: -0.45594883, y: -0.07036209}
+      - {x: -0.44605827, y: -0.2993126}
+      - {x: -0.29376984, y: -0.2960682}
+      - {x: -0.32438183, y: -0.5}
+      - {x: 0.39622545, y: -0.5}
+      - {x: 0.33909702, y: -0.38906097}
+      - {x: 0.50080156, y: -0.2954998}
+      - {x: 0.440475, y: 0.006471634}
+      - {x: 0.3287568, y: 0.19724464}
+      - {x: 0.30841684, y: 0.46806908}
+      - {x: -0.38026047, y: 0.46806908}
+--- !u!95 &95705199850751458
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044356174451104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37f6a98cbb260a048b39130f860fd1eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114100585514862012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044356174451104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c25ed727aff76a41a43f25715738e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 150
+  speed: 175
+  spawnEnemy1: {fileID: 1689230529453474, guid: b6580aaf57b6fd94e92fdf75665dd4d6,
+    type: 2}
+  spawnEnemy2: {fileID: 1044945245228856, guid: 5e216ac2af649d247a29bad20435cd98,
+    type: 2}
+  CloseEmeny: {fileID: 0}
+  aggro: 0
+  touchPlayer: 0
+  touchWeapon: 0
+  timeCount: 0
+  aggroDistance: 5
+  OffsetEnemy1: {x: -0.5, y: 0, z: 0}
+  OffsetEnemy2: {x: 0.5, y: 0, z: 0}
 --- !u!212 &212262734887896646
 SpriteRenderer:
   m_ObjectHideFlags: 1
