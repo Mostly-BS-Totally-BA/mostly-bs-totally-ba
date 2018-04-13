@@ -28,6 +28,8 @@ public class PlantDemon : MonoBehaviour
     //private PolygonCollider2D playerColl; Getting errors because of not being used
     public float timeCount;
     public int aggroDistance;
+    public Vector3 OffsetEnemy1;
+    public Vector3 OffsetEnemy2;
 
 
     private GameManager _gm = null;
@@ -75,8 +77,8 @@ public class PlantDemon : MonoBehaviour
         {
 
             death();
-            GameObject smallSpore1 = Instantiate(spawnEnemy1, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
-            GameObject Lizard = Instantiate(spawnEnemy2, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
+            GameObject smallSpore1 = Instantiate(spawnEnemy1, transform.position + OffsetEnemy1, Quaternion.identity) as GameObject;
+            GameObject Lizard = Instantiate(spawnEnemy2, transform.position + OffsetEnemy2, Quaternion.identity) as GameObject;
             smallSpore1.SendMessage("onAggro");
             Lizard.SendMessage("onAggro");
 
