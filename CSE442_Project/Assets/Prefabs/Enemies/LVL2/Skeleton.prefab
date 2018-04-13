@@ -133,9 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
-  speed: 170
+  maxHealth: 100
+  speed: 125
   CloseEmeny: {fileID: 0}
+  damage_amount: 1
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0

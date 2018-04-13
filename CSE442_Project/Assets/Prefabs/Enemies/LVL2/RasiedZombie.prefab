@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
+  maxHealth: 50
   speed: 100
   CloseEmeny: {fileID: 0}
   aggro: 0

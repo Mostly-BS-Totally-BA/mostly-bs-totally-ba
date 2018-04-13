@@ -64,8 +64,8 @@ public class GameManager : Singleton<GameManager>
     {
         _gm = GameManager.Instance;
         _gm.livesMax = 12;
-        _gm.playerSpeedNorm = 2.25f;
-        _gm.playerAttackSpeedNorm = 1.5f;
+        _gm.playerSpeedNorm = 2.00f;
+        _gm.playerAttackSpeedNorm = 0.50f;
 		_gm.potionCount = 0;
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
@@ -139,7 +139,7 @@ public class GameManager : Singleton<GameManager>
     {
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        _gm.playerSpeedNorm += 1f;
+        _gm.playerSpeedNorm += 0.25f;
         _gm.playerSpeed = _gm.playerSpeedNorm;
         //_ui.UpdateHUDRunSpeed();
     }
@@ -149,7 +149,7 @@ public class GameManager : Singleton<GameManager>
     {
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        _gm.playerAttackSpeedNorm += 0.75f;
+        _gm.playerAttackSpeedNorm += 0.05f;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
         //_ui.UpdateHUDRunSpeed();
     }

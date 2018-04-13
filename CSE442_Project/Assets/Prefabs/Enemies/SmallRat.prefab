@@ -131,6 +131,7 @@ MonoBehaviour:
   maxHealth: 100
   speed: 85
   CloseEmeny: {fileID: 0}
+  damage_amount: 1
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0
