@@ -28,6 +28,9 @@ https://www.youtube.com/watch?v=tOTkq1Pvyuw
 Alpha Release Video:
 https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 
+Beta Release Video:
+https://www.youtube.com/watch?v=8dcB7IObpSQ
+
 Alpha Release Instructions
 =========================
 Mac
@@ -79,17 +82,17 @@ Gameplay:
 -------------------------
 * Player Functionality:
 	* The player controls a character that will be able to move, attack enemies of different types.
-	* The player will have the option to choose between using a melee or ranged attack to defeat enemies.
+	* The player will have the option to choose one of three stats  (movement speed, attack speed, or health pool, or refrain to challenge) to increase when they beat a level
 * Setting:
 	* Game is based in a dungeon or tower, with multiple levels going up and/or down.
-	* A minimum of 5 levels will exist with the game difficulty increasing for each.
+	* A minimum of 3 levels will exist with the game difficulty increasing for each.
 	* These levels will contain different enemies types / themes to prevent the game from feeling redundant. 
 * Enemies / Boss:
-	* The final level will contain the final game boss that the player needs to defeat in order to beat the game. 
-	* The levels will increase in difficulty as the player progresses, with the first level being the easiest and the final boss being the hardest. 
+	* The levels will increase in difficulty as the player progresses
+	* The enemies on each level will have different behaviors and the level bosses will have unique mechanics to make them more interesting
 * User Interface:
-	* Game opens and loads to a basic menu with options for creating a new game,  loading a saved game, and exiting the game.
-	* When the player beats the game, or if the player decides to exit the game, they will be able to do so with an option screen to take them back to the main menu.
+	* Game opens and loads to a basic menu with options for creating a new game, loading a saved game, and exiting the game.
+	* The game contains an in-game escape menu, allowing players to save and return to main menu.
 
 
 
@@ -97,14 +100,13 @@ Gameplay:
 
 Add-Ons
 =========
-* Each boss fight will have different mechanics. This is to add variety to the game so that bosses feel unique and provide a challenge for the player to overcome.
 * Ability to solve puzzles, and interact with objects in game such as opening a chest to find loot.
 * Functioning inventory system where you can see items you have picked up throughout the game, and possibly use said items.
-* Procedurally generate maps, so that every time a player starts a game it is a never before seen map, this will make memorizing the game maps nearly impossible.
 * Provide readable text on the screen that will pop up at various points. Each time it will provide more context to the story of the game so that the player can feel involved in the game world.
 * Multiple Player Classes, such as Rogue, Warrior, Wizard who have different weapon/attack functionality.
+* Implement ranged attacks for player
 * Addition of an in game map, to track where the player is and where they have/haven’t been yet.
-* save and load an existing game.
+* Addition save slots
 
 
 User Story:

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Player_Movement : MonoBehaviour {
 
-	public float speed;
+	//public float speed;
 	private Animator animator;
 	private Rigidbody2D player_rigid;
 	public PolygonCollider2D swordCollider;
@@ -16,9 +18,16 @@ public class Player_Movement : MonoBehaviour {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex;
     private GameManager _gm = null;
+	private float timer = 3.0f;
+	private bool showGUI = false;
+	private GUIStyle guiStyle = new GUIStyle();
+    public bool isPoison;
+    private float poisonCount = 1.5f;
+    private int damageTime = 0;
+    private float flashCount = .5f;
+    private int flag = 0;
+    private SpriteRenderer SpriteR;
     //public int currentHealth;
-    public int KillCount;
-    public bool hasKilled;
 
     void Start () {
 		//Get the animator for the player
@@ -31,8 +40,9 @@ public class Player_Movement : MonoBehaviour {
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
         //currentHealth = 6;
-        KillCount = 0;
-        hasKilled = false;
+
+        SpriteR = GetComponent<SpriteRenderer>();
+        isPoison = false;
 
     }
 	
@@ -43,26 +53,11 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
-            checkKills();
+            poisonOverTime();
         }
 
 	}
-    public void addKill()
-    {
-		//Add kill to kill counter
-        KillCount++;
-        hasKilled = true;
-    }
-    public void checkKills()
-    {
-		//If it has been 5 kills add 1 health to player
-        if(KillCount%5==0&&hasKilled==true)
-        {
-            _gm.LivesIncrease(1);
-            hasKilled = false;
-            //currentHealth++;
-        }
-    }
+    
     public void takeDamage(int amount)
     {   
         //_gm.LivesDecrease(amount);
@@ -78,6 +73,50 @@ public class Player_Movement : MonoBehaviour {
         Destroy(gameObject);
         //_gm.endGame();
         
+    }
+    public void flashPurple()
+    {
+        flashCount -= Time.deltaTime;
+        if(flashCount<=0&&flag==0)
+        {
+            this.SpriteR.color = new Color(.596f, .121f, .509f);
+            flag = 1;
+            flashCount = .5f;
+        }
+        if(flashCount<=0&&flag==1)
+        {
+            this.SpriteR.color = new Color(.909f, .270f, .792f);
+            flag = 0;
+            flashCount = .5f;
+        }
+        
+    }
+    public void poison(bool val)
+    {
+        isPoison = val;
+    }
+    public void poisonOverTime()
+    {
+        if (isPoison == true)
+        {
+            poisonCount -= Time.deltaTime;
+            flashPurple();
+            if (poisonCount<=0)
+            {
+                takeDamage(1);
+               
+                poisonCount = 1.5f;
+                damageTime++;
+            }
+            if(damageTime==3)
+            {
+                damageTime = 0;
+                isPoison = false;
+                this.SpriteR.color = new Color(1f, 1f, 1f);
+            }
+        }
+        
+
     }
     public void SetColliderForSprite(int spriteNum)
     {
@@ -103,7 +142,7 @@ public class Player_Movement : MonoBehaviour {
 			//moves left or right
             if (horizontal > 0.5f || horizontal < -0.5f)
             {
-                transform.Translate(new Vector3(horizontal * speed * Time.deltaTime, 0f, 0f));
+                transform.Translate(new Vector3(horizontal * _gm.playerSpeed * Time.deltaTime, 0f, 0f));
                 moving = true;
                 lastMove = new Vector2(horizontal, 0f);
             }
@@ -112,7 +151,7 @@ public class Player_Movement : MonoBehaviour {
             if (vertical > 0.5f || vertical < -0.5f)
             {
 
-                transform.Translate(new Vector3(0f, vertical * speed * Time.deltaTime, 0f));
+                transform.Translate(new Vector3(0f, vertical * _gm.playerSpeed * Time.deltaTime, 0f));
                 moving = true;
                 lastMove = new Vector2(0f, vertical);
             }
@@ -127,11 +166,21 @@ public class Player_Movement : MonoBehaviour {
                 animator.SetBool("isAttacking", true);
             }
 
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				//On attack, enables sword colliders and set attack duration
+				_gm.use_potion();
+				if (_gm.potionCount <= 0) {
+					showGUI = true;
+					StartCoroutine (Wait (timer));
+				}
+			}
+
         }
 
         if (counter > 0)
         {
-            counter = counter - Time.deltaTime;
+            counter = counter - (Time.deltaTime * _gm.playerAttackSpeed);
         }
 
         else
@@ -165,5 +214,28 @@ public class Player_Movement : MonoBehaviour {
     {
         //coll.rigidbody.isKinematic = false;
     }
+
+    public void ZeroVel()
+    {
+        player_rigid.velocity = Vector2.zero;
+    }
+
+
+	IEnumerator Wait(float timer)
+	{
+		yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
+		showGUI = false;                                     //removes text from screen
+	}
+
+	private void OnGUI()
+	{
+        if (showGUI == true)
+        {
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);
+        }//places text on screen
+	}
+
     
 }

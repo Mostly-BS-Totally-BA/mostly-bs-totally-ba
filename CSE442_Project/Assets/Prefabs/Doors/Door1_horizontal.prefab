@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1d3477a691f2d4b8422437ce00b109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opened_door: {fileID: 0}
+  overlay: []
 --- !u!212 &212663916566852244
 SpriteRenderer:
   m_ObjectHideFlags: 1

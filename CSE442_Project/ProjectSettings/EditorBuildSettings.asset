@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/MAP_Level1.unity
     guid: 9591162ba2d7a7e45976ef8b75ac018f
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/_Scenes/LVL1_to_LVL2_Transition.unity
-    guid: e418a945fd15ac3409eb85ea52cfcdb2
   - enabled: 1
     path: Assets/_Scenes/MAP_Level2.unity
-    guid: 90a9bdf0caab19149a36f8034e293190
+    guid: 5917532bbc2eb8e4c894dfc152fc4696
+  - enabled: 1
+    path: Assets/_Scenes/MAP_Level3.unity
+    guid: 36b4da4307e68bb47bda4ba03dd67113
+  - enabled: 1
+    path: Assets/_Scenes/MAP_preFinalLevel.unity
+    guid: 2ad96b1b47b920c4fb04329a6a7dd711
+  - enabled: 1
+    path: Assets/_Scenes/MAP_Level4_Final_Boss.unity
+    guid: a5812d4318ef3524d8b5c996b82e20a9

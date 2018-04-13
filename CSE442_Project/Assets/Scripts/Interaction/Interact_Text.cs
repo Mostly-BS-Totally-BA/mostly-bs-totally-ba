@@ -8,6 +8,7 @@ public class Interact_Text : MonoBehaviour
     bool showGUI = false;                           //variable that determines if text is on screen
     public string text;                             //text that is displayed, can be set in Unity
     public Player_Interact player;                  //Links script to the player sprite, can be set in Unity
+    private GUIStyle guiStyle = new GUIStyle();
 
     //activates when something enters the object's trigger collider
     void OnTriggerEnter2D(Collider2D collision)
@@ -16,7 +17,7 @@ public class Interact_Text : MonoBehaviour
             showGUI = true;
         if(gameObject.CompareTag("Door_Inter_Locked"))          //if the object this is attached to is the locked door to level2
         {
-            if (player.has_lvl1_Key == false)                   //and if the player does not have the key to proceed, alters text that is displayed
+            if (player.has_lvl1_Key == false)    //and if the player does not have the key to proceed, alters text that is displayed
             {
                 text = "You need a key...";
                 showGUI = true;
@@ -44,7 +45,9 @@ public class Interact_Text : MonoBehaviour
     {
         if (showGUI == true)                                     
         {
-            GUI.Label(new Rect(10, 10, 500, 20), text);             //places text on screen
+            guiStyle.fontSize = 20;                                            //change the font size
+            guiStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(10, 10, 500, 20), text, guiStyle);             //places text on screen
         }
     }
 }

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040968465575150}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.41, y: -14.83, z: 0.099230126}
+  m_LocalPosition: {x: -1.9921894, y: 0.02217102, z: 0.053331688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: You gained 30 gold!
+  score_increase: 30
 --- !u!212 &212382236540311352
 SpriteRenderer:
   m_ObjectHideFlags: 1

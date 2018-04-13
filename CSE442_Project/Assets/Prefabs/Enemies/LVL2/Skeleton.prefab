@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692849683798682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5781436, y: 28.294415, z: 0.25390625}
+  m_LocalPosition: {x: -14.321731, y: -1.0524101, z: 0.25390625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -133,9 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
-  speed: 160
+  maxHealth: 100
+  speed: 125
   CloseEmeny: {fileID: 0}
+  damage_amount: 1
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0

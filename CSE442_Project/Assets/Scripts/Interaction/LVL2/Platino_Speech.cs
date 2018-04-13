@@ -7,6 +7,7 @@ using UnityEngine;
 public class Platino_Speech : MonoBehaviour
 {
     public TextBoxManager textBox;                          //text box that contains monologue, set in Unity (text box must have TextBoxManager component)
+    public GameObject boss = null;
 
     //Activates when something enters the trigger collider of the object this is attached to
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +22,9 @@ public class Platino_Speech : MonoBehaviour
     //Activated by function call within TextBoxManager
     public void Disapper()
     {
+        if (gameObject.CompareTag("Platino_Boss"))
+            boss.SetActive(true);
+
         Destroy(gameObject);                                //removes Platino sprite from map
     }
 

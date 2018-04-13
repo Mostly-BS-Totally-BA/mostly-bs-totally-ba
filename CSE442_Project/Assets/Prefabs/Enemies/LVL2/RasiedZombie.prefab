@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95082129535780366}
   - component: {fileID: 60563241792659672}
   - component: {fileID: 50580635955443632}
-  - component: {fileID: 114839394482818168}
+  - component: {fileID: 114588719189138288}
   m_Layer: 0
   m_Name: RasiedZombie
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178550924585484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.05, y: -18.86, z: 0.03515625}
+  m_LocalPosition: {x: -30.733616, y: -35.451336, z: 0.03515625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,8 +54,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.61550707
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -123,7 +123,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114839394482818168
+--- !u!114 &114588719189138288
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -131,12 +131,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1178550924585484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25271fda392439f4b84aef948f629b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 52462e52ff4c1f048bb5a46e68fab3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 150
-  speed: 150
+  maxHealth: 50
+  speed: 100
   CloseEmeny: {fileID: 0}
   aggro: 0
   touchPlayer: 0

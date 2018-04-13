@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4903431113022356}
   - component: {fileID: 212543182753971440}
   - component: {fileID: 60167874426132634}
+  - component: {fileID: 114003105498231106}
   m_Layer: 0
   m_Name: Large_Safe_Open
-  m_TagString: Untagged
+  m_TagString: Chest_Open
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,6 +74,19 @@ PolygonCollider2D:
       - {x: -0.37655258, y: 0.30599976}
       - {x: -0.37815762, y: 0.25066948}
       - {x: -0.5015774, y: 0.24925613}
+--- !u!114 &114003105498231106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204394499720426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c33062f686391e4c98bcfdbb87fe19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: You gained 100 gold!
+  player: {fileID: 0}
 --- !u!212 &212543182753971440
 SpriteRenderer:
   m_ObjectHideFlags: 1

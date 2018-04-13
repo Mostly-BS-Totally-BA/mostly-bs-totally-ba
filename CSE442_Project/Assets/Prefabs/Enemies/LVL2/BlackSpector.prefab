@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95151017413328934}
   - component: {fileID: 60749936294913692}
   - component: {fileID: 50273970619700100}
-  - component: {fileID: 114147322216272466}
+  - component: {fileID: 114631893182660696}
   m_Layer: 0
   m_Name: BlackSpector
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645160585642672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.31, y: -11.37, z: 0.03515625}
+  m_LocalPosition: {x: -5.7905407, y: 34.887634, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,7 +120,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114147322216272466
+--- !u!114 &114631893182660696
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,17 +128,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1645160585642672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25271fda392439f4b84aef948f629b4c, type: 3}
+  m_Script: {fileID: 11500000, guid: df77b5bf29ea9564d8c38e6becb6a55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 1378830262858694, guid: aa3d0220b952c2343a72cff951e3811f, type: 2}
   currentHealth: 0
   maxHealth: 150
-  speed: 150
+  speed: 90
   CloseEmeny: {fileID: 0}
+  Waypoints: []
+  WaypointFlag: 
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0
   timeCount: 0
+  OffsetPosition: {x: 0.1, y: 0, z: 0}
 --- !u!212 &212837036931356056
 SpriteRenderer:
   m_ObjectHideFlags: 1
