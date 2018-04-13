@@ -20,26 +20,83 @@ GameObject:
   m_Component:
   - component: {fileID: 4555239544556610}
   - component: {fileID: 212266439468386444}
+  - component: {fileID: 114229841788268876}
+  - component: {fileID: 60040940651162700}
   m_Layer: 0
   m_Name: Dead Tree
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4555239544556610
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254606899300568}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: -26.55, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.888721, y: 9.05579, z: 0.03125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60040940651162700
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254606899300568}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.32014084, y: -0.015483856}
+      - {x: -0.17945862, y: -0.46565628}
+      - {x: 0.24814606, y: -0.45420837}
+      - {x: 0.27104187, y: -0.45420837}
+      - {x: 0.28248978, y: -0.24814606}
+      - {x: 0.39432907, y: -0.024816513}
+      - {x: 0.35117722, y: 0.3282814}
+      - {x: -0.35117722, y: 0.3282814}
+--- !u!114 &114229841788268876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254606899300568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8fdb6b55ad6354681cbf7381a54599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  summon: {fileID: 1647082913859910, guid: 14f9ddf7555aa934dab23eedeb62c44e, type: 2}
+  summonCir: {fileID: 1001188002090380, guid: cd5144cfcc68ac540bcd151bb7b7e0b7, type: 2}
+  Door: {fileID: 0}
+  currentHealth: 0
+  maxHealth: 200
+  speed: 0
+  CloseEmeny: {fileID: 0}
+  aggro: 0
+  touchPlayer: 0
+  touchWeapon: 0
+  timeCount: 0
+  OffsetPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &212266439468386444
 SpriteRenderer:
   m_ObjectHideFlags: 1

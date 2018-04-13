@@ -22,6 +22,8 @@ public class Trees : MonoBehaviour
     private float red;
     private float green;
     private float blue;
+    private float snapX;
+    private float snapY;
 
     public bool aggro;
 
@@ -42,11 +44,14 @@ public class Trees : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Player = GameObject.FindWithTag("Player");
 
-        //polygonCol2D = GetComponent<PolygonCollider2D>();
+        
         rb = GetComponent<Rigidbody2D>();
-        //Player = GameObject.FindWithTag("Player");
 
-        //playerColl = GetComponent<PolygonCollider2D>();
+
+        snapX = Player.transform.position.x;
+        snapY = Player.transform.position.y;
+
+
         timeCount = 1f;
         SpriteR = GetComponent<SpriteRenderer>();
         red = 255f;
@@ -63,6 +68,7 @@ public class Trees : MonoBehaviour
     {
         if (_gm.gameState == GameState.Game)
         {
+            
             MoveEnemy();
             if (attackS == true)
             {
@@ -133,7 +139,7 @@ public class Trees : MonoBehaviour
         blue = 255;
         green = 255;
     }
-
+    
     public void defaultColor()
     {
         this.SpriteR.color = new Color(1, 1, 1);
@@ -179,6 +185,7 @@ public class Trees : MonoBehaviour
             if (countAtt == 2 && countAtt != 3)
             {
                 Player.SendMessage("takeDamage", 1);
+                
                 //_gm.LivesDecrease(1);
             }
         }
@@ -203,79 +210,81 @@ public class Trees : MonoBehaviour
 
         if (aggro == false && target != null)
         {
-            if (Door == null && Vector2.Distance(transform.position, target.position) <= 5.5)
+            if (Door == null && Vector2.Distance(transform.position, target.position) <= 3.5)
             {
                 aggro = true;
             }
-            else if (Door != null && Door.active == false)
-            {
-                aggro = true;
-                if (CloseEmeny != null)
-                {
-                    CloseEmeny.SendMessage("onAggro");
-                }
-
-
-            }
+            
         }
-
-
-
-        if (aggro == true && target != null)
+        if(aggro==true && target != null)
         {
+            
             timeCount -= Time.deltaTime;
-            //Debug.Log("time: " + timeCount);
             if (timeCount <= 0)
             {
-
-                blue = blue - 85;
-                red = red - 85;
-                red = red / 255;
-                blue = blue / 255;
-                green = green / 255;
-                this.SpriteR.color = new Color(red, green, blue);
-                red = red * 255;
-                blue = blue * 255;
-                green = green * 255;
-
-                timeCount = 1f;
+                
                 countAtt++;
+                timeCount = .5f;
+                if (countAtt == 1)
+                {
+                    float nowX = Player.transform.position.x;
+                    float nowY = Player.transform.position.y;
+                    float resultX = snapX - nowX;
+                    float resultY = snapY - nowY;
 
+                    if (resultY==0)
+                    {
+                        if (resultX < 0)
+                        {
+                            OffsetPosition = new Vector3(resultX + 3f, resultY, 0);
+                        }
+                        else if (resultX > 0)
+                        {
+                            OffsetPosition = new Vector3(resultX - 3f, resultY, 0);
+                        }
+                        else
+                        {
+                            OffsetPosition = new Vector3(resultX, resultY, 0);
+                        }
+
+                    }
+                    if (resultX == 0)
+                    {
+                        if (resultY < 0)
+                        {
+                            OffsetPosition = new Vector3(resultX, resultY+3f, 0);
+                        }
+                        else if (resultY > 0)
+                        {
+                            OffsetPosition = new Vector3(resultX , resultY-3f, 0);
+                        }
+                        else
+                        {
+                            OffsetPosition = new Vector3(resultX, resultY, 0);
+                        }
+
+                    }
+                    sumCir=Instantiate(summon, target.position + OffsetPosition, Quaternion.identity)as GameObject;
+                    Destroy(sumCir, 1.5f);
+                }
+                if (countAtt == 3)
+                {
+                    GameObject trap=Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity) as GameObject;
+                    
+                    countAtt = 0;
+                    snapX = Player.transform.position.x;
+                    snapY = Player.transform.position.y;
+                    Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity);
+                    //Instantiate(summon, Player.transform + OffsetPosition, Quaternion.identity);
+                }
             }
-            if (countAtt == 2)
-            {
-
-                this.SpriteR.color = new Color(.043f, .878f, .85f);
-
-            }
-            if (countAtt == 3)
-            {
-                sumCir = Instantiate(summonCir, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
-                this.SpriteR.color = new Color(1, 1, 1);
-                Destroy(sumCir, 1);
-            }
-            if (countAtt == 4)
-            {
-                this.SpriteR.color = new Color(.878f, .349f, .043f);
-
-            }
-            if (countAtt == 5)
-            {
-                //this.SpriteR.color = new Color(.878f, .349f, .043f);
-                //Player.SendMessage("takeDamage", 10);
-                GameObject zomb = Instantiate(summon, transform.position + OffsetPosition, Quaternion.identity) as GameObject;
-                //GameObject sumCir = Instantiate(summonCir, OffsetPosition, Quaternion.identity) as GameObject;
-                zomb.SendMessage("onAggro");
-                Destroy(sumCir);
-                this.SpriteR.color = new Color(1, 1, 1);
-                blue = 255;
-                green = 255;
-                countAtt = 0;
-            }
+            
 
 
-
-
+        }
+        if(target != null&&Vector2.Distance(transform.position, target.position) >= 5.5)
+        {
+            aggro = false;
         }
     }
 }
