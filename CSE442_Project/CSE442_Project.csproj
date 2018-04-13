@@ -363,6 +363,13 @@
     <Compile Include="Assets\Scripts\Enemies\LVL2\Necromancer.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\SatanBall.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\Zombie.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\DarkGas.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\Lizard.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\Small Spore.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\Trees.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\TreeTrap.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\TwoHeadPlant.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\Vines.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\CurrentEnding.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />

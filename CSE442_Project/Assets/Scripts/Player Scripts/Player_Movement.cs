@@ -21,6 +21,12 @@ public class Player_Movement : MonoBehaviour {
 	private float timer = 3.0f;
 	private bool showGUI = false;
 	private GUIStyle guiStyle = new GUIStyle();
+    public bool isPoison;
+    private float poisonCount = 1.5f;
+    private int damageTime = 0;
+    private float flashCount = .5f;
+    private int flag = 0;
+    private SpriteRenderer SpriteR;
     //public int currentHealth;
 
     void Start () {
@@ -35,6 +41,9 @@ public class Player_Movement : MonoBehaviour {
         _gm = GameManager.Instance;
         //currentHealth = 6;
 
+        SpriteR = GetComponent<SpriteRenderer>();
+        isPoison = false;
+
     }
 	
 	// Update is called once per frame
@@ -44,6 +53,7 @@ public class Player_Movement : MonoBehaviour {
         if (_gm.gameState == GameState.Game)
         {
             MovePlayer();
+            poisonOverTime();
         }
 
 	}
@@ -63,6 +73,50 @@ public class Player_Movement : MonoBehaviour {
         Destroy(gameObject);
         //_gm.endGame();
         
+    }
+    public void flashPurple()
+    {
+        flashCount -= Time.deltaTime;
+        if(flashCount<=0&&flag==0)
+        {
+            this.SpriteR.color = new Color(.596f, .121f, .509f);
+            flag = 1;
+            flashCount = .5f;
+        }
+        if(flashCount<=0&&flag==1)
+        {
+            this.SpriteR.color = new Color(.909f, .270f, .792f);
+            flag = 0;
+            flashCount = .5f;
+        }
+        
+    }
+    public void poison(bool val)
+    {
+        isPoison = val;
+    }
+    public void poisonOverTime()
+    {
+        if (isPoison == true)
+        {
+            poisonCount -= Time.deltaTime;
+            flashPurple();
+            if (poisonCount<=0)
+            {
+                takeDamage(1);
+               
+                poisonCount = 1.5f;
+                damageTime++;
+            }
+            if(damageTime==3)
+            {
+                damageTime = 0;
+                isPoison = false;
+                this.SpriteR.color = new Color(1f, 1f, 1f);
+            }
+        }
+        
+
     }
     public void SetColliderForSprite(int spriteNum)
     {
