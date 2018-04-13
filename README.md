@@ -29,7 +29,7 @@ Alpha Release Video:
 https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 
 Beta Release Video:
-https://www.youtube.com/watch?v=8dcB7IObpSQ&t=3s
+https://www.youtube.com/watch?v=8dcB7IObpSQ
 
 Alpha Release Instructions
 =========================
