@@ -37157,6 +37157,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114352114680855170, guid: 441b6b33a06494a319ec2172b9f50370,
+        type: 2}
+      propertyPath: m_text
+      value: FORGE AHEAD
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 441b6b33a06494a319ec2172b9f50370, type: 2}
   m_IsPrefabParent: 0
