@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class LVL2Boss : MonoBehaviour
 {
-    public GameObject projectile;
+    
+	public GameObject summon;
+	public GameObject summonCir;
+	private GameObject sumCir;
+	public GameObject projectile;
     public float currentHealth;
     public float maxHealth;
     public float speed;
@@ -230,6 +234,7 @@ public class LVL2Boss : MonoBehaviour
         if (aggro == true && target != null)
         {
             bulletTime -= Time.deltaTime;
+			timeCount -= Time.deltaTime;
             if(bulletTime<=0)
             {
                 Invoke("bulletHell",1);
@@ -287,9 +292,37 @@ public class LVL2Boss : MonoBehaviour
                     }
                 }
             }
-
-
-
+			if (timeCount <= 0) {
+				timeCount = 1f;
+				countAtt++;
+			}
+			if(countAtt==8)
+			{
+				sumCir = Instantiate(summonCir, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				this.SpriteR.color = new Color(1, 1, 1);
+				Destroy(sumCir, 1);
+			}
+			if (countAtt == 10)
+			{
+				//this.SpriteR.color = new Color(.878f, .349f, .043f);
+				//Player.SendMessage("takeDamage", 10);
+				GameObject zomb = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				GameObject zomb1 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				GameObject zomb2 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				GameObject zomb3 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				GameObject zomb4 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				//GameObject sumCir = Instantiate(summonCir, OffsetPosition, Quaternion.identity) as GameObject;
+				zomb.SendMessage("onAggro");
+				zomb1.SendMessage("onAggro");
+				zomb2.SendMessage("onAggro");
+				zomb3.SendMessage("onAggro");
+				zomb4.SendMessage("onAggro");
+				Destroy(sumCir);
+				this.SpriteR.color = new Color(1, 1, 1);
+				blue = 255;
+				green = 255;
+				countAtt = 0;
+			}
 
             Vector2 direction = Waypoints[pick].transform.position - transform.position;
             Vector2 newvector = direction.normalized * speed * Time.deltaTime;
