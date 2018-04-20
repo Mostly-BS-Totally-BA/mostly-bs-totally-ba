@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
 public delegate void OnStateChangeHandler();
@@ -34,6 +36,12 @@ public class GameManager : Singleton<GameManager>
     public float playerAttackSpeed { get; private set; }
 
     private float timeCount = 2.0f;
+
+	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
+	public float bgmVolume;
+	public Slider bgmVolumeSlider;
+
+
 
     //public UIManager UIManager;
     private UIManager _ui;
@@ -274,5 +282,12 @@ public class GameManager : Singleton<GameManager>
             _ui.GameOver();
         }
     }
+
+
+	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
+	public void bgmSetting() {
+		//Volumn Start at 5. Max is 10, Min is 0
+		bgmVolume = bgmVolumeSlider.value;
+	}
 
 }
