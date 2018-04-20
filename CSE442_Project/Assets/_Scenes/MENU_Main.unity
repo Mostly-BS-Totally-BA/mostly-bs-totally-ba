@@ -123,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109009076}
   - component: {fileID: 109009077}
+  - component: {fileID: 109009078}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -193,14 +194,27 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2004469820}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &109009078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 109009075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29437296f18f54cccb4e8d15776cf8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmVolume: 5
+  bgmVolumeSlider: {fileID: 109009077}
 --- !u!1 &113345142
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,11 +348,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -4652,6 +4666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29437296f18f54cccb4e8d15776cf8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgmVolume: 0
+  bgmVolumeSlider: {fileID: 0}
 --- !u!4 &1783168685
 Transform:
   m_ObjectHideFlags: 0
@@ -5468,11 +5484,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
