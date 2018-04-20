@@ -28,6 +28,7 @@ public class Player_Movement : MonoBehaviour {
     private int flag = 0;
     private SpriteRenderer SpriteR;
     //public int currentHealth;
+    public AudioSource PlayerDied;
 
     void Start () {
 		//Get the animator for the player
@@ -71,8 +72,9 @@ public class Player_Movement : MonoBehaviour {
     public void death()
     {
         Destroy(gameObject);
+        PlayerDied.Play();
         //_gm.endGame();
-        
+
     }
     public void flashPurple()
     {
