@@ -25,7 +25,7 @@ public class Puzzle_Lvl2 : MonoBehaviour
         if (collision.CompareTag("Puzzle_Interact"))                                                    //if the collider was on a puzzle pressure plate
         {
             square = collision.gameObject;                                                              //sets square to pressure plate object being collided with
-
+            AudioManager.Instance.PlayAudio(AudioName.Plate);
             if (square.name == "Floor_yellow" && pressed_yellow == false)                               //if it is the yellow plate and the yellow plate hasn't been pressed
             {
                 pressed_yellow = true;  

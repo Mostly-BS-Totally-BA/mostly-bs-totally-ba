@@ -7,7 +7,7 @@ public class Unlock_Door_lvl1 : MonoBehaviour
 {
     public GameObject unlocked_door;                //variable for sprite of unlocked door, set in Unity
     public Player_Interact player;                  //links to the player for access to variables within Player_Interact script
-
+ 
     //Called via Player_Interact script when player presses 'e' on locked door
     public void RunInteraction()
     {

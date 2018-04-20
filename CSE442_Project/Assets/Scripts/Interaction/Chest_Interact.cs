@@ -12,6 +12,7 @@ public class Chest_Interact : MonoBehaviour
     //called by Player_Interact script
     public void RunInteraction()
     {
+        AudioManager.Instance.PlayAudio(AudioName.Chest);
         gameObject.SetActive(false);            //deactivates object this script is attached to
         opened_chest.SetActive(true);           //activates opened chest object
 

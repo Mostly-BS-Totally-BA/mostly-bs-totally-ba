@@ -9,6 +9,7 @@ public class Door_Interact : MonoBehaviour
     public GameObject[] overlay;                                //array of overlays that cover the room this door reveals
     int number_of_Overlays;                                     //number of overlays
 
+
     //Called via Player_Interact script when player presses 'e' on closed door
     public void RunInteraction()
     {
@@ -19,7 +20,9 @@ public class Door_Interact : MonoBehaviour
 
         gameObject.SetActive(false);                            //deactivates door this is attached to
         opened_door.SetActive(true);                            //activates the open door sprite
+        AudioManager.Instance.PlayAudio(AudioManager.Instance.Door);
         Destroy(gameObject.GetComponent("Interact_Text"));      //destroys Interact_Text component on open door, so text no longer appears on screen
+
     }
 }
  
