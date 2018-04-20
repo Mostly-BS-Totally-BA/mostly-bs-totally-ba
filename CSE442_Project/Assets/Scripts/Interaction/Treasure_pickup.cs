@@ -17,7 +17,7 @@ public class Treasure_pickup : MonoBehaviour
     //called by Player_Interact script when player enters collider of object tagged as Treasure_Inter
     public void RunInteraction()
     {
-        AudioManager.Instance.PlayAudio(AudioName.Chest);
+        AudioManager.Instance.PlayAudio(AudioName.Treasure);
         showGUI = true;                                         //display text on screen
         StartCoroutine(Wait(timer));                            //calls timer function
     }
