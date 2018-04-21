@@ -37,6 +37,7 @@ public class Platino_Candles : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction") && candle)               //if player presses interaction key ('e') and they are in the trigger collider of a candle
         {
+            AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
             previous_pulled = number_pulled;                            //saves number pulled
             number_pulled++;                                            //increments number of candles pulled
             showGUI = true;                                             //activates on screen text
@@ -45,6 +46,9 @@ public class Platino_Candles : MonoBehaviour
 
         if(number_pulled == 3)                                          //if all three have been pulled, removes walls and black overlays blocking secret room
         {
+         AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
+
+
             for (int i = 0; i < walls.GetLength(0); i++)
                 walls[i].SetActive(false);
             for (int i = 0; i < overlays.GetLength(0); i++)
@@ -56,10 +60,10 @@ public class Platino_Candles : MonoBehaviour
     private void OnGUI()
     {
         if (showGUI == true && number_pulled == 1)                                  //If statements print different message to screen based on the number
-        {                                                                           //of candles pulled thus far    
+        {                                                                           //of candles pulled thus far
             guiStyle.fontSize = 20;                                                //change the font size
             guiStyle.normal.textColor = Color.white;
-            GUI.Label(new Rect(10, 10, 300, 20), "A tumbler turns...", guiStyle); 
+            GUI.Label(new Rect(10, 10, 300, 20), "A tumbler turns...", guiStyle);
         }
         else if (showGUI == true && number_pulled == 2)
         {

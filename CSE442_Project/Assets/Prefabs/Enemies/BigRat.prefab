@@ -129,7 +129,8 @@ MonoBehaviour:
   currentHealth: 150
   maxHealth: 100
   speed: 100
-  smallrat: {fileID: 0}
+  CloseEmeny: {fileID: 0}
+  damage_amount: 2
   aggro: 0
   touchPlayer: 0
   touchWeapon: 0

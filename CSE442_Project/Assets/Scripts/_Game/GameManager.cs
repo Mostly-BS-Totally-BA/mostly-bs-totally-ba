@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
 public delegate void OnStateChangeHandler();
@@ -35,6 +37,12 @@ public class GameManager : Singleton<GameManager>
     public float playerAttackSpeed { get; private set; }
 
     private float timeCount = 2.0f;
+
+	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
+	public float bgmVolume;
+	public Slider bgmVolumeSlider;
+
+
 
     //public UIManager UIManager;
     private UIManager _ui;
@@ -74,8 +82,8 @@ public class GameManager : Singleton<GameManager>
     {
         _gm = GameManager.Instance;
         _gm.livesMax = 12;
-        _gm.playerSpeedNorm = 2.25f;
-        _gm.playerAttackSpeedNorm = 1.5f;
+        _gm.playerSpeedNorm = 2.00f;
+        _gm.playerAttackSpeedNorm = 0.50f;
 		_gm.potionCount = 0;
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
@@ -149,7 +157,7 @@ public class GameManager : Singleton<GameManager>
     {
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        _gm.playerSpeedNorm += 1f;
+        _gm.playerSpeedNorm += 0.25f;
         _gm.playerSpeed = _gm.playerSpeedNorm;
         //_ui.UpdateHUDRunSpeed();
     }
@@ -159,7 +167,7 @@ public class GameManager : Singleton<GameManager>
     {
         //_ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm = GameManager.Instance;
-        _gm.playerAttackSpeedNorm += 0.75f;
+        _gm.playerAttackSpeedNorm += 0.05f;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
         //_ui.UpdateHUDRunSpeed();
     }
@@ -284,5 +292,12 @@ public class GameManager : Singleton<GameManager>
             _ui.GameOver();
         }
     }
+
+
+	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
+	public void bgmSetting() {
+		//Volumn Start at 5. Max is 10, Min is 0
+		bgmVolume = bgmVolumeSlider.value;
+	}
 
 }

@@ -17,6 +17,7 @@ public class Enemy_movement : MonoBehaviour {
     private float red;
     private float green;
     private float blue;
+	public int damage_amount;
     //private Color mColor; Getting errors because of not being used
     public bool aggro;
     //private PolygonCollider2D polygonCol2D; Getting errors because of not being used
@@ -169,7 +170,7 @@ public class Enemy_movement : MonoBehaviour {
             countAtt++;
             if(countAtt==2&&countAtt!=3)
             {
-                Player.SendMessage("takeDamage", 1);
+				Player.SendMessage("takeDamage", damage_amount);
                 //_gm.LivesDecrease(1);
             }
         }
