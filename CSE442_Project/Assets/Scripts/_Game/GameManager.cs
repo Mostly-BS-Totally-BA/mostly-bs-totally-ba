@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager>
     public GameState gameState { get; private set; }
     protected GameManager() { }
 
+    private string gameBuild="0.1.0";
     public int Level { get; private set; }
     public int livesMax { get; private set; }
     public int LivesCount { get; private set; }
@@ -47,6 +48,15 @@ public class GameManager : Singleton<GameManager>
     private UIManager _ui;
     private MainMenu _mm;
     private Player_Movement _pm;
+
+    //Changes the current Game State
+    public string GetGameBuild()
+    {
+        _gm = GameManager.Instance;
+        Debug.Log("GMB: " + gameBuild);
+        Debug.Log("ggmb: " + _gm.gameBuild);
+        return _gm.gameBuild;
+    }
 
     //Changes the current Game State
     public void SetGameState(GameState gameState)
