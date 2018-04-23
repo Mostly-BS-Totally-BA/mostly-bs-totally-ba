@@ -18,6 +18,7 @@ public class Player_Movement : MonoBehaviour {
     private PolygonCollider2D[] colliders;
     private int currentColliderIndex;
     private GameManager _gm = null;
+    private AudioManager _am = null;
 	private float timer = 3.0f;
 	private bool showGUI = false;
 	private GUIStyle guiStyle = new GUIStyle();
@@ -39,6 +40,7 @@ public class Player_Movement : MonoBehaviour {
 		//Get swords collider object
 		swordCollider.GetComponent<PolygonCollider2D> ();
         _gm = GameManager.Instance;
+        _am = AudioManager.Instance;
         //currentHealth = 6;
 
         SpriteR = GetComponent<SpriteRenderer>();
@@ -164,6 +166,7 @@ public class Player_Movement : MonoBehaviour {
                 isAttacking = true;
                 player_rigid.velocity = Vector2.zero;
                 animator.SetBool("isAttacking", true);
+                AudioManager.Instance.PlayAudio(AudioName.PlayerAttack);
             }
 
 			if (Input.GetKeyDown(KeyCode.Q))

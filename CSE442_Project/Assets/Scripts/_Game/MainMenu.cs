@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameManager GameManager;
     private GameManager _gm;
+    private MusicManager _mmgr;
     [SerializeField]
     private GameObject mCanvas;
     [SerializeField]
@@ -29,8 +30,15 @@ public class MainMenu : MonoBehaviour
         _gm.SetGameState(GameState.MainMenu);
     }
 
-    //Linked to button to start new game
-    public void NewGame()
+	private void Start()
+	{
+        _mmgr = MusicManager.Instance;
+        _mmgr.StopAudio();
+        MusicManager.Instance.PlayAudio(MusicName.MM);
+	}
+
+	//Linked to button to start new game
+	public void NewGame()
     {
         Debug.Log("New Game");
         _gm.StartNewGame();

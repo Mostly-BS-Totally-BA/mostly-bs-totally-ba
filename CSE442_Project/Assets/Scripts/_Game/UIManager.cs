@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     [SerializeField]
     private Text scoreText;
     [SerializeField]
+    private Text potText;
+    [SerializeField]
     private GameObject runImg;
     [SerializeField]
     private GameObject attackImg;
@@ -36,6 +38,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     private GameManager _gm = null;
     private UIManager _ui;
+    private Volume _vol;
 
     //Grabs GameManager instance and UIManager component
     void Awake()
@@ -47,9 +50,11 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Refresh HUD
     private void Start()
     {
+        //_vol = GameObject.Find("OptionsMenu").GetComponent<Volume>();
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.UpdateLives();
         _ui.UpdateScore();
+        _ui.UpdateHPPots();
         _ui.UpdateHUDAttackSpeed();
         _ui.UpdateHUDRunSpeed();
     }
@@ -69,6 +74,14 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.scoreText.text = "Score: " + _gm.Score;
+    }
+
+
+    //Update text to match current Score value
+    public void UpdateHPPots()
+    {
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _ui.potText.text = "" + _gm.potionCount;
     }
 
     //Update text to match current Score value
@@ -98,8 +111,11 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Loads pause menu
     public void ShowEscMenu()
     {
+        
         //Debug.Log("Show Esc");
         activateEscMenu("MainMenu");
+        //_vol = GameObject.Find("OptionsMenu").GetComponent<Volume>();
+        //_vol.SetSliders();
     }
 
     //Hides pause menu

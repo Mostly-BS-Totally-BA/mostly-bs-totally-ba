@@ -37,14 +37,10 @@ public class GameManager : Singleton<GameManager>
 
     private float timeCount = 2.0f;
 
-	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
-	public float bgmVolume;
-	public Slider bgmVolumeSlider;
-
-
 
     //public UIManager UIManager;
     private UIManager _ui;
+    private MusicManager _mmgr;
     private MainMenu _mm;
     private Player_Movement _pm;
 
@@ -56,6 +52,10 @@ public class GameManager : Singleton<GameManager>
         {
             OnStateChange();
         }
+    }
+
+    void Start(){
+        _mmgr = MusicManager.Instance;
     }
 
     //Repeated checks of Escape being called. Also checks if player dead or game over
@@ -108,6 +108,23 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("SL1: " + _gm.gameState);
         SceneManager.LoadScene(_gm.Level);
         Debug.Log("SL2: " + _gm.gameState);
+
+        _mmgr.StopAudio();
+        switch (_gm.Level)
+        {
+            case 1:
+                MusicManager.Instance.PlayAudio(MusicName.L1);
+                break;
+            case 2:
+                MusicManager.Instance.PlayAudio(MusicName.L2);
+                break;
+            case 3:
+                MusicManager.Instance.PlayAudio(MusicName.L3);
+                break;
+            case 4:
+                MusicManager.Instance.PlayAudio(MusicName.L4);
+                break;
+        }
 /*        if (_gm.Level > 1)
         {
             Debug.Log("StartLevel");
@@ -175,11 +192,13 @@ public class GameManager : Singleton<GameManager>
     public void LivesDecrease(int lives)
     {
         int newLives = _gm.LivesCount - lives;
+
         if (newLives <= 0)
         {
             newLives = 0;
             _gm.KillPlayer();
         }
+        AudioManager.Instance.PlayAudio(AudioName.PlayerDMG);
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.LivesCount = newLives;
         _ui.UpdateLives();
@@ -204,13 +223,17 @@ public class GameManager : Singleton<GameManager>
 	public void pickup_potion()
 	{
 		_gm.potionCount++;
+        _ui.UpdateHPPots();
+        AudioManager.Instance.PlayAudio(AudioName.PotionGet);
 	}
 
 	public void use_potion()
 	{
 		if (_gm.potionCount > 0) {
 			_gm.potionCount--;
+            _ui.UpdateHPPots();
 			_gm.LivesIncrease (4);
+            AudioManager.Instance.PlayAudio(AudioName.PotionDrink);
 			Debug.Log ("Potion Count: " + _gm.potionCount);
 		} 
 		else {
@@ -262,6 +285,7 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.PlayerDead)
         {
+            _mmgr.StopAudio();
             _gm.timeCount -= Time.deltaTime;
             if (_gm.timeCount <= 0)
             {
@@ -278,16 +302,10 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.GameOver)
         {
+            _mmgr.StopAudio();
+            MusicManager.Instance.PlayAudio(MusicName.End);
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _ui.GameOver();
         }
     }
-
-
-	//Collaboration, Volume Control #76, Meng Chun Hsieh mengchun@buffalo.edu
-	public void bgmSetting() {
-		//Volumn Start at 5. Max is 10, Min is 0
-		bgmVolume = bgmVolumeSlider.value;
-	}
-
 }

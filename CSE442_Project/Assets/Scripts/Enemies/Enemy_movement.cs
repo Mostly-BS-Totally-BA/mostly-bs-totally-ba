@@ -28,6 +28,7 @@ public class Enemy_movement : MonoBehaviour {
 
 
     private GameManager _gm = null;
+    private AudioManager _am = null;
 
     // Use this for initialization
     void Start () {
@@ -46,6 +47,7 @@ public class Enemy_movement : MonoBehaviour {
         green = 255f;
         //mColor = new Color(red, green, blue);
         _gm = GameManager.Instance;
+        _am = AudioManager.Instance;
         attackS = false;
         countAtt = 0;
     }
@@ -77,7 +79,7 @@ public class Enemy_movement : MonoBehaviour {
         _gm = GameManager.Instance;
         _gm.UpdateScore(10);
         //_gm.LivesDecrease(1);
-        Player.SendMessage("addKill");
+        //Player.SendMessage("addKill");
         Destroy(gameObject);
         
     }
