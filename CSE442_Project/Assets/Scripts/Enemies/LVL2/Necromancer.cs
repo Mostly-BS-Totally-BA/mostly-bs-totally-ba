@@ -24,7 +24,7 @@ public class Necromancer : MonoBehaviour
     private float blue;
     
     public bool aggro;
-    
+    public bool triggerAggro;
     public bool touchPlayer;
     public bool touchWeapon;
     
@@ -88,6 +88,27 @@ public class Necromancer : MonoBehaviour
         Player.SendMessage("addKill");
         Destroy(gameObject);
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            triggerAggro = true;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            triggerAggro = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            triggerAggro = false;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D coll)
@@ -203,11 +224,11 @@ public class Necromancer : MonoBehaviour
 
         if (aggro == false && target != null)
         {
-            if(Door==null&& Vector2.Distance(transform.position, target.position) <= 5.5)
+            if (Door == null && Vector2.Distance(transform.position, target.position) <= 5.5 && triggerAggro == true)
             {
                 aggro = true;
             }
-            else if (Door!=null &&Door.active==false)
+            else if (Door != null && Door.active == false && triggerAggro == true)
             {
                 aggro = true;
                 if (CloseEmeny != null)
@@ -271,10 +292,10 @@ public class Necromancer : MonoBehaviour
                 green = 255;
                 countAtt = 0;
             }
-
-
-
-
+            if(triggerAggro==false)
+            {
+                aggro = false;
+            }
         }
     }
 }
