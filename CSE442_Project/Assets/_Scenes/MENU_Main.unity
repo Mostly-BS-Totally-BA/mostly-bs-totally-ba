@@ -684,7 +684,7 @@ MonoBehaviour:
   Candles: {fileID: 8300000, guid: ebd99f68a94430f4f945a08b1837804e, type: 3}
   Treasure: {fileID: 8300000, guid: 91cd745b3764d07438aff8817d439026, type: 3}
   Potion: {fileID: 8300000, guid: ddcbda9bb1ac94a30af964d98cab701e, type: 3}
-  PlayerDMG: {fileID: 8300000, guid: 7c574322a42d44a918bba9c2603da536, type: 3}
+  PlayerDMG: {fileID: 8300000, guid: d36f84f150df341fdb1a03df232a655d, type: 3}
   PlayerDeath: {fileID: 8300000, guid: 94450902cd9ce48f3be989bc0b372f6c, type: 3}
   PlayerAttack: {fileID: 8300000, guid: 0c3f9de78783249acb6689950bf23fcc, type: 3}
 --- !u!4 &270611818
