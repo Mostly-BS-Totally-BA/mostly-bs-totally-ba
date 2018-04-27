@@ -166,7 +166,7 @@ public class Player_Movement : MonoBehaviour {
                 isAttacking = true;
                 player_rigid.velocity = Vector2.zero;
                 animator.SetBool("isAttacking", true);
-                AudioManager.Instance.PlayAudio(AudioName.PlayerAttack);
+
             }
 
 			if (Input.GetKeyDown(KeyCode.Q))

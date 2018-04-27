@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interaction/Potion_Pickup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player Scripts/PlayerAttack.cs">
     <Files>
-      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="289" Column="36" />
-      <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="14" Column="5" />
+      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="57" Column="18" />
+      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="52" Column="6" />
+      <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="33" Column="22" />
       <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="15" Column="36" />
-      <File FileName="Assets/Scripts/_Game/Volume.cs" Line="42" Column="47" />
+      <File FileName="Assets/Scripts/_Game/Volume.cs" Line="38" Column="40" />
       <File FileName="Assets/Scripts/Interaction/Door_Interact.cs" Line="16" Column="51" />
       <File FileName="Assets/Scripts/Interaction/Platino_Candles.cs" Line="40" Column="13" />
       <File FileName="Assets/Scripts/Interaction/Treasure_pickup.cs" Line="20" Column="50" />
@@ -12,11 +13,11 @@
       <File FileName="Assets/Scripts/Enemies/Enemy_movement.cs" Line="49" Column="36" />
       <File FileName="Assets/Scripts/Interaction/Player_Interact.cs" Line="22" Column="10" />
       <File FileName="Assets/Scripts/Interaction/lvl1_Puzzle_Interactions.cs" Line="55" Column="17" />
-      <File FileName="Assets/Scripts/_Game/AudioManager.cs" Line="74" Column="38" />
-      <File FileName="Assets/Scripts/_Game/MusicManager.cs" Line="34" Column="11" />
-      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="97" Column="1" />
-      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="168" Column="54" />
-      <File FileName="Assets/Scripts/Interaction/Potion_Pickup.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/_Game/AudioManager.cs" Line="73" Column="45" />
+      <File FileName="Assets/Scripts/_Game/MusicManager.cs" Line="48" Column="26" />
+      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="169" Column="17" />
+      <File FileName="Assets/Scripts/Interaction/Potion_Pickup.cs" Line="19" Column="50" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerAttack.cs" Line="24" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />
