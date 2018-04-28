@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 270611818}
   - component: {fileID: 270611817}
   - component: {fileID: 270611819}
+  - component: {fileID: 270611820}
   m_Layer: 0
   m_Name: audioManager
   m_TagString: Untagged
@@ -551,6 +552,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3336ed2d5263345dca373ddd9200bf4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Door: {fileID: 8300000, guid: 27ff1df628bc96b4197573ecf5a17c3c, type: 3}
+  Puzzle: {fileID: 8300000, guid: 5c45f87638d6c0a42a959c34cf672951, type: 3}
+  Plate: {fileID: 8300000, guid: 772430529c2664240ac6634fc534bf89, type: 3}
+  Key: {fileID: 8300000, guid: 772430529c2664240ac6634fc534bf89, type: 3}
+  Chest: {fileID: 8300000, guid: 27ff1df628bc96b4197573ecf5a17c3c, type: 3}
+  Book: {fileID: 8300000, guid: 9216ec886a10519489a2eca391d11e98, type: 3}
+  Candles: {fileID: 8300000, guid: ebd99f68a94430f4f945a08b1837804e, type: 3}
+  Treasure: {fileID: 8300000, guid: df7db43ba9718904db8d1494f5cf47d1, type: 3}
+  Potion: {fileID: 8300000, guid: 087fd62ff03234a3c87a7a672c282f5c, type: 3}
+  PlayerDMG: {fileID: 8300000, guid: 5caec9c7a054042b2bb14fe24069199b, type: 3}
+  PlayerDeath: {fileID: 8300000, guid: 1f8373278bbe3467ab65f399050121b0, type: 3}
+  PlayerAttack: {fileID: 8300000, guid: 8aab3813d66224804a0a4b7a70b36d22, type: 3}
 --- !u!4 &270611818
 Transform:
   m_ObjectHideFlags: 0
@@ -644,6 +657,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &270611820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 270611816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a71ecb2dfd5a431fbdcd57b28f24e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volSliderAll: {fileID: 1431662910}
+  volSliderMusic: {fileID: 1610299620}
+  volSliderSFX: {fileID: 1716646668}
 --- !u!1 &272497698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1652,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a29db24606a4f1f8176796f12b4166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Intro: {fileID: 8300000, guid: 18b710c4bf67a4165b9be26b18b90aae, type: 3}
+  MM: {fileID: 8300000, guid: 18571b33624274faeb7bc6d64b85c9d3, type: 3}
+  L1: {fileID: 8300000, guid: 40fccd4113df841b196fd69585ab2a10, type: 3}
+  L2: {fileID: 8300000, guid: 416eb55235b4e49388a4231fe70085b7, type: 3}
+  L3: {fileID: 8300000, guid: 30d6abc6e54964e85b19a0f0c74d5a58, type: 3}
+  L4: {fileID: 8300000, guid: ef8728483f2a244148f0e1408a1e29da, type: 3}
+  B1: {fileID: 8300000, guid: da1e61e89b19545b3a06648d27acfc2b, type: 3}
+  B2: {fileID: 8300000, guid: fa6efae107b584e448f7835757b6dcc3, type: 3}
+  B3: {fileID: 8300000, guid: 705901e6de2694d988e83b378fbe7e87, type: 3}
+  B4: {fileID: 8300000, guid: 99001f9c729fc4d979681664738f691d, type: 3}
+  End: {fileID: 8300000, guid: e21d15b3f2b8546b18d44194a178dbe2, type: 3}
 --- !u!4 &715367027
 Transform:
   m_ObjectHideFlags: 0
@@ -5805,8 +5843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29437296f18f54cccb4e8d15776cf8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmVolume: 0
-  bgmVolumeSlider: {fileID: 0}
 --- !u!4 &1783168685
 Transform:
   m_ObjectHideFlags: 0
