@@ -25,7 +25,7 @@ public class Double_Door_Interact : MonoBehaviour
 
         opened_door1.SetActive(true);                              //activates the open door sprites
         opened_door2.SetActive(true);
-        //AudioManager.Instance.PlayAudio(AudioManager.Instance.Door);
+        AudioManager.Instance.PlayAudio(AudioName.Door);
         Destroy(gameObject.GetComponent("Interact_Text"));         //destroys Interact_Text component on open door, so text no longer appears on screen
     }
 }
