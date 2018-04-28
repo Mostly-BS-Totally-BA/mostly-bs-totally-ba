@@ -37,7 +37,7 @@ public class Platino_Candles : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction") && candle)               //if player presses interaction key ('e') and they are in the trigger collider of a candle
         {
-            AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
+            //AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
             previous_pulled = number_pulled;                            //saves number pulled
             number_pulled++;                                            //increments number of candles pulled
             showGUI = true;                                             //activates on screen text
@@ -46,7 +46,7 @@ public class Platino_Candles : MonoBehaviour
 
         if(number_pulled == 3)                                          //if all three have been pulled, removes walls and black overlays blocking secret room
         {
-         AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
+         //AudioManager.Instance.PlayAudio(AudioManager.Instance.Candles);
 
 
             for (int i = 0; i < walls.GetLength(0); i++)
