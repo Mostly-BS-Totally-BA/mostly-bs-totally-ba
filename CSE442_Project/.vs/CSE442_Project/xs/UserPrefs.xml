@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interaction/LVL2/Double_Door_Interact.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemies/Enemy_movement.cs">
     <Files>
       <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="65" Column="6" />
       <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="1" Column="1" />
@@ -11,9 +11,10 @@
       <File FileName="Assets/Scripts/_Game/AudioManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/_Game/MusicManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/_Game/Volume.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interaction/Door_Interact.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interaction/Platino_Candles.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interaction/LVL2/Double_Door_Interact.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/Door_Interact.cs" Line="23" Column="21" />
+      <File FileName="Assets/Scripts/Interaction/Platino_Candles.cs" Line="49" Column="54" />
+      <File FileName="Assets/Scripts/Interaction/LVL2/Double_Door_Interact.cs" Line="28" Column="50" />
+      <File FileName="Assets/Scripts/Enemies/LVL1Boss.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />
