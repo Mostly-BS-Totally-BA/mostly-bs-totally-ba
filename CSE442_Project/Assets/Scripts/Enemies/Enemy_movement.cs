@@ -171,6 +171,7 @@ public class Enemy_movement : MonoBehaviour {
             if(countAtt==2&&countAtt!=3)
             {
 				Player.SendMessage("takeDamage", damage_amount);
+                AudioManager.Instance.PlayAudio(AudioName.PlayerAttack);
                 //_gm.LivesDecrease(1);
             }
         }

@@ -20,7 +20,7 @@ public class Door_Interact : MonoBehaviour
 
         gameObject.SetActive(false);                            //deactivates door this is attached to
         opened_door.SetActive(true);                            //activates the open door sprite
-        AudioManager.Instance.PlayAudio(AudioManager.Instance.Door);
+        AudioManager.Instance.PlayAudio(AudioName.Door);
         Destroy(gameObject.GetComponent("Interact_Text"));      //destroys Interact_Text component on open door, so text no longer appears on screen
 
     }
