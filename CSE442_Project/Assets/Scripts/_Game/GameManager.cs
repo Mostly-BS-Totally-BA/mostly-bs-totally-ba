@@ -261,6 +261,7 @@ public class GameManager : Singleton<GameManager>
 	{
 		if (_gm.arrowCount > 0) {
 			_gm.arrowCount--;
+			_ui = GameObject.Find("HUD").GetComponent<UIManager>();
 			_ui.UpdateArrows ();
 			Debug.Log ("Arrow Count: " + _gm.arrowCount);
 		} 
