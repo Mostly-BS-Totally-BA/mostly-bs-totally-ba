@@ -10,6 +10,9 @@ public class Transition : MonoBehaviour
     public void RunInteraction()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        textManager.Instance.disableTextTransition();
+        Destroy(gameObject.GetComponent("Interact_Text"));
+
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.Game)
         {

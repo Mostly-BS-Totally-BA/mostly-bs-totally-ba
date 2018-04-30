@@ -36,6 +36,11 @@ public class textManager : Singleton<textManager> {
             showGUI = false;
     }
 
+    public void disableTextTransition()
+    {
+        showGUI = false;
+    }
+
     //Checks if showGUI is true
     private void OnGUI()
     {

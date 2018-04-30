@@ -94,6 +94,7 @@ public class Trees : MonoBehaviour
         if(gameObject.name == "boss")
         {
             portal.SetActive(true);
+            _gm.UpdateScore(450);
         }
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");

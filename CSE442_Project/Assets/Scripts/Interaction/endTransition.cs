@@ -20,6 +20,7 @@ public class endTransition : MonoBehaviour
         if(Input.GetButtonDown("Interaction") && player)
         {
             endScreen.SetActive(true);
+            textManager.Instance.disableTextTransition();
         }
     }
 
