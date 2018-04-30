@@ -31,6 +31,7 @@ public class GameManager : Singleton<GameManager>
     public int LivesCount { get; private set; }
     public int Score { get; private set; }
 	public int potionCount { get; private set; }
+	public int arrowCount { get; private set; }
     public float playerSpeedNorm { get; private set; }
     public float playerSpeed { get; private set; }
     public float playerAttackSpeedNorm { get; private set; }
@@ -85,11 +86,12 @@ public class GameManager : Singleton<GameManager>
         _gm.playerSpeedNorm = 2.00f;
         _gm.playerAttackSpeedNorm = 0.50f;
 		_gm.potionCount = 0;
+		_gm.arrowCount = 5;
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
 
-        _gm.Level = 1;
+        _gm.Level = 2;
         _gm.Score = 0;
         timeCount = 2.0f;
         _gm.StartLevel();
@@ -106,6 +108,7 @@ public class GameManager : Singleton<GameManager>
         _gm.LivesCount = save.lives;
         _gm.Score = save.score;
 		_gm.potionCount = save.potionCount;
+		_gm.arrowCount = save.arrowCount;
     }
 
     //Used to begin currently set level, including for new game or for next level
@@ -245,6 +248,25 @@ public class GameManager : Singleton<GameManager>
 		_gm.potionCount++;
         _ui.UpdateHPPots();
         AudioManager.Instance.PlayAudio(AudioName.PotionGet);
+	}
+
+	public void pickup_arrow()
+	{
+		_gm.arrowCount++;
+		_ui.UpdateArrows();
+		AudioManager.Instance.PlayAudio(AudioName.PotionGet);
+	}
+
+	public void use_arrow()
+	{
+		if (_gm.arrowCount > 0) {
+			_gm.arrowCount--;
+			_ui.UpdateArrows ();
+			Debug.Log ("Arrow Count: " + _gm.arrowCount);
+		} 
+		else {
+			Debug.Log ("Out of Arrows");
+		}
 	}
 
 	public void use_potion()
