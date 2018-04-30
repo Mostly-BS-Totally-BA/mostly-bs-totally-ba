@@ -62,6 +62,7 @@ public class SaveLoad {
         save.lives = _gm.LivesCount;
         save.score = _gm.Score;
 		save.potionCount = _gm.potionCount;
+		save.arrowCount = _gm.arrowCount;
 
         return save;
     }
