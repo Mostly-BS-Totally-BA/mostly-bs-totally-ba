@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LVL2Boss : MonoBehaviour
 {
-	public GameObject summon;
+    public GameObject portal;
+    public GameObject summon;
 	public GameObject summonCir;
 	private GameObject sumCir;
 	public GameObject projectile;
@@ -89,6 +90,7 @@ public class LVL2Boss : MonoBehaviour
     {
         _gm = GameManager.Instance;
         _gm.UpdateScore(500);
+        portal.SetActive(true);
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);

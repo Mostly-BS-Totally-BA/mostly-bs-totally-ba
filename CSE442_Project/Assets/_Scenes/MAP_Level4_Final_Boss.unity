@@ -1138,7 +1138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1708838989198000, guid: 813fa3191650662408fd77329018200d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1708838989198000, guid: 813fa3191650662408fd77329018200d, type: 2}
       propertyPath: m_Name
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 709601983}
+      - m_Target: {fileID: 709601984}
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -2743,11 +2743,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -3140,20 +3140,40 @@ Prefab:
       propertyPath: endGame
       value: 
       objectReference: {fileID: 374899751}
+    - target: {fileID: 114191512637002148, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+        type: 2}
+      propertyPath: newLevel
+      value: 
+      objectReference: {fileID: 1337922910}
+    - target: {fileID: 114191512637002148, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+        type: 2}
+      propertyPath: statBoost
+      value: 
+      objectReference: {fileID: 1337922910}
+    - target: {fileID: 114191512637002148, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+        type: 2}
+      propertyPath: endGame
+      value: 
+      objectReference: {fileID: 374899751}
+    - target: {fileID: 114191512637002148, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+        type: 2}
+      propertyPath: escMenu
+      value: 
+      objectReference: {fileID: 1866235669}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9afc442628f34b3bbb42e9d2ad6d1ae, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &709601983 stripped
+--- !u!224 &709601983 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224561892576548366, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 709601982}
+--- !u!114 &709601984 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114382859673500358, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
+  m_PrefabParentObject: {fileID: 114191512637002148, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
     type: 2}
   m_PrefabInternal: {fileID: 709601982}
   m_Script: {fileID: 11500000, guid: 7527a2e5aa25540478e1b871ac2bf64b, type: 3}
---- !u!224 &709601984 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224788063565829726, guid: d9afc442628f34b3bbb42e9d2ad6d1ae,
-    type: 2}
-  m_PrefabInternal: {fileID: 709601982}
 --- !u!1001 &723731978
 Prefab:
   m_ObjectHideFlags: 0
@@ -3407,7 +3427,7 @@ RectTransform:
   m_Children:
   - {fileID: 1698069104}
   - {fileID: 1866235670}
-  - {fileID: 709601984}
+  - {fileID: 709601983}
   - {fileID: 1337922911}
   - {fileID: 374899750}
   m_Father: {fileID: 0}
@@ -4225,11 +4245,11 @@ MonoBehaviour:
     lineCount: 6
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6078,7 +6098,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 709601983}
+      objectReference: {fileID: 709601984}
     - target: {fileID: 114352114680855170, guid: 441b6b33a06494a319ec2172b9f50370,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -7571,11 +7591,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11667,7 +11687,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 709601983}
+      objectReference: {fileID: 0}
     - target: {fileID: 1500064201551672, guid: 7109aa3026cb0413ba8511a1f7e9fd57, type: 2}
       propertyPath: m_IsActive
       value: 0
