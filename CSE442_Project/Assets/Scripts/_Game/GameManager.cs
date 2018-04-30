@@ -91,7 +91,7 @@ public class GameManager : Singleton<GameManager>
         _gm.playerSpeed = _gm.playerSpeedNorm;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
 
-        _gm.Level = 2;
+        _gm.Level = 1;
         _gm.Score = 0;
         timeCount = 2.0f;
         _gm.StartLevel();
@@ -252,6 +252,7 @@ public class GameManager : Singleton<GameManager>
 
 	public void pickup_arrow()
 	{
+		_ui = GameObject.Find("HUD").GetComponent<UIManager>();
 		_gm.arrowCount++;
 		_ui.UpdateArrows();
 		AudioManager.Instance.PlayAudio(AudioName.PotionGet);
