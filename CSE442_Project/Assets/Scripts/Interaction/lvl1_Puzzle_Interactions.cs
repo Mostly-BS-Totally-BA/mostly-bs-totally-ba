@@ -48,11 +48,11 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
     {
         if (Input.GetButtonDown("Interaction"))    //if the player presses the interaction key ('e')
         {
-            //AudioManager.Instance.PlayAudio(AudioName.Plate);
+            //AudioManager.Instance.PlayAudio(AudioName.Puzzle);
 
             if (torch.name == "Torch_3" && torch3_pulls != 1 && (torch2_pulls == 0 && torch1_pulls == 0 && torch4_pulls == 0))              //if interacting with torch3 and no torches have been pulled
             {
-                AudioManager.Instance.PlayAudio(AudioName.Plate);
+                AudioManager.Instance.PlayAudio(AudioName.Puzzle);
                 torch3_pulls++;
                 text = "The sconce clicks into position...";
                 showGUI = true;
@@ -60,7 +60,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
 
             else if (torch.name == "Torch_4" && torch4_pulls != 2 && (torch3_pulls == 1 && torch1_pulls == 0 && torch2_pulls == 0))         //if interacting with torch4 and torch4 hasn't been pulled twice, torch3 has been pulled once, and the other two haven't been pulled at all
             {
-                AudioManager.Instance.PlayAudio(AudioName.Plate);
+                AudioManager.Instance.PlayAudio(AudioName.Puzzle);
                 torch4_pulls++;
                 if (torch4_pulls == 1)
                 {
@@ -77,7 +77,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
 
             else if (torch.name == "Torch_2" && torch2_pulls != 3 && (torch3_pulls == 1 && torch1_pulls == 0 && torch4_pulls == 2))         //if interacting with 2 and 2 hasn't been pulled three times and 3 has been pulled once, 4 pulled twice and 1 hasnce been pulled at all
             {
-                AudioManager.Instance.PlayAudio(AudioName.Plate);
+                AudioManager.Instance.PlayAudio(AudioName.Puzzle);
                 torch2_pulls++;
                 if (torch2_pulls == 1)
                 {
@@ -98,7 +98,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
 
             else if (torch.name == "Torch_1" && torch1_pulls != 1 && (torch2_pulls == 3 && torch3_pulls == 1 && torch4_pulls == 2))     //if interacting with torch1 and all other torches have been pulled the correct amount
             {
-                AudioManager.Instance.PlayAudio(AudioName.Plate);
+                AudioManager.Instance.PlayAudio(AudioName.Puzzle);
                 torch1_pulls++;
                 text = "The sconce clicks into position...";
                 showGUI = true;
@@ -106,7 +106,7 @@ public class lvl1_Puzzle_Interactions : MonoBehaviour
 
             else                                                                                                                        //any incorrect pull of a torch
             {
-                AudioManager.Instance.PlayAudio(AudioName.Plate);
+                AudioManager.Instance.PlayAudio(AudioName.Puzzle);
                 torch1_pulls = 0;           //puzzle resets
                 torch2_pulls = 0;
                 torch3_pulls = 0;
