@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_movement : MonoBehaviour {
+    public int scoreValue;
     public float currentHealth;
     public float maxHealth;
     public float speed;

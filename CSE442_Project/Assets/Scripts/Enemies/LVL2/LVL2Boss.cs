@@ -88,7 +88,7 @@ public class LVL2Boss : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(500);
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);

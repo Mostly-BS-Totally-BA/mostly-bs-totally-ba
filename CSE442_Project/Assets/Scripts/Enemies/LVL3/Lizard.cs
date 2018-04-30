@@ -82,7 +82,7 @@ public class Lizard : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(30);
         Player.SendMessage("addKill");
         Destroy(gameObject);
 
