@@ -534,8 +534,8 @@ MonoBehaviour:
   - {fileID: 60728411508503052}
   - {fileID: 60422627853183540}
   - {fileID: 60951562301504132}
-  KillCount: 0
-  hasKilled: 0
+  isPoison: 0
+  arrow: {fileID: 1557616396093666, guid: 4650ddbc5d90c4c14a24254cca2996ce, type: 2}
 --- !u!114 &114879458552026008
 MonoBehaviour:
   m_ObjectHideFlags: 1

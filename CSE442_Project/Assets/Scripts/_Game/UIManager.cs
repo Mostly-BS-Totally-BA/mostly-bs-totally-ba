@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     [SerializeField]
     private Text potText;
     [SerializeField]
+	private Text arrowText;
+	[SerializeField]
     private GameObject runImg;
     [SerializeField]
     private GameObject attackImg;
@@ -57,8 +59,10 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _ui.UpdateLives();
         _ui.UpdateScore();
         _ui.UpdateHPPots();
+		_ui.UpdateArrows();
         _ui.UpdateHUDAttackSpeed();
         _ui.UpdateHUDRunSpeed();
+
     }
 
     //Set lives sprites to match current LivesCount value
@@ -85,6 +89,12 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.potText.text = "" + _gm.potionCount;
     }
+
+	public void UpdateArrows()
+	{
+		_ui = GameObject.Find("HUD").GetComponent<UIManager>();
+		_ui.arrowText.text = "" + _gm.arrowCount;
+	}
 
     //Update text to match current Score value
     public void UpdateHUDAttackSpeed()
