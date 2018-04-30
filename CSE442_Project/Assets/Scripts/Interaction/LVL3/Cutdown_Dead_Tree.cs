@@ -18,12 +18,12 @@ public class Cutdown_Dead_Tree : MonoBehaviour
         if(has_axe)
         {
             text = "Press 'e' to chop down...";
-            showGUI = true;
+            textManager.Instance.enableText(text);
         }
         else
         {
             text = "You need an axe...";
-            showGUI = true;
+            textManager.Instance.enableText(text);
         }
     }
 
@@ -45,25 +45,14 @@ public class Cutdown_Dead_Tree : MonoBehaviour
     {
         has_axe = true;
         text = "You picked up the Woodsman's Axe!";
-        showGUI = true;
+        textManager.Instance.enableText(text);
         StartCoroutine(Wait(timer));
-    }
-
-    //Checks if showGUI is true
-    private void OnGUI()
-    {
-        if (showGUI == true)
-        {
-            guiStyle.fontSize = 20;                                            //change the font size
-            guiStyle.normal.textColor = Color.white;
-            GUI.Label(new Rect(10, 10, 500, 20), text, guiStyle);             //places text on screen
-        }
     }
 
     //Coroutine that causes script to wait before resuming 
     IEnumerator Wait(float timer)
     {
         yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
-        showGUI = false;                                     //removes text from screen
+        textManager.Instance.disableText(text);
     }
 }
