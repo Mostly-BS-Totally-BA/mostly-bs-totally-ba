@@ -76,7 +76,7 @@ public class BlackSpector : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(25);
         Player.SendMessage("addKill");
         Destroy(gameObject);
 

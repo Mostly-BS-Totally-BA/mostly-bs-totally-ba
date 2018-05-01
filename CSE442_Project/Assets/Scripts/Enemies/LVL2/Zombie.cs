@@ -77,7 +77,7 @@ public class Zombie : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(5);
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);

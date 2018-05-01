@@ -67332,11 +67332,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114078033958849180, guid: 3799447e7af7943c2a85133cf4c7187b,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1044791788}
     - target: {fileID: 114130505939683252, guid: 3799447e7af7943c2a85133cf4c7187b,
         type: 2}
       propertyPath: player
@@ -67356,6 +67351,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114078033958849180, guid: 3799447e7af7943c2a85133cf4c7187b,
+        type: 2}
+      propertyPath: player
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3799447e7af7943c2a85133cf4c7187b, type: 2}

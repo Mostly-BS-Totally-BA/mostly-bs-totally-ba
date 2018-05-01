@@ -19554,6 +19554,11 @@ Prefab:
       propertyPath: Waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1080679236}
+    - target: {fileID: 114112481599720348, guid: a0d3172330a5d49499a0a1e38e5c3cc9,
+        type: 2}
+      propertyPath: portal
+      value: 
+      objectReference: {fileID: 643238359}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0d3172330a5d49499a0a1e38e5c3cc9, type: 2}
   m_IsPrefabParent: 0
@@ -20316,9 +20321,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1364206901542162, guid: e29b35e0a8ac08d499146aa804e1b236, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e29b35e0a8ac08d499146aa804e1b236, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &643238359 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1364206901542162, guid: e29b35e0a8ac08d499146aa804e1b236,
+    type: 2}
+  m_PrefabInternal: {fileID: 643238358}
 --- !u!1 &643309430 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1130180788674334, guid: 3c5059f478192054f965cc5a6b7fda11,

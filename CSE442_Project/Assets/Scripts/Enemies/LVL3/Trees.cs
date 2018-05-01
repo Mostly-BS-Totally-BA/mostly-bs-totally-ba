@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trees : MonoBehaviour
 {
+    public GameObject portal;
     public GameObject summon;
     public GameObject summonCir;
     private GameObject sumCir;
@@ -89,7 +90,12 @@ public class Trees : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(50);
+        if(gameObject.name == "boss")
+        {
+            portal.SetActive(true);
+            _gm.UpdateScore(450);
+        }
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);
