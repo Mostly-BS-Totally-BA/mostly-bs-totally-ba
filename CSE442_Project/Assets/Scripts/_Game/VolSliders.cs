@@ -45,8 +45,6 @@ public class VolSliders : MonoBehaviour {
     public void SetAllSlider(float val)
     {
         volSliderAll.value = val * 10;
-        SetMusicSlider(val);
-        SetSFXSlider(val);
     }
 
     public void SetMusicSlider(float val)

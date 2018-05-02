@@ -24,10 +24,10 @@ public class PauseMenu : MonoBehaviour
     {
         _vol = GameObject.Find("audioManager").GetComponent<Volume>();
         _vols = GameObject.Find("OptionsMenu").GetComponent<VolSliders>();
-         
 
-
-
+        _vols.SetAllSlider(_vol.volValAll);
+        _vols.SetSFXSlider(_vol.volValSFX);
+        _vols.SetMusicSlider(_vol.volValMusic);
     }
 
     //Linked to quit game button
