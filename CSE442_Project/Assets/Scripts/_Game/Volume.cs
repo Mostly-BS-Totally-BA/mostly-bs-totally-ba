@@ -9,12 +9,7 @@ public class Volume : MonoBehaviour {
     public float volValAll { get; private set; }
     public float volValMusic { get; private set; }
     public float volValSFX { get; private set; }
-    [SerializeField]
-    private Slider volSliderAll;
-    [SerializeField]
-    private Slider volSliderMusic;
-    [SerializeField]
-    private Slider volSliderSFX;
+
 
     private MusicManager mmgr;
     private AudioManager amgr;
@@ -35,37 +30,25 @@ public class Volume : MonoBehaviour {
 
     void Update()
     {
-        volValAll = volSliderAll.value;
+        //volValAll = volSliderAll.value;
      }
 
-    public void OnAllValueChanged()
+    public void SetAllValueChanged(float val)
     {
-        //volSliderMusic = GetComponent<Slider>();
-        //volSliderSFX = GetComponent<Slider>();
-        volValAll = volSliderAll.value / 10;
+        volValAll = val;
         mmgr.SetMusicVolume(volValAll);
         amgr.SetEffectsVolume(volValAll);
-
-        volSliderMusic.value = volValAll * 10;
-        volSliderSFX.value = volValAll * 10;
     }
 
-    public void OnMusicValueChanged()
+    public void SetMusicValueChanged(float val)
     {
-        volValMusic = volSliderMusic.value / 10;
+        volValMusic = val;
         mmgr.SetMusicVolume(volValMusic);
     }
 
-    public void OnSFXValueChanged()
+    public void SetSFXValueChanged(float val)
     {
-        volValSFX = volSliderSFX.value / 10;
+        volValSFX = val;
         amgr.SetEffectsVolume(volValSFX);
-    }
-
-    public void SetSliders()
-    {
-        volSliderAll.value = volValAll * 10;
-        volSliderMusic.value = volValMusic * 10;
-        volSliderSFX.value = volValSFX * 10;
     }
 }

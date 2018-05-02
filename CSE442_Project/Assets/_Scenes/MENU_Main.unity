@@ -708,9 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a71ecb2dfd5a431fbdcd57b28f24e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volSliderAll: {fileID: 1431662910}
-  volSliderMusic: {fileID: 1610299620}
-  volSliderSFX: {fileID: 1716646668}
 --- !u!1 &272497698
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4577,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 270611820}
+      - m_Target: {fileID: 1546584963}
         m_MethodName: OnAllValueChanged
         m_Mode: 1
         m_Arguments:
@@ -4605,6 +4602,7 @@ GameObject:
   - component: {fileID: 1546584962}
   - component: {fileID: 1546584961}
   - component: {fileID: 1546584960}
+  - component: {fileID: 1546584963}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -4699,6 +4697,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1546584963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546584958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed69c563e950b4cbf8c71f6a7926d4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volSliderAll: {fileID: 1431662910}
+  volSliderMusic: {fileID: 1610299620}
+  volSliderSFX: {fileID: 1716646668}
 --- !u!1 &1564994111
 GameObject:
   m_ObjectHideFlags: 0
@@ -5145,7 +5157,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 270611820}
+      - m_Target: {fileID: 1546584963}
         m_MethodName: OnMusicValueChanged
         m_Mode: 1
         m_Arguments:
@@ -5560,7 +5572,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 270611820}
+      - m_Target: {fileID: 1546584963}
         m_MethodName: OnSFXValueChanged
         m_Mode: 1
         m_Arguments:
