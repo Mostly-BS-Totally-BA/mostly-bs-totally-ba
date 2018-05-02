@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
+public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, GameOver1, LevelTransition }
 public delegate void OnStateChangeHandler();
 
 /* Purpose of the GameManager is to act as a central hub and maintain the states the 
@@ -318,6 +318,8 @@ public class GameManager : Singleton<GameManager>
     {
         _gm.SetGameState(GameState.PlayerDead);
         _pm = GameObject.Find("PlayerSprite").GetComponent<Player_Movement>();
+        _mmgr.StopAudio();
+        AudioManager.Instance.PlayAudio(AudioName.PlayerDeath);
         _pm.death();
         PlayerDead();
     }
@@ -329,12 +331,13 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.PlayerDead)
         {
-            _mmgr.StopAudio();
+
             _gm.timeCount -= Time.deltaTime;
             if (_gm.timeCount <= 0)
             {
                 _gm.timeCount = 2f;
-                _gm.gameState = GameState.GameOver;
+                //_gm.gameState = GameState.GameOver;
+                _gm.SetGameState(GameState.GameOver);
             }
         }
     }
@@ -346,8 +349,7 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.GameOver)
         {
-            _mmgr.StopAudio();
-            MusicManager.Instance.PlayAudio(MusicName.End);
+            _gm.SetGameState(GameState.GameOver1);
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _ui.GameOver();
         }
