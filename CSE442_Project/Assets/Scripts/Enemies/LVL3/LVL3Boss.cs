@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trees : MonoBehaviour
+public class LVL3Boss : MonoBehaviour
 {
+    public GameObject Arena;
     public GameObject portal;
     public GameObject summon;
+    public GameObject Phase2;
     public GameObject summonCir;
     private GameObject sumCir;
     public GameObject Door;
@@ -25,7 +27,7 @@ public class Trees : MonoBehaviour
     private float blue;
     private float snapX;
     private float snapY;
-
+    private int splitPhaseFlag;
     public bool aggro;
 
     public bool touchPlayer;
@@ -45,13 +47,13 @@ public class Trees : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         Player = GameObject.FindWithTag("Player");
 
-        
+
         rb = GetComponent<Rigidbody2D>();
 
 
         snapX = Player.transform.position.x;
         snapY = Player.transform.position.y;
-
+        splitPhaseFlag = 0;
 
         timeCount = 1f;
         SpriteR = GetComponent<SpriteRenderer>();
@@ -69,7 +71,7 @@ public class Trees : MonoBehaviour
     {
         if (_gm.gameState == GameState.Game)
         {
-            
+
             MoveEnemy();
             if (attackS == true)
             {
@@ -85,23 +87,39 @@ public class Trees : MonoBehaviour
         {
             death();
         }
+        if (currentHealth<=maxHealth/2)
+        {
+            
+            Splitphase();
+        }
     }
 
     public void death()
     {
         _gm = GameManager.Instance;
         _gm.UpdateScore(50);
-        if(gameObject.name == "boss")
+        if (gameObject.name == "boss")
         {
             portal.SetActive(true);
             _gm.UpdateScore(450);
         }
         //_gm.LivesDecrease(1);
-        //Player.SendMessage("addKill");
+        Player.SendMessage("addKill");
         Destroy(gameObject);
 
     }
 
+
+
+    private void Splitphase()
+    {
+        if(splitPhaseFlag!=1)
+        {
+            Phase2.SetActive(true);
+            splitPhaseFlag = 1;
+            Destroy(gameObject);
+        }
+    }
     private void OnCollisionStay2D(Collision2D coll)
     {
 
@@ -116,6 +134,14 @@ public class Trees : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag=="Player")
+        {
+            Arena.SetActive(true);
+        }
+    }
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Player")
@@ -145,7 +171,7 @@ public class Trees : MonoBehaviour
         blue = 255;
         green = 255;
     }
-    
+
     public void defaultColor()
     {
         this.SpriteR.color = new Color(1, 1, 1);
@@ -191,7 +217,7 @@ public class Trees : MonoBehaviour
             if (countAtt == 2 && countAtt != 3)
             {
                 Player.SendMessage("takeDamage", 1);
-                
+
                 //_gm.LivesDecrease(1);
             }
         }
@@ -220,15 +246,15 @@ public class Trees : MonoBehaviour
             {
                 aggro = true;
             }
-            
+
         }
-        if(aggro==true && target != null)
+        if (aggro == true && target != null)
         {
-            
+
             timeCount -= Time.deltaTime;
             if (timeCount <= 0)
             {
-                
+
                 countAtt++;
                 timeCount = .5f;
                 if (countAtt == 1)
@@ -238,7 +264,7 @@ public class Trees : MonoBehaviour
                     float resultX = snapX - nowX;
                     float resultY = snapY - nowY;
 
-                    if (resultY==0)
+                    if (resultY == 0)
                     {
                         if (resultX < 0)
                         {
@@ -258,11 +284,11 @@ public class Trees : MonoBehaviour
                     {
                         if (resultY < 0)
                         {
-                            OffsetPosition = new Vector3(resultX, resultY+3f, 0);
+                            OffsetPosition = new Vector3(resultX, resultY + 3f, 0);
                         }
                         else if (resultY > 0)
                         {
-                            OffsetPosition = new Vector3(resultX , resultY-3f, 0);
+                            OffsetPosition = new Vector3(resultX, resultY - 3f, 0);
                         }
                         else
                         {
@@ -270,13 +296,13 @@ public class Trees : MonoBehaviour
                         }
 
                     }
-                    sumCir=Instantiate(summon, target.position + OffsetPosition, Quaternion.identity)as GameObject;
+                    sumCir = Instantiate(summon, target.position + OffsetPosition, Quaternion.identity) as GameObject;
                     Destroy(sumCir, 1.5f);
                 }
                 if (countAtt == 3)
                 {
-                    GameObject trap=Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity) as GameObject;
-                    
+                    GameObject trap = Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity) as GameObject;
+
                     countAtt = 0;
                     snapX = Player.transform.position.x;
                     snapY = Player.transform.position.y;
@@ -284,11 +310,11 @@ public class Trees : MonoBehaviour
                     //Instantiate(summon, Player.transform + OffsetPosition, Quaternion.identity);
                 }
             }
-            
+
 
 
         }
-        if(target != null&&Vector2.Distance(transform.position, target.position) >= 5.5)
+        if (target != null && Vector2.Distance(transform.position, target.position) >= 5.5)
         {
             aggro = false;
         }
