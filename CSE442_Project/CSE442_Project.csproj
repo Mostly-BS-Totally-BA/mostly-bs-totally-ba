@@ -338,6 +338,7 @@
     <Compile Include="Assets\Scripts\_Game\VolSliders.cs" />
     <Compile Include="Assets\Scripts\_Game\Volume.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\endCredits.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_movement.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL1Boss.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\BlackSpector.cs" />
