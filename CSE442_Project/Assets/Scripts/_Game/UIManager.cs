@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 
     private GameManager _gm = null;
     private UIManager _ui;
+    private MusicManager _mmgr;
     private Volume _vol;
 
     //Grabs GameManager instance and UIManager component
@@ -62,6 +63,7 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
 		_ui.UpdateArrows();
         _ui.UpdateHUDAttackSpeed();
         _ui.UpdateHUDRunSpeed();
+        _mmgr = MusicManager.Instance;
 
     }
 
@@ -191,6 +193,8 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Loads gameover menu
     public void GameOver()
     {
+        _mmgr.StopAudio();
+        MusicManager.Instance.PlayAudio(MusicName.End);
         activateEscMenu("GameOver");
     }
 

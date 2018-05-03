@@ -332,6 +332,7 @@
     <Compile Include="Assets\Scripts\_Game\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\_Game\Singleton.cs" />
     <Compile Include="Assets\Scripts\_Game\UIManager.cs" />
+    <Compile Include="Assets\Scripts\_Game\VolSliders.cs" />
     <Compile Include="Assets\Scripts\_Game\Volume.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_movement.cs" />

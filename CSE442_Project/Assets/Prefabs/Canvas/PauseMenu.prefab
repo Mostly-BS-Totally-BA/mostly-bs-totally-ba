@@ -326,7 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224997710339942720}
   - component: {fileID: 114154241116897406}
-  - component: {fileID: 114336962094775168}
+  - component: {fileID: 114516572237257602}
   m_Layer: 5
   m_Name: OptionsMenu
   m_TagString: Untagged
@@ -2221,7 +2221,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114336962094775168}
+      - m_Target: {fileID: 114516572237257602}
         m_MethodName: OnAllValueChanged
         m_Mode: 1
         m_Arguments:
@@ -2729,7 +2729,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114336962094775168}
+      - m_Target: {fileID: 114516572237257602}
         m_MethodName: OnSFXValueChanged
         m_Mode: 1
         m_Arguments:
@@ -3085,20 +3085,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114336962094775168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345782497044666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a71ecb2dfd5a431fbdcd57b28f24e63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volSliderAll: {fileID: 114216660573239830}
-  volSliderMusic: {fileID: 114500237358691876}
-  volSliderSFX: {fileID: 114294054828483588}
 --- !u!114 &114371790500444246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3745,7 +3731,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114336962094775168}
+      - m_Target: {fileID: 114516572237257602}
         m_MethodName: OnMusicValueChanged
         m_Mode: 1
         m_Arguments:
@@ -3758,6 +3744,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114516572237257602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345782497044666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed69c563e950b4cbf8c71f6a7926d4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volSliderAll: {fileID: 114216660573239830}
+  volSliderMusic: {fileID: 114500237358691876}
+  volSliderSFX: {fileID: 114294054828483588}
 --- !u!114 &114525061913719618
 MonoBehaviour:
   m_ObjectHideFlags: 1
