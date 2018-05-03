@@ -29,15 +29,24 @@ public class Phase2Boss : MonoBehaviour
     private float snapY;
     private int splitPhaseFlag;
     public bool aggro;
+    public GameObject[] LeftSpike;
+    public GameObject[] RightSpike;
+    public GameObject[] CenterSpike;
 
     public bool touchPlayer;
     public bool touchWeapon;
-
+    public Vector3 BHellStart;
+    public Vector3 BHellStart2;
+    public Vector3 BHellStart3;
     public float timeCount;
     private float growTree;
+    public int cycles = 0;
+    public int cycles2 = 0;
+    public int cycles3 = 0;
 
     public Vector3 OffsetPosition;
-
+    private bool secondwave = false;
+    private bool thridwave = false;
 
     private GameManager _gm = null;
 
@@ -75,10 +84,7 @@ public class Phase2Boss : MonoBehaviour
         {
 
             MoveEnemy();
-            if (attackS == true)
-            {
-                attack();
-            }
+           
             Splitphase();
         }
     }
@@ -101,6 +107,7 @@ public class Phase2Boss : MonoBehaviour
         {
             portal.SetActive(true);
             _gm.UpdateScore(450);
+            Arena.SetActive(false);
         }
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
@@ -114,6 +121,7 @@ public class Phase2Boss : MonoBehaviour
     {
         if (splitPhaseFlag == 1)
         {
+            Arena.SetActive(true);
             growTree -= Time.deltaTime;
             if(growTree<=0)
             {
@@ -199,46 +207,11 @@ public class Phase2Boss : MonoBehaviour
         Debug.Log("Sprite:" + SpriteR.color.ToString());
     }
 
-    public void attack()
-    {
-
-        timeCount -= Time.deltaTime;
-        //Debug.Log("time: " + timeCount);
-        if (timeCount <= 0)
-        {
-
-            blue = blue - 85;
-            green = green - 85;
-            red = red / 255;
-            blue = blue / 255;
-            green = green / 255;
-            this.SpriteR.color = new Color(red, green, blue);
-            red = red * 255;
-            blue = blue * 255;
-            green = green * 255;
-            Debug.Log("Blue: " + blue + "Green: " + green);
-            Debug.Log("Sprite:" + SpriteR.color.ToString());
-            timeCount = .5f;
-            countAtt++;
-            if (countAtt == 2 && countAtt != 3)
-            {
-                Player.SendMessage("takeDamage", 1);
-
-                //_gm.LivesDecrease(1);
-            }
-        }
-        if (countAtt == 3)
-        {
-            //Player.SendMessage("takeDamage", 10);
-            this.SpriteR.color = new Color(1, 1, 1);
-            blue = 255;
-            green = 255;
-            countAtt = 0;
-        }
+   
 
 
 
-    }
+    
     public void onAggro()
     {
         aggro = true;
@@ -269,58 +242,135 @@ public class Phase2Boss : MonoBehaviour
                     float nowY = Player.transform.position.y;
                     float resultX = snapX - nowX;
                     float resultY = snapY - nowY;
-
-                    if (resultY == 0)
+                    BHellStart = new Vector3(-11.49f, BHellStart.y + 1, 0f);
+                    for (int i=0; i<LeftSpike.Length; i++)
                     {
-                        if (resultX < 0)
-                        {
-                            OffsetPosition = new Vector3(resultX + 3f, resultY, 0);
-                        }
-                        else if (resultX > 0)
-                        {
-                            OffsetPosition = new Vector3(resultX - 3f, resultY, 0);
-                        }
-                        else
-                        {
-                            OffsetPosition = new Vector3(resultX, resultY, 0);
-                        }
-
+                        GameObject hell=Instantiate(LeftSpike[i], BHellStart, Quaternion.identity)as GameObject;
+                        BHellStart = new Vector3(BHellStart.x + 1f, BHellStart.y, BHellStart.z);
+                        Destroy(hell, 1f);
                     }
-                    if (resultX == 0)
+                    cycles++;
+                    if(cycles>=13)
                     {
-                        if (resultY < 0)
-                        {
-                            OffsetPosition = new Vector3(resultX, resultY + 3f, 0);
-                        }
-                        else if (resultY > 0)
-                        {
-                            OffsetPosition = new Vector3(resultX, resultY - 3f, 0);
-                        }
-                        else
-                        {
-                            OffsetPosition = new Vector3(resultX, resultY, 0);
-                        }
-
+                        cycles = 0;
+                        BHellStart = new Vector3(-11.49f, -29.49f, 0f);
                     }
-                    sumCir = Instantiate(summon, target.position + OffsetPosition, Quaternion.identity) as GameObject;
-                    Destroy(sumCir, 1.5f);
+
+                    if(cycles==10)
+                    {
+                        secondwave = true;   
+                    }
+                    if(cycles2==10)
+                    {
+                        thridwave = true;
+                    }
+                    if(secondwave==true)
+                    {
+                        BHellStart2 = new Vector3(-11.49f, BHellStart2.y + 1, 0f);
+                        for (int i = 0; i < RightSpike.Length; i++)
+                        {
+                            GameObject hell = Instantiate(RightSpike[i], BHellStart2, Quaternion.identity) as GameObject;
+                            BHellStart2 = new Vector3(BHellStart2.x + 1f, BHellStart2.y, BHellStart2.z);
+                            Destroy(hell, 1f);
+                        }
+                        cycles2++;
+                    }
+                    if (cycles2 >= 13)
+                    {
+                        cycles2 = 0;
+                        BHellStart2 = new Vector3(-11.49f, -29.49f, 0f);
+                    }
+                    if (thridwave==true)
+                    {
+                        BHellStart3 = new Vector3(-11.49f, BHellStart3.y + 1, 0f);
+                        for (int i = 0; i < LeftSpike.Length; i++)
+                        {
+                            GameObject hell = Instantiate(LeftSpike[i], BHellStart3, Quaternion.identity) as GameObject;
+                            BHellStart3 = new Vector3(BHellStart3.x + 1f, BHellStart3.y, BHellStart3.z);
+                            Destroy(hell, 1f);
+                        }
+                        cycles3++;
+                    }
+                    if (cycles3 >= 13)
+                    {
+                        cycles3 = 0;
+                        BHellStart3 = new Vector3(-11.49f, -29.49f, 0f);
+                    }
+
+
                 }
                 if (countAtt == 3)
                 {
-                    GameObject trap = Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity) as GameObject;
+                    BHellStart = new Vector3(-11.49f, BHellStart.y+1, 0f);
+                    for (int i = 0; i < RightSpike.Length; i++)
+                    {
+                        GameObject hell = Instantiate(RightSpike[i], BHellStart, Quaternion.identity) as GameObject;
+                        BHellStart = new Vector3(BHellStart.x + 1f, BHellStart.y, BHellStart.z);
+                        Destroy(hell, 1f);
+                    }
+                    cycles++;
+                    if (cycles >= 13)
+                    {
+                        cycles = 0;
+                        BHellStart = new Vector3(-11.49f, -29.49f, 0f);
+                    }
+                    
+                    if (cycles3 >= 13)
+                    {
+                        cycles3 = 0;
+                        BHellStart3 = new Vector3(-11.49f, -29.49f, 0f);
+                    }
+                    if (cycles == 10)
+                    {
+                        secondwave = true;
 
-                    countAtt = 0;
-                    snapX = Player.transform.position.x;
-                    snapY = Player.transform.position.y;
-                    Instantiate(summonCir, target.position + OffsetPosition, Quaternion.identity);
+                    }
+                    if (cycles2 == 10)
+                    {
+                        thridwave = true;
+
+                    }
+                    if (secondwave == true)
+                    {
+                        BHellStart2 = new Vector3(-11.49f, BHellStart2.y + 1, 0f);
+                        for (int i = 0; i < LeftSpike.Length; i++)
+                        {
+                            GameObject hell = Instantiate(LeftSpike[i], BHellStart2, Quaternion.identity) as GameObject;
+                            BHellStart2 = new Vector3(BHellStart2.x + 1f, BHellStart2.y, BHellStart2.z);
+                            Destroy(hell, 1f);
+                        }
+                        cycles2++;
+                    }
+                    if (cycles2 >= 13)
+                    {
+                        cycles2 = 0;
+                        BHellStart2 = new Vector3(-11.49f, -29.49f, 0f);
+                    }
+                    if (thridwave == true)
+                    {
+                        BHellStart3 = new Vector3(-11.49f, BHellStart3.y + 1, 0f);
+                        for (int i = 0; i < RightSpike.Length; i++)
+                        {
+                            GameObject hell = Instantiate(RightSpike[i], BHellStart3, Quaternion.identity) as GameObject;
+                            BHellStart3 = new Vector3(BHellStart3.x + 1f, BHellStart3.y, BHellStart3.z);
+                            Destroy(hell, 1f);
+                        }
+                        cycles3++;
+                    }
+
+
                     //Instantiate(summon, Player.transform + OffsetPosition, Quaternion.identity);
+                }
+                if(countAtt==4)
+                {
+                    countAtt = 0;
                 }
             }
 
 
 
         }
-        if (target != null && Vector2.Distance(transform.position, target.position) >= 5.5)
+        if (target != null && Vector2.Distance(transform.position, target.position) >= 20.5)
         {
             aggro = false;
         }

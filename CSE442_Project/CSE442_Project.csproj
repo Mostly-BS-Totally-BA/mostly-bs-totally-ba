@@ -342,6 +342,7 @@
     <Compile Include="Assets\Scripts\Enemies\LVL2\Necromancer.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\SatanBall.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\Zombie.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\BHtrap.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\DarkGas.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Lizard.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\LVL3Boss.cs" />
