@@ -354,6 +354,8 @@
     <Compile Include="Assets\Scripts\Enemies\LVL3\TwoHeadPlant.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Vines.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\wingedDemons.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL4Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL4Phase2.cs" />
     <Compile Include="Assets\Scripts\Interaction\Arrow_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />
