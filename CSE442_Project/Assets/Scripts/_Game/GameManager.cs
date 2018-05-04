@@ -255,7 +255,7 @@ public class GameManager : Singleton<GameManager>
 		_ui = GameObject.Find("HUD").GetComponent<UIManager>();
 		_gm.arrowCount++;
 		_ui.UpdateArrows();
-		AudioManager.Instance.PlayAudio(AudioName.PotionGet);
+		AudioManager.Instance.PlayAudio(AudioName.Key);
 	}
 
 	public void use_arrow()

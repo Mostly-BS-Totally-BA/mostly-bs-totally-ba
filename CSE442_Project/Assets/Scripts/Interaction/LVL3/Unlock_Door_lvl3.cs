@@ -24,7 +24,7 @@ public class Unlock_Door_lvl3 : MonoBehaviour
     //activates when something enters the object's trigger collider
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.CompareTag("Door_Inter_Locked"))          //if the object this is attached to is the locked door to level2
+        if (collision.CompareTag("Player"))          //if the object this is attached to is the locked door to level2
         {
             if (keys.has_Keys == 0)    //and if the player does not have the key to proceed, alters text that is displayed
             {
