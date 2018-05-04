@@ -9,11 +9,13 @@ public class MinimapMovement : MonoBehaviour {
 
     private void LateUpdate()
     {
+
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.Game){
             Vector3 newPosition = player.position;
             newPosition.z = transform.position.z;
             transform.position = newPosition;            
         }
+
     }
 }
