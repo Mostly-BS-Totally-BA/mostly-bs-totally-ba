@@ -344,14 +344,16 @@
     <Compile Include="Assets\Scripts\Enemies\LVL2\Zombie.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\BHtrap.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\DarkGas.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\fireBall.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Lizard.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\LVL3Boss.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Phase2Boss.cs" />
-    <Compile Include="Assets\Scripts\Enemies\LVL3\Small Spore.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\SmallSpore.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Trees.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\TreeTrap.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\TwoHeadPlant.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Vines.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\wingedDemons.cs" />
     <Compile Include="Assets\Scripts\Interaction\Arrow_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />

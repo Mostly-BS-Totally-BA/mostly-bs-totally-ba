@@ -103,7 +103,7 @@ public class Phase2Boss : MonoBehaviour
     {
         _gm = GameManager.Instance;
         _gm.UpdateScore(50);
-        if (gameObject.name == "boss")
+        if (gameObject.name == "bossphase2")
         {
             portal.SetActive(true);
             _gm.UpdateScore(450);
@@ -221,7 +221,7 @@ public class Phase2Boss : MonoBehaviour
 
         if (aggro == false && target != null)
         {
-            if (Door == null && Vector2.Distance(transform.position, target.position) <= 3.5)
+            if (Door == null && Vector2.Distance(transform.position, target.position) <= 5.5)
             {
                 aggro = true;
             }
