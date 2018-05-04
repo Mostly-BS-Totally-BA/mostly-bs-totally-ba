@@ -33,10 +33,17 @@ public class SaveLoad {
             Save save = (Save)bf.Deserialize(file);
             file.Close();
 
-            //load game values
-            _gm.LoadGame(save);
-            //start game
-            _gm.StartLevel();
+            Debug.Log("Gamebuild: " + _gm.GetGameBuild());
+            Debug.Log("Savebuild: " + save.gameBuild);
+            if (_gm.GetGameBuild() != save.gameBuild){
+                File.Delete(Application.persistentDataPath + "/gamesave.save");
+            }
+            else{
+                //load game values
+                _gm.LoadGame(save);
+                //start game
+                _gm.StartLevel();
+            }
         }
     }
 
@@ -45,6 +52,7 @@ public class SaveLoad {
         Save save = new Save();
         _gm = GameManager.Instance;
 
+        save.gameBuild = _gm.GetGameBuild();
         save.playerSpeedNorm = _gm.playerSpeedNorm;
         save.playerSpeed = _gm.playerSpeed;
         save.playerAttackSpeedNorm = _gm.playerAttackSpeedNorm;
@@ -54,6 +62,7 @@ public class SaveLoad {
         save.lives = _gm.LivesCount;
         save.score = _gm.Score;
 		save.potionCount = _gm.potionCount;
+		save.arrowCount = _gm.arrowCount;
 
         return save;
     }

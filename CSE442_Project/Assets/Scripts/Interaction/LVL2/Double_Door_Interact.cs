@@ -8,7 +8,7 @@ public class Double_Door_Interact : MonoBehaviour
     public GameObject opened_door1;                                //game objects are the open door sprites to replace object this is attached to
     public GameObject opened_door2;
     public GameObject other_door;                                  //closed door that is paired with this door
-
+    
     public GameObject [] overlay;                                  //array of overlays that cover the room this door reveals
     int number_of_Overlays;                                        //number of overlays
 
@@ -25,7 +25,7 @@ public class Double_Door_Interact : MonoBehaviour
 
         opened_door1.SetActive(true);                              //activates the open door sprites
         opened_door2.SetActive(true);
-
+        AudioManager.Instance.PlayAudio(AudioName.Door);
         Destroy(gameObject.GetComponent("Interact_Text"));         //destroys Interact_Text component on open door, so text no longer appears on screen
     }
 }

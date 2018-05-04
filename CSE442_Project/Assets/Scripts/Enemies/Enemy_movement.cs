@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_movement : MonoBehaviour {
+    public int scoreValue;
     public float currentHealth;
     public float maxHealth;
     public float speed;
@@ -171,6 +172,7 @@ public class Enemy_movement : MonoBehaviour {
             if(countAtt==2&&countAtt!=3)
             {
 				Player.SendMessage("takeDamage", damage_amount);
+                AudioManager.Instance.PlayAudio(AudioName.PlayerAttack);
                 //_gm.LivesDecrease(1);
             }
         }

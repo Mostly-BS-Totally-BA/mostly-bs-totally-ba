@@ -1,13 +1,23 @@
 ﻿<Properties StartupConfiguration="{8E680DB9-F0C1-EDAE-38B0-7D3F2165849A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/_Game/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/_Game/VolSliders.cs">
     <Files>
-      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="67" Column="38" />
-      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="97" Column="6" />
+      <File FileName="Assets/Scripts/_Game/GameManager.cs" Line="339" Column="19" />
+      <File FileName="Assets/Scripts/_Game/UIManager.cs" Line="201" Column="43" />
       <File FileName="Assets/Scripts/_Game/MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="15" Column="36" />
-      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="133" Column="10" />
+      <File FileName="Assets/Scripts/_Game/PauseMenu.cs" Line="17" Column="9" />
+      <File FileName="Assets/Scripts/_Game/Volume.cs" Line="38" Column="40" />
+      <File FileName="Assets/Scripts/Player Scripts/ArrowMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/Player_Movement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Enemies/Enemy_movement.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/_Game/LoadScene.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/_Game/AudioManager.cs" Line="82" Column="48" />
+      <File FileName="Assets/Scripts/_Game/MusicManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player Scripts/PlayerAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/Interact_Text.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/LVL2/Double_Door_Interact.cs" Line="25" Column="9" />
+      <File FileName="Assets/Scripts/Interaction/Transition.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MinimapMovement.cs" Line="12" Column="36" />
+      <File FileName="Assets/Scripts/_Game/VolSliders.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CSE442__Project PreferredExecutionTarget="Unity.Editor" />

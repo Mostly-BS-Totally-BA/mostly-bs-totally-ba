@@ -22,6 +22,10 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     [SerializeField]
     private Text scoreText;
     [SerializeField]
+    private Text potText;
+    [SerializeField]
+	private Text arrowText;
+	[SerializeField]
     private GameObject runImg;
     [SerializeField]
     private GameObject attackImg;
@@ -31,11 +35,15 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     private GameObject statBoost;
     [SerializeField]
     private GameObject newLevel;
+    [SerializeField]
+    private GameObject endGame;
 
 
 
     private GameManager _gm = null;
     private UIManager _ui;
+    private MusicManager _mmgr;
+    private Volume _vol;
 
     //Grabs GameManager instance and UIManager component
     void Awake()
@@ -47,11 +55,16 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Refresh HUD
     private void Start()
     {
+        //_vol = GameObject.Find("OptionsMenu").GetComponent<Volume>();
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.UpdateLives();
         _ui.UpdateScore();
+        _ui.UpdateHPPots();
+		_ui.UpdateArrows();
         _ui.UpdateHUDAttackSpeed();
         _ui.UpdateHUDRunSpeed();
+        _mmgr = MusicManager.Instance;
+
     }
 
     //Set lives sprites to match current LivesCount value
@@ -70,6 +83,20 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.scoreText.text = "Score: " + _gm.Score;
     }
+
+
+    //Update text to match current Score value
+    public void UpdateHPPots()
+    {
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _ui.potText.text = "" + _gm.potionCount;
+    }
+
+	public void UpdateArrows()
+	{
+		_ui = GameObject.Find("HUD").GetComponent<UIManager>();
+		_ui.arrowText.text = "" + _gm.arrowCount;
+	}
 
     //Update text to match current Score value
     public void UpdateHUDAttackSpeed()
@@ -98,8 +125,11 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Loads pause menu
     public void ShowEscMenu()
     {
+        
         //Debug.Log("Show Esc");
         activateEscMenu("MainMenu");
+        //_vol = GameObject.Find("OptionsMenu").GetComponent<Volume>();
+        //_vol.SetSliders();
     }
 
     //Hides pause menu
@@ -121,6 +151,13 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     {
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _ui.newLevel.SetActive(show);
+    }
+
+    //Displays dialog for tranistion between levels
+    public void LoadEndGame(bool show)
+    {
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _ui.endGame.SetActive(show);
     }
 
     //Selection of health for stat boost
@@ -156,6 +193,8 @@ public class UIManager : MonoBehaviour //Singleton<UIManager> //
     //Loads gameover menu
     public void GameOver()
     {
+        _mmgr.StopAudio();
+        MusicManager.Instance.PlayAudio(MusicName.End);
         activateEscMenu("GameOver");
     }
 

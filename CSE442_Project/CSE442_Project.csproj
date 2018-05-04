@@ -256,6 +256,9 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
@@ -266,25 +269,25 @@
       <HintPath>Assets/Packages/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Analytics">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/arody/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Christian/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -321,16 +324,21 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\_Game\AudioManager.cs" />
     <Compile Include="Assets\Scripts\_Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\_Game\LoadScene.cs" />
     <Compile Include="Assets\Scripts\_Game\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\_Game\MusicManager.cs" />
     <Compile Include="Assets\Scripts\_Game\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\_Game\Properties.cs" />
     <Compile Include="Assets\Scripts\_Game\Save.cs" />
     <Compile Include="Assets\Scripts\_Game\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\_Game\Singleton.cs" />
     <Compile Include="Assets\Scripts\_Game\UIManager.cs" />
+    <Compile Include="Assets\Scripts\_Game\VolSliders.cs" />
+    <Compile Include="Assets\Scripts\_Game\Volume.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\endCredits.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemy_movement.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL1Boss.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\BlackSpector.cs" />
@@ -338,22 +346,28 @@
     <Compile Include="Assets\Scripts\Enemies\LVL2\Necromancer.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\SatanBall.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL2\Zombie.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\BHtrap.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\DarkGas.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\fireBall.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Lizard.cs" />
-    <Compile Include="Assets\Scripts\Enemies\LVL3\Small Spore.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\LVL3Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\Phase2Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\SmallSpore.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Trees.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\TreeTrap.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\TwoHeadPlant.cs" />
     <Compile Include="Assets\Scripts\Enemies\LVL3\Vines.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL3\wingedDemons.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL4Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\LVL4Phase2.cs" />
+    <Compile Include="Assets\Scripts\Interaction\Arrow_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Chest_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\CurrentEnding.cs" />
     <Compile Include="Assets\Scripts\Interaction\Door_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\From_lvl1_to_Transition.cs" />
+    <Compile Include="Assets\Scripts\Interaction\endTransition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Interact_Text.cs" />
     <Compile Include="Assets\Scripts\Interaction\lvl1_Puzzle_Interactions.cs" />
     <Compile Include="Assets\Scripts\Interaction\lvl1_puzzle_tip.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Double_Door_Interact.cs" />
-    <Compile Include="Assets\Scripts\Interaction\LVL2\From_Transition_to_2.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Platino_Speech.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Puzzle_Lvl2.cs" />
     <Compile Include="Assets\Scripts\Interaction\LVL2\Secret_Passage_Lvl2.cs" />
@@ -371,9 +385,12 @@
     <Compile Include="Assets\Scripts\Interaction\Platino_Candles.cs" />
     <Compile Include="Assets\Scripts\Interaction\Player_Interact.cs" />
     <Compile Include="Assets\Scripts\Interaction\Potion_Pickup.cs" />
+    <Compile Include="Assets\Scripts\Interaction\textManager.cs" />
     <Compile Include="Assets\Scripts\Interaction\Transition.cs" />
     <Compile Include="Assets\Scripts\Interaction\Treasure_pickup.cs" />
     <Compile Include="Assets\Scripts\Interaction\Unlock_Door_lvl1.cs" />
+    <Compile Include="Assets\Scripts\MinimapMovement.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\ArrowMovement.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
   </ItemGroup>

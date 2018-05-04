@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Player_Movement : MonoBehaviour {
 
-	//public float speed;
+    //public float speed;
+    public string text;
 	private Animator animator;
 	private Rigidbody2D player_rigid;
 	public PolygonCollider2D swordCollider;
@@ -19,14 +20,14 @@ public class Player_Movement : MonoBehaviour {
     private int currentColliderIndex;
     private GameManager _gm = null;
 	private float timer = 3.0f;
-	private bool showGUI = false;
-	private GUIStyle guiStyle = new GUIStyle();
     public bool isPoison;
     private float poisonCount = 1.5f;
     private int damageTime = 0;
     private float flashCount = .5f;
     private int flag = 0;
     private SpriteRenderer SpriteR;
+	public GameObject arrow;
+	private float ranged_CD = 0.0f;
     //public int currentHealth;
 
     void Start () {
@@ -134,6 +135,7 @@ public class Player_Movement : MonoBehaviour {
 		//Get horiztontal and vertical position of the player
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+		ranged_CD -= Time.deltaTime;
 
         moving = false;
 
@@ -171,8 +173,22 @@ public class Player_Movement : MonoBehaviour {
 				//On attack, enables sword colliders and set attack duration
 				_gm.use_potion();
 				if (_gm.potionCount <= 0) {
-					showGUI = true;
+                    text = "Out of potions!";
+                    textManager.Instance.enableText(text);
 					StartCoroutine (Wait (timer));
+				}
+			}
+
+			if(Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+			{
+				if (ranged_CD <= 0 && _gm.arrowCount > 0) {
+					spawnArrow (horizontal, vertical);
+					_gm.use_arrow();
+					Debug.Log ("Using Arrow: " + _gm.arrowCount + " left");
+					ranged_CD = 3.0f;
+				}
+				else {
+					Debug.Log ("Attack on CD");
 				}
 			}
 
@@ -199,6 +215,27 @@ public class Player_Movement : MonoBehaviour {
         animator.SetFloat("last_y_movement", lastMove.y);
     }
 
+	void spawnArrow(float horizontal,float vertical)
+	{
+		GameObject spawnArrow;
+
+		if (horizontal > 0.5f || lastMove.Equals (new Vector2 (1, 0))) {
+			spawnArrow = Instantiate (arrow, transform.position, Quaternion.Euler (0f, 0f, -225f));
+		} else if (horizontal < -0.5f || lastMove.Equals (new Vector2 (-1, 0))) {
+			spawnArrow = Instantiate (arrow, transform.position, Quaternion.Euler (0f, 0f, -45f));
+		} else if (vertical > 0.5f || lastMove.Equals (new Vector2 (0, 1))) {
+			spawnArrow = Instantiate (arrow, transform.position, Quaternion.Euler (0f, 0f, -135f));
+			spawnArrow.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionY;
+			spawnArrow.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+		} else {
+			spawnArrow = Instantiate (arrow, transform.position, Quaternion.Euler (0f, 0f, -315f));
+			spawnArrow.GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionY;
+			spawnArrow.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
+		}
+
+		spawnArrow.GetComponent <Rigidbody2D> ().AddRelativeForce (new Vector2 (0f, -200f));
+	}
+
     void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Enemy")
@@ -224,18 +261,6 @@ public class Player_Movement : MonoBehaviour {
 	IEnumerator Wait(float timer)
 	{
 		yield return new WaitForSecondsRealtime(timer);        //Waits for seconds indicated by timer
-		showGUI = false;                                     //removes text from screen
-	}
-
-	private void OnGUI()
-	{
-        if (showGUI == true)
-        {
-            guiStyle.fontSize = 20;                                            //change the font size
-            guiStyle.normal.textColor = Color.white;
-            GUI.Label(new Rect(10, 10, 500, 20), "Out of potions!", guiStyle);
-        }//places text on screen
-	}
-
-    
+        textManager.Instance.disableText(text);
+	}    
 }

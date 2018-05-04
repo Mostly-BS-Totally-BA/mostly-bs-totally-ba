@@ -11,6 +11,7 @@ public class lvl1_puzzle_tip : MonoBehaviour
     //called by Player_Interact script
     public void RunInteraction()
     {
+        AudioManager.Instance.PlayAudio(AudioName.Book);
         player.canMove = false;                         //disables player's ability to move, alters variable in Player_Movement script of player object
         textBox.SetActive(true);                        //activates textBox so that tip appears on screen
     }
@@ -20,6 +21,7 @@ public class lvl1_puzzle_tip : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))           //if player presses return key ('enter')
         {
+            AudioManager.Instance.PlayAudio(AudioName.Book);
             player.canMove = true;                      //allows the player to move again, alters variable in Player_Movement script of player object
             textBox.SetActive(false);                   //deactivates textBox so that tip disappears from screen
         }

@@ -19,8 +19,9 @@ public class PlayerAttack : MonoBehaviour {
 		GameObject enemy = _enemy.gameObject;
 
 		//If the game object is an enemy send that enemy damage to take
-		if (_enemy.gameObject.CompareTag("Enemy")) {
+		if (_enemy.gameObject.CompareTag("Enemy") && !_enemy.isTrigger) {
 			enemy.SendMessage("takeDamage", 50);
+            AudioManager.Instance.PlayAudio(AudioName.PlayerAttack);
 		}
 
 	}

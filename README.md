@@ -31,6 +31,35 @@ https://www.youtube.com/watch?v=sRCQMmgo13g&feature=youtu.be
 Beta Release Video:
 https://www.youtube.com/watch?v=8dcB7IObpSQ
 
+Official Release:
+https://youtu.be/Vcrza_6BBUk
+
+Landing Page
+=========================
+
+Locate our landing page here: https://mostly-bs-totally-ba.itch.io/images-of-morphia?secret=ctfCEaKB6FzUx6ruZo9XBrS9KZ4
+
+Official/Beta Release Instructions
+=========================
+Mac
+------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the .zip or tar.gz to your computer
+3) Unzip the contents
+4) Locate the IoM_MacOS.zip inside the CSE442_Project folder and unzip it.
+5) Locate the file named "IoM_MacOS" in the unzipped folder.
+6) Double click this file to run it
+7) Screen to select graphics options should open, then press Play!
+
+Windows
+------------
+1) Go to the releases section here: https://github.com/Mostly-BS-Totally-BA/mostly-bs-totally-ba/releases
+2) Download the zip to your computer
+3) Unzip the contents
+4) Locate the file IoM_Windows.zip inside the CSE442_Project and unzip this
+5) Within the unzipped folder locate the file named "IoM_Windows.exe"
+6) Run this file to begin playing
+
 Alpha Release Instructions
 =========================
 Mac

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, LevelTransition }
+
+public enum GameState { NullState, Intro, MainMenu, Game, Paused, PlayerDead, GameOver, GameOver1, LevelTransition }
 public delegate void OnStateChangeHandler();
 
 /* Purpose of the GameManager is to act as a central hub and maintain the states the 
@@ -23,11 +25,13 @@ public class GameManager : Singleton<GameManager>
     public GameState gameState { get; private set; }
     protected GameManager() { }
 
+    private string gameBuild="0.1.0";
     public int Level { get; private set; }
     public int livesMax { get; private set; }
     public int LivesCount { get; private set; }
     public int Score { get; private set; }
 	public int potionCount { get; private set; }
+	public int arrowCount { get; private set; }
     public float playerSpeedNorm { get; private set; }
     public float playerSpeed { get; private set; }
     public float playerAttackSpeedNorm { get; private set; }
@@ -35,10 +39,21 @@ public class GameManager : Singleton<GameManager>
 
     private float timeCount = 2.0f;
 
+
     //public UIManager UIManager;
     private UIManager _ui;
+    private MusicManager _mmgr;
     private MainMenu _mm;
     private Player_Movement _pm;
+
+    //Changes the current Game State
+    public string GetGameBuild()
+    {
+        _gm = GameManager.Instance;
+        Debug.Log("GMB: " + gameBuild);
+        Debug.Log("ggmb: " + _gm.gameBuild);
+        return _gm.gameBuild;
+    }
 
     //Changes the current Game State
     public void SetGameState(GameState gameState)
@@ -48,6 +63,10 @@ public class GameManager : Singleton<GameManager>
         {
             OnStateChange();
         }
+    }
+
+    void Start(){
+        _mmgr = MusicManager.Instance;
     }
 
     //Repeated checks of Escape being called. Also checks if player dead or game over
@@ -67,6 +86,7 @@ public class GameManager : Singleton<GameManager>
         _gm.playerSpeedNorm = 2.00f;
         _gm.playerAttackSpeedNorm = 0.50f;
 		_gm.potionCount = 0;
+		_gm.arrowCount = 5;
         _gm.LivesCount = _gm.livesMax;
         _gm.playerSpeed = _gm.playerSpeedNorm;
         _gm.playerAttackSpeed = _gm.playerAttackSpeedNorm;
@@ -88,6 +108,7 @@ public class GameManager : Singleton<GameManager>
         _gm.LivesCount = save.lives;
         _gm.Score = save.score;
 		_gm.potionCount = save.potionCount;
+		_gm.arrowCount = save.arrowCount;
     }
 
     //Used to begin currently set level, including for new game or for next level
@@ -100,6 +121,23 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("SL1: " + _gm.gameState);
         SceneManager.LoadScene(_gm.Level);
         Debug.Log("SL2: " + _gm.gameState);
+
+        _mmgr.StopAudio();
+        switch (_gm.Level)
+        {
+            case 1:
+                MusicManager.Instance.PlayAudio(MusicName.L1);
+                break;
+            case 2:
+                MusicManager.Instance.PlayAudio(MusicName.L2);
+                break;
+            case 3:
+                MusicManager.Instance.PlayAudio(MusicName.L3);
+                break;
+            case 4:
+                MusicManager.Instance.PlayAudio(MusicName.L4);
+                break;
+        }
 /*        if (_gm.Level > 1)
         {
             Debug.Log("StartLevel");
@@ -124,6 +162,16 @@ public class GameManager : Singleton<GameManager>
         _gm.SetGameState(GameState.LevelTransition);
         SetLevel(_gm.Level += 1);
         _ui.LoadStatBoost(true); //_ui.StartLevelTransition();
+    }
+
+    //Triggers transition phase that brings up dialog for next level
+    public void EndGameTransition()
+    {
+        _ui = GameObject.Find("HUD").GetComponent<UIManager>();
+        _gm = GameManager.Instance;
+        _gm.SetGameState(GameState.LevelTransition);
+        SetLevel(_gm.Level = 0);
+        _ui.LoadEndGame(true); //_ui.StartLevelTransition();
     }
 
     //Stat boost for health
@@ -167,11 +215,13 @@ public class GameManager : Singleton<GameManager>
     public void LivesDecrease(int lives)
     {
         int newLives = _gm.LivesCount - lives;
+
         if (newLives <= 0)
         {
             newLives = 0;
             _gm.KillPlayer();
         }
+        AudioManager.Instance.PlayAudio(AudioName.PlayerDMG);
         _ui = GameObject.Find("HUD").GetComponent<UIManager>();
         _gm.LivesCount = newLives;
         _ui.UpdateLives();
@@ -196,13 +246,38 @@ public class GameManager : Singleton<GameManager>
 	public void pickup_potion()
 	{
 		_gm.potionCount++;
+        _ui.UpdateHPPots();
+        AudioManager.Instance.PlayAudio(AudioName.PotionGet);
+	}
+
+	public void pickup_arrow()
+	{
+		_ui = GameObject.Find("HUD").GetComponent<UIManager>();
+		_gm.arrowCount++;
+		_ui.UpdateArrows();
+		AudioManager.Instance.PlayAudio(AudioName.Key);
+	}
+
+	public void use_arrow()
+	{
+		if (_gm.arrowCount > 0) {
+			_gm.arrowCount--;
+			_ui = GameObject.Find("HUD").GetComponent<UIManager>();
+			_ui.UpdateArrows ();
+			Debug.Log ("Arrow Count: " + _gm.arrowCount);
+		} 
+		else {
+			Debug.Log ("Out of Arrows");
+		}
 	}
 
 	public void use_potion()
 	{
 		if (_gm.potionCount > 0) {
 			_gm.potionCount--;
+            _ui.UpdateHPPots();
 			_gm.LivesIncrease (4);
+            AudioManager.Instance.PlayAudio(AudioName.PotionDrink);
 			Debug.Log ("Potion Count: " + _gm.potionCount);
 		} 
 		else {
@@ -243,6 +318,8 @@ public class GameManager : Singleton<GameManager>
     {
         _gm.SetGameState(GameState.PlayerDead);
         _pm = GameObject.Find("PlayerSprite").GetComponent<Player_Movement>();
+        _mmgr.StopAudio();
+        AudioManager.Instance.PlayAudio(AudioName.PlayerDeath);
         _pm.death();
         PlayerDead();
     }
@@ -254,11 +331,13 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.PlayerDead)
         {
+
             _gm.timeCount -= Time.deltaTime;
             if (_gm.timeCount <= 0)
             {
                 _gm.timeCount = 2f;
-                _gm.gameState = GameState.GameOver;
+                //_gm.gameState = GameState.GameOver;
+                _gm.SetGameState(GameState.GameOver);
             }
         }
     }
@@ -270,9 +349,9 @@ public class GameManager : Singleton<GameManager>
         _gm = GameManager.Instance;
         if (_gm.gameState == GameState.GameOver)
         {
+            _gm.SetGameState(GameState.GameOver1);
             _ui = GameObject.Find("HUD").GetComponent<UIManager>();
             _ui.GameOver();
         }
     }
-
 }

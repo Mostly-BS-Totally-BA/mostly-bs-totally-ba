@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212266439468386444}
   - component: {fileID: 114229841788268876}
   - component: {fileID: 60040940651162700}
+  - component: {fileID: 50518887563511212}
   m_Layer: 0
   m_Name: Dead Tree
   m_TagString: Enemy
@@ -42,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50518887563511212
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254606899300568}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &60040940651162700
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -85,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fdb6b55ad6354681cbf7381a54599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portal: {fileID: 0}
   summon: {fileID: 1647082913859910, guid: 14f9ddf7555aa934dab23eedeb62c44e, type: 2}
   summonCir: {fileID: 1001188002090380, guid: cd5144cfcc68ac540bcd151bb7b7e0b7, type: 2}
   Door: {fileID: 0}

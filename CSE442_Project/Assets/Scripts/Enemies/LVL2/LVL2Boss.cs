@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class LVL2Boss : MonoBehaviour
 {
-    public GameObject projectile;
+    public GameObject portal;
+    public GameObject summon;
+	public GameObject summonCir;
+	private GameObject sumCir;
+	public GameObject projectile;
     public float currentHealth;
     public float maxHealth;
     public float speed;
@@ -85,7 +89,8 @@ public class LVL2Boss : MonoBehaviour
     public void death()
     {
         _gm = GameManager.Instance;
-        _gm.UpdateScore(10);
+        _gm.UpdateScore(500);
+        portal.SetActive(true);
         //_gm.LivesDecrease(1);
         Player.SendMessage("addKill");
         Destroy(gameObject);
@@ -229,7 +234,8 @@ public class LVL2Boss : MonoBehaviour
 
         if (aggro == true && target != null)
         {
-            bulletTime -= Time.deltaTime;
+			timeCount -= Time.deltaTime;
+			bulletTime -= Time.deltaTime;
             if(bulletTime<=0)
             {
                 Invoke("bulletHell",1);
@@ -287,8 +293,42 @@ public class LVL2Boss : MonoBehaviour
                     }
                 }
             }
+			if (timeCount <= 0) 
+			{
+				timeCount = 1f;
+				countAtt++;
+			}
+			if(countAtt==8)
+			{
+				sumCir = Instantiate(summonCir, transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				this.SpriteR.color = new Color(1, 1, 1);
+				Destroy(sumCir, 1);
+			}
+			if (countAtt == 10) 
+			{
+				OffsetPosition = new Vector3(0, 1f, 0);
+				GameObject zomb = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				//GameObject sumCir = Instantiate(summonCir, OffsetPosition, Quaternion.identity) as GameObject;
+				OffsetPosition = new Vector3(.75f, -1f, 0);
+				GameObject zomb1 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				OffsetPosition = new Vector3(-1f, .65f, 0);
+				GameObject zomb2 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				OffsetPosition = new Vector3(1f, .65f, 0);
+				GameObject zomb3 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
+				OffsetPosition = new Vector3(-.75f, -1f, 0);
+				GameObject zomb4 = Instantiate(summon,  transform.position+OffsetPosition, Quaternion.identity) as GameObject;
 
-
+				zomb.SendMessage("onAggro");
+				zomb1.SendMessage("onAggro");
+				zomb2.SendMessage("onAggro");
+				zomb3.SendMessage("onAggro");
+				zomb4.SendMessage("onAggro");
+				Destroy(sumCir);
+				this.SpriteR.color = new Color(1, 1, 1);
+				blue = 255;
+				green = 255;
+				countAtt = 0;
+			}
 
 
             Vector2 direction = Waypoints[pick].transform.position - transform.position;
